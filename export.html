@@ -34,19 +34,19 @@
     <tr><td><b>Tileset</b></td><td>One sheet: frames left to right, top to bottom.</td><td>Columns (4 by default), Spacing (px) 0-32, Pixel scale</td></tr>
     <tr><td><b>GIF</b></td><td>An animated GIF. Individual durations with the accumulated time rounded to hundredths of a second; the loop can be turned off (Loop). Binary transparency.</td><td>Pixel scale, Loop</td></tr>
     <tr><td><b>CSS</b></td><td>Pixel art via <code>box-shadow</code>. The limit is one million visible pixels; for more use PNG.</td><td>Pixel scale</td></tr>
-    <tr><td><b>Engine atlas</b></td><td>A PNG sheet + a JSON atlas for the engine. Animation tags become clips.</td><td>Engine, Pixels per unit (16 by default), Godot resource folder</td></tr>
-    <tr><td><b>.aseprite</b></td><td>An Aseprite file with all layers, frames, tags and durations at the original size.</td><td>-</td></tr>
+    <tr><td><b>Engine atlas</b></td><td>A PNG sheet + a JSON atlas for the engine. Animations become clips.</td><td>Engine, Pixels per unit (16 by default), Godot resource folder</td></tr>
+    <tr><td><b>.aseprite</b></td><td>An Aseprite file with all layers, frames, animations and durations at the original size.</td><td>-</td></tr>
   </table></div>
 
   <h3>Engine atlas</h3>
   <ul>
     <li><b>Unity (JSON)</b> - an atlas with <i>Pixels per unit</i>.</li>
     <li><b>Godot (JSON + SpriteFrames .tres)</b> - a SpriteFrames resource is additionally created; the <i>Godot resource folder</i> field sets the resource path inside the project.</li>
-    <li><b>Phaser (JSON atlas with tags)</b> - a JSON atlas with tags.</li>
+    <li><b>Phaser (JSON atlas with tags)</b> - a JSON atlas with the animations as tags.</li>
   </ul>
 
   <h3>.aseprite</h3>
-  <p>The export contains layers, frames, tags and durations. Groups are flattened and layer masks are not saved. Importing .aseprite is also supported - see <a href="import-files.html">Projects and import</a>.</p>
+  <p>The export contains layers, frames, animations and durations. Groups are flattened and layer masks are not saved. Importing .aseprite is also supported - see <a href="import-files.html">Projects and import</a>.</p>
 
   <h2>Limits and errors</h2>
   <ul>
@@ -56,7 +56,7 @@
     <li>Writes are transactional: if something fails an existing file is not lost.</li>
   </ul>
 
-  <div class="warn"><p>Exporting a PNG/JPEG does not replace saving the project: save the <code>.sf</code> so you do not lose layers and tags.</p></div>
+  <div class="warn"><p>Exporting a PNG/JPEG does not replace saving the project: save the <code>.sf</code> so you do not lose layers and animations.</p></div>
 
   <h2>Exporting individual parts</h2>
   <ul>

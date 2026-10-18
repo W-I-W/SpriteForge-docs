@@ -14,7 +14,7 @@
   <h2>The .sf project</h2>
   <ul>
     <li><b>Save</b> / <b>Save As</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) and <b>Open</b> (<code>File &gt; Open</code>).</li>
-    <li>The file stores the pixels in full, layers, groups and masks, frames, durations, animation tags, the playback range, layer opacity and blend mode, and a compact list of filled tool cells (Body/Outline, etc.).</li>
+    <li>The file stores the pixels in full, layers, groups and masks, frames, durations, animations, the playback range, layer opacity and blend mode, and a compact list of filled tool cells (Body/Outline, etc.).</li>
     <li>New files use <code>AnimationVersion = 3</code>. Old files open (layer opacity 100%, the former frame FPS), but new files are not meant to be opened by an old version of the program.</li>
     <li>Writing is atomic: if something fails the previous file stays untouched.</li>
     <li>The <b>Unsaved changes</b> window offers <i>Save and close</i>, <i>Discard changes</i> or <i>Cancel</i> when closing a document with unsaved changes.</li>
@@ -27,7 +27,7 @@
     <li><b>The clipboard</b>: pasting an image (Windows). If the system clipboard is unavailable an internal copy is used.</li>
     <li><b>A sprite sheet</b>: <code>File &gt; Import sprite sheet</code>, see <a href="layers-timeline.html">Layers and Timeline</a>.</li>
     <li><b>AI image to pixel art</b>: converting an image with grid recovery - <a href="ai-pixel.html">page</a>.</li>
-    <li><b>Aseprite</b>: opening .aseprite files with layers, frames, tags and durations preserved.</li>
+    <li><b>Aseprite</b>: opening .aseprite files with layers, frames, animations and durations preserved.</li>
   </ul>
   <div class="note"><p>The image file size is limited. Files that are too large or empty are rejected with the messages "Image file is empty or too large" or "Unsupported image or image dimensions".</p></div>
 
