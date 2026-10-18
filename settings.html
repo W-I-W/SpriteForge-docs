@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Настройки и контент - SpriteForge</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="settings">
+<main>
+  <h1><img class="ico page-ico" src="assets/icons/palette-options.png" alt="" width="40" height="40">Настройки и пользовательский контент</h1>
+  <p class="lead">Окно <b>Properties</b> (<code>Edit &gt; Properties...</code>, Program settings) содержит вкладки General, Appearance, Onion skin, Content и Language.</p>
+
+  <h2>Вкладки</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Вкладка</th><th>Содержимое</th></tr>
+    <tr><td><b>General</b></td><td>Общие параметры, включая <i>Predict next edit</i> и перенос правок между кадрами (<a href="prediction.html">подробнее</a>). Значения сохраняются между запусками.</td></tr>
+    <tr><td><b>Appearance</b></td><td><i>Interface scale</i> (1x-3x, кнопки Auto и 100%; клавиши <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd>), тема (<i>Dark theme</i> / <i>Light theme</i>), редактируемый атлас иконок (<i>Open icon folder</i>, <i>Reload icons</i>), <i>Atlas PNG</i>, <i>Icon tint</i>, <i>Icon scale</i> (0,5-1,5), <i>Button rounding</i>, <i>Window rounding</i> (0-16), <i>Save style</i>.</td></tr>
+    <tr><td><img class="ico" src="assets/icons/layers.png" alt="Onion skin" width="26" height="26"><b>Onion skin</b></td><td>Включение, число предыдущих и следующих кадров (0-4) и непрозрачность (0,05-0,75).</td></tr>
+    <tr><td><b>Content</b></td><td><img class="ico" src="assets/icons/open.png" alt="Open settings folder" width="26" height="26"><i>Open settings folder</i>, <i>Reload from folder</i> и описание папок.</td></tr>
+    <tr><td><b>Language</b></td><td><i>Interface language</i>, <i>Open language folder</i>, <i>Reload languages</i>.</td></tr>
+  </table></div>
+
+  <h2>Папка настроек</h2>
+  <p>Общая папка: <code>Application.persistentDataPath/Settings</code>. В Windows: <code>%USERPROFILE%\AppData\LocalLow\BowPixel\Sprite Forge\Settings</code>. Создаётся при запуске и переживает обновления.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Папка</th><th>Назначение</th></tr>
+    <tr><td><code>Palettes</code></td><td>Палитры PNG, HEX, GPL, JSON. См. <a href="palettes.html">Палитры</a>.</td></tr>
+    <tr><td><code>Mods</code></td><td>Моды - библиотеки DLL. См. <a href="mods.html">Моды</a>.</td></tr>
+    <tr><td><code>Languages</code></td><td>Файлы языков (JSON).</td></tr>
+    <tr><td><code>Fonts</code></td><td>Шрифты TTF/OTF для языков.</td></tr>
+    <tr><td><code>SpriteForgeIcons</code> (<code>Icons</code>)</td><td>Заменяющий атлас иконок и <code>style.json</code>.</td></tr>
+  </table></div>
+
+  <h2>Языки</h2>
+  <p>Встроены английский (<code>en</code>) и русский (<code>ru</code>). Чтобы добавить язык, положите JSON-файл в <code>Settings/Languages</code> и нажмите <b>Reload languages</b>. Структура файла:</p>
+  <pre><code>{
+  "code": "en",
+  "name": "English",
+  "font": "LiberationSans.ttf",
+  "strings": {
+    "Outline filter": "Outline",
+    "Save": "Save"
+  }
+}</code></pre>
+  <ul>
+    <li>Ключ - английская строка интерфейса, значение - перевод. Пропущенные строки берутся из английского.</li>
+    <li><code>font</code> - имя файла шрифта в <code>Settings/Fonts</code> (TTF или OTF), без путей. Для CJK-языков положите туда подходящий шрифт.</li>
+    <li>Если шрифт не загрузился, программа сообщает и использует запасной.</li>
+  </ul>
+
+  <h2>Иконки</h2>
+  <p>В <code>SpriteForgeIcons</code> можно положить свой атлас <code>SpriteForgeIcons.png</code> и <code>style.json</code>. Размеры атласа и расположение иконок (ячейки 64 пикселя) должны совпадать с оригиналом. Файл не больше 16 МиБ. <b>Reload icons</b> применяет их без перезапуска. Если PNG нет, используются встроенные иконки.</p>
+  <pre><code>{
+  "atlas": "SpriteForgeIcons.png",
+  "tint": "#FFFFFFFF",
+  "scale": 1.0,
+  "frameRounding": 6.0,
+  "windowRounding": 8.0
+}</code></pre>
+
+  <h2>Библиотека результатов и стили</h2>
+  <ul>
+    <li><code>Application.persistentDataPath/ResultLibrary</code> - <a href="library.html">библиотека результатов</a>.</li>
+    <li>Стили карандаша сохраняются как JSON/PNG через <i>Save pencil style</i>.</li>
+  </ul>
+</main>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

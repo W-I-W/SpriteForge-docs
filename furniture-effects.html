@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мебель и эффекты - SpriteForge</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="furniture-effects">
+<main>
+  <h1><img class="ico page-ico" src="assets/icons/variations.png" alt="" width="40" height="40">Мебель и эффекты</h1>
+  <p class="lead">Два генератора с библиотеками готовых типов: интерьерные предметы и визуальные эффекты/материалы.</p>
+
+  <figure class="dg"><svg viewBox="0 0 720 250" role="img" aria-label="Режимы генерации" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="230" rx="8" class="box" /><rect x="30" y="80" width="140" height="50" rx="8" class="bg" /><text x="100" y="110" class="t" text-anchor="middle" font-size="15">Drawing</text><rect x="300" y="22" width="170" height="42" rx="8" class="bg" /><text x="385" y="49" class="t" text-anchor="middle" font-size="14">Effects</text><line x1="170" y1="105" x2="300" y2="43" class="ln" marker-end="url(#ah)"/><rect x="300" y="74" width="170" height="42" rx="8" class="bg" /><text x="385" y="101" class="t" text-anchor="middle" font-size="14">Furniture</text><line x1="170" y1="105" x2="300" y2="95" class="ln" marker-end="url(#ah)"/><rect x="300" y="126" width="170" height="42" rx="8" class="bg" /><text x="385" y="153" class="t" text-anchor="middle" font-size="14">UI</text><line x1="170" y1="105" x2="300" y2="147" class="ln" marker-end="url(#ah)"/><rect x="300" y="178" width="170" height="42" rx="8" class="bg" /><text x="385" y="205" class="t" text-anchor="middle" font-size="14">Character</text><line x1="170" y1="105" x2="300" y2="199" class="ln" marker-end="url(#ah)"/><text x="500" y="70" class="m" text-anchor="start" font-size="12">флажок «Apply ... to Drawing»</text><text x="500" y="94" class="m" text-anchor="start" font-size="12">в окне настроек генератора</text><text x="500" y="118" class="m" text-anchor="start" font-size="12">включает его вместо обычных</text><text x="500" y="142" class="m" text-anchor="start" font-size="12">вариаций рисунка</text><text x="30" y="190" class="m" text-anchor="start" font-size="12">Tiles выбирается отдельным режимом;</text><text x="30" y="212" class="m" text-anchor="start" font-size="12">Auto noise добавляется из окна Auto generator.</text></svg><figcaption>Effects, Furniture, UI и Character включаются как надстройки над Drawing.</figcaption></figure>
+
+  <h2>Furniture</h2>
+  <p>Режим <b>Furniture</b> открывает окно <b>Furniture settings</b>. Выберите <i>Furniture type</i> и настройте форму. Флажок <b>Apply furniture to Drawing</b> в начале окна включает генератор мебели вместо обычных вариаций рисунка. Кнопка <img class="ico" src="assets/icons/refresh.png" alt="Reset furniture settings" width="26" height="26"><b>Reset furniture settings</b> возвращает значения по умолчанию.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Категория</th><th>Примеры</th></tr>
+    <tr><td>Beds</td><td>Кровати</td></tr>
+    <tr><td>Chairs</td><td>Стулья</td></tr>
+    <tr><td>Tables</td><td>Столы (параметр <i>Top thickness</i> - толщина столешницы)</td></tr>
+    <tr><td>Armchairs &amp; Sofas</td><td>Мягкая мебель</td></tr>
+    <tr><td>Gas Stoves</td><td>Газовые плиты</td></tr>
+    <tr><td>Doors, Drawers, Shelves, Cabinet</td><td>Двери, ящики, полки, шкафы (<i>Cabinet divider</i>, <i>Partition thickness</i>)</td></tr>
+  </table></div>
+  <ul>
+    <li>Цвета берутся из палитры, как у остальных генераторов.</li>
+    <li>Игровой вид (например, Top down или Platformer) влияет на проекцию предметов.</li>
+    <li>Внутри программы пакеты мебели возвращают данные «снизу вверх», а общий метод конвертации приводит результат к стандартной ориентации - вручную переворачивать результат не нужно.</li>
+  </ul>
+
+  <h2>Effects</h2>
+  <p>Режим <b>Effects</b> и окно <b>Effect settings</b>. Эффекты организованы в пакеты (<i>Effect pack</i>); внутри пакета выбирается конкретный эффект. Флажок <b>Apply effects to Drawing</b> в начале окна запускает генерацию всего пакета эффектов по рисунку на холсте. Рядом - <b>Fit effects to drawing</b> (активен, только когда надстройка включена): каждый эффект масштабируется до размера рисунка и центрируется на нём, а не на холсте. У эффектов есть читаемые имена (например, «Lens Flare H»). Параметры сбрасываются стрелками возле значений.</p>
+  <h3>Пакеты эффектов</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Группа</th><th>Пакеты</th></tr>
+    <tr><td>Игровые эффекты</td><td>Combat (бой), GameFeedback (обратная связь: попадания, подбор), StatusEffects (статусы), Movement (движение), Gameplay</td></tr>
+    <tr><td>Стихии и природа</td><td>Elemental, Nature, Environment, MagicAndEnergy</td></tr>
+    <tr><td>Свет</td><td>StarsAndFlares (звёзды и вспышки), Geometry</td></tr>
+    <tr><td>Материалы</td><td>Metals, Wood, StoneAndGround, Ceramics, GlassAndCrystals, Liquids, FabricsAndLeather, Organic</td></tr>
+  </table></div>
+  <h3>Общие параметры</h3>
+  <ul>
+    <li><b>Element count</b> - число элементов, <b>Element scale</b> - их размер, <b>Element spacing</b> - расстояние.</li>
+    <li><b>Size</b>, <b>Line thickness</b>, <b>Edge softness</b> (по умолчанию 0,5), <b>Vignette</b>, <b>Noise</b>.</li>
+    <li><b>Seed</b> / <b>Random seed</b>.</li>
+    <li><b>Glass highlight</b> и другие специфичные параметры появляются в зависимости от выбранного эффекта.</li>
+  </ul>
+  <p>Материальные пакеты (Metals, Wood, Liquids и др.) создают текстурные заготовки, а игровые - анимированные эффекты; многокадровые результаты ведут себя как <a href="library.html">сгенерированные анимации</a>.</p>
+</main>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

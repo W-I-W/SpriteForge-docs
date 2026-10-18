@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проекты и импорт - SpriteForge</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="import-files">
+<main>
+  <h1><img class="ico page-ico" src="assets/icons/open.png" alt="" width="40" height="40">Проекты и импорт</h1>
+  <p class="lead">Формат проекта <code>.sf</code>, открытие файлов и ввод изображений извне.</p>
+
+  <h2>Проект .sf</h2>
+  <ul>
+    <li><b>Save</b> / <b>Save As</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) и <b>Open</b> (<code>File &gt; Open</code>).</li>
+    <li>Файл хранит пиксели полностью, слои, группы и маски, кадры, длительности, теги анимаций, диапазон воспроизведения, прозрачность и режим наложения слоёв, а также компактный список заполненных ячеек инструментов (Body/Outline и др.).</li>
+    <li>Новые файлы используют <code>AnimationVersion = 3</code>. Старые файлы открываются (непрозрачность слоя 100%, прежний FPS кадров), но новые файлы не предназначены для открытия старой версией программы.</li>
+    <li>Запись выполняется атомарно: при сбое прежний файл остаётся нетронутым.</li>
+    <li>Окно <b>Unsaved changes</b> предлагает <i>Save and close</i>, <i>Discard changes</i> или <i>Cancel</i> при закрытии документа с несохранёнными изменениями.</li>
+    <li>На пустом холсте показываются последние 12 открытых или сохранённых проектов.</li>
+  </ul>
+
+  <h2>Импорт изображений</h2>
+  <ul>
+    <li><b>Перетаскивание</b> PNG, JPG или .aseprite в окно открывает диалог: <i>Create new document</i> или <i>Insert into current document</i> (вставка на новый слой текущего кадра; при необходимости изображение масштабируется или обрезается по холсту, программа сообщает об этом).</li>
+    <li><b>Буфер обмена</b>: вставка изображения (Windows). Если системный буфер недоступен, используется внутренняя копия.</li>
+    <li><b>Лист спрайтов</b>: <code>File &gt; Import sprite sheet</code>, см. <a href="layers-timeline.html">Слои и Timeline</a>.</li>
+    <li><b>AI image to pixel art</b>: преобразование изображения с восстановлением сетки - <a href="ai-pixel.html">страница</a>.</li>
+    <li><b>Aseprite</b>: открытие файлов .aseprite с сохранением слоёв, кадров, тегов и длительностей.</li>
+  </ul>
+  <div class="note"><p>Размер файла изображения ограничен. Слишком большие или пустые файлы отклоняются сообщениями «Image file is empty or too large» или «Unsupported image or image dimensions».</p></div>
+
+  <h2>Палитры</h2>
+  <p>Импорт палитр из PNG, HEX, GPL и JSON описан на странице <a href="palettes.html">Палитры</a>.</p>
+
+
+  <h2>Система координат при импорте</h2>
+  <p>Внутри программы строка 0 - верхняя. Импортируемые изображения проходят единственное преобразование строк на границе (чтобы голова осталась сверху), а экспорт делает обратное. Если вы создаёте моды или внешние инструменты, придерживайтесь этого же правила.</p>
+</main>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

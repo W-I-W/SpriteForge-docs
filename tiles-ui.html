@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тайлы и UI - SpriteForge</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="tiles-ui">
+<main>
+  <h1><img class="ico page-ico" src="assets/icons/tiles.png" alt="" width="40" height="40">Тайлы и UI</h1>
+  <p class="lead">Генераторы, создающие целые наборы: 48 тайлов для карт и компоненты интерфейса в четырёх состояниях.</p>
+
+  <h2>Tiles</h2>
+  <p>Режим <b>Tiles</b> (окно <b>Tile settings</b>) создаёт полный набор тайлов для автотайлинга: карта 8 x 6, то есть 48 ячеек. Размер набора определяется автоматически.</p>
+  <ul>
+    <li>Используйте <b>квадратный</b> холст («Use a square canvas for the 48-tile generator»).</li>
+    <li>Исходный рисунок задаёт цвета и фактуру; генератор создаёт края, углы и внутренние варианты.</li>
+    <li>Режим выгрузки <b>Tileset</b> в окне <a href="export.html">экспорта</a> собирает кадры в один лист.</li>
+    <li>Для проверки бесшовности включите <a href="mirror-tile.html">Tile Repeat</a>.</li>
+  </ul>
+
+  <h2>UI components</h2>
+  <p>Режим <b>UI</b> (окно <b>UI generation settings</b>, PIXEL UI COMPONENTS) создаёт «чистые» оболочки компонентов без иконок и текста.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Компонент</th><th>Компонент</th><th>Компонент</th></tr>
+    <tr><td>Button</td><td>Panel</td><td>Slider</td></tr>
+    <tr><td>Scrollbar (и Scrollbar thumb)</td><td>Toggle</td><td>Checkbox</td></tr>
+    <tr><td>Progress Bar</td><td>Text Input</td><td>Number Input</td></tr>
+    <tr><td>Dropdown</td><td>Scroll View</td><td>Key Bind Button</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Состояния</b>: Normal, Hover, Pressed, Disabled. Каждый компонент создаётся по одному разу на состояние («Fixed state set»); одинаковые части разных состояний используются совместно.</li>
+    <li><b>UI kit / UI set</b> - набор собранных примеров всех компонентов; на выходе все четыре состояния каждого.</li>
+    <li><b>Generate separate UI parts</b> - выдаёт каждую часть отдельным обрезанным спрайтом, готовым для UI Image. Предпросмотр показывает собранный компонент.</li>
+    <li>Параметры вида: <i>Button rounding</i>, <i>Window rounding</i>, <i>Handle size</i>, <i>Thumb width / height</i>, <i>Style</i> (Flat, Beveled, Double frame и др.), <i>Accent</i>.</li>
+    <li>Для детализированных компонентов используйте холст от 64 x 64 пикселей.</li>
+    <li><b>Apply UI to Drawing</b> - флажок в начале окна: включает генератор UI вместо обычных вариаций Drawing.</li>
+    <li>9-slice: в сочетании с инструментом <a href="tools.html#slice">Slice</a> можно задать центральную область для масштабируемого UI.</li>
+  </ul>
+
+  <h3>Параметры геометрии и цвета</h3>
+  <div class="table-wrap"><table>
+    <tr><th>Параметр</th><th>Действие</th></tr>
+    <tr><td><b>Component</b>, <b>Style</b></td><td>Какой компонент и в каком стиле создавать. Для пункта «все компоненты» показывается собранный набор.</td></tr>
+    <tr><td><b>Shape variations</b>, <b>Seed</b>, <b>New variations</b></td><td>Вариации формы по сиду.</td></tr>
+    <tr><td><b>Use document canvas size</b> / <b>Output width, Output height</b></td><td>Размер результата: по холсту документа или своё (8-256 px).</td></tr>
+    <tr><td><b>Width</b>, <b>Height</b></td><td>Доля холста, занимаемая компонентом (0,1-1).</td></tr>
+    <tr><td><b>Border pixels</b> (0-8), <b>Corner pixels</b> (0-16), <b>Padding pixels</b> (0-12), <b>Detail pixels</b> (1-4)</td><td>Толщина рамки, скругление углов, внутренний отступ, размер деталей.</td></tr>
+    <tr><td><b>Track pixels</b>, <b>Thumb width</b>, <b>Thumb height</b></td><td>Для слайдеров и полос прокрутки: толщина дорожки, размеры ползунка (0 - автоматически).</td></tr>
+    <tr><td><b>Vertical orientation</b>, <b>Value / position</b>, <b>Scrollbar thumb</b></td><td>Ориентация, значение заполнения/положение, размер ползунка полосы прокрутки.</td></tr>
+    <tr><td><b>Use palette colors</b> / <b>Body</b>, <b>Outline</b>, <b>Accent</b></td><td>Цвета из палитры или свои.</td></tr>
+  </table></div>
+  <p>Окно показывает «Output: W x H», живой предпросмотр и подсказку использовать холст от 64 x 64 для детализированных компонентов.</p>
+  <figure class="dg"><svg viewBox="0 0 720 220" role="img" aria-label="9-slice" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="200" rx="8" class="box" /><rect x="40" y="30" width="240" height="150" rx="4" fill="#5a7fa8" opacity=".35"/><line x1="90" y1="30" x2="90" y2="180" class="ln2" stroke-dasharray="5 4"/><line x1="230" y1="30" x2="230" y2="180" class="ln2" stroke-dasharray="5 4"/><line x1="40" y1="75" x2="280" y2="75" class="ln2" stroke-dasharray="5 4"/><line x1="40" y1="135" x2="280" y2="135" class="ln2" stroke-dasharray="5 4"/><text x="160.0" y="110.0" class="t" text-anchor="middle" font-size="14">center</text><text x="330" y="70" class="t" text-anchor="start" font-size="13">Slice + 9-slice center задают</text><text x="330" y="94" class="t" text-anchor="start" font-size="13">растягиваемую центральную область.</text><text x="330" y="126" class="m" text-anchor="start" font-size="13">Углы и края сохраняют размер,</text><text x="330" y="148" class="m" text-anchor="start" font-size="13">центр масштабируется - как в UI Image.</text></svg><figcaption>Slice с 9-slice center: углы остаются неизменными, центр растягивается.</figcaption></figure>
+</main>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Генератор персонажей - SpriteForge</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="character">
+<main>
+  <h1><img class="ico page-ico" src="assets/icons/sparkle.png" alt="" width="40" height="40">Генератор персонажей</h1>
+  <p class="lead">Окно <b>Character settings</b> (PIXEL CHARACTER GENERATOR) собирает пиксельного персонажа из частей и создаёт набор анимаций с направлениями.</p>
+  <p>Откройте <i>Character settings</i> и включите <i>Apply character to Drawing</i>. Для работы нужен открытый документ.</p>
+
+  <p>Флажок <b>Apply character to Drawing</b> в начале окна включает генератор персонажей вместо обычных вариаций рисунка.</p>
+
+  <h2>Пресеты и случайный персонаж</h2>
+  <ul>
+    <li><b>Character preset</b> / <b>Apply character preset</b> заменяет тело, одежду, снаряжение и цвета готовой заготовкой. Среди пресетов: Adventurer, Knight, Mage, Rogue, Cleric, Barbarian, Worker, Office worker, Student, Athlete, а также существа - Skeleton, Zombie, Vampire, Orc, Goblin, Troll, Ogre, Demon и другие. После применения доработайте остальные разделы.</li>
+    <li><b>Random character</b> строит случайного человека, животное или монстра. Один и тот же сид всегда даёт одного и того же персонажа.</li>
+  </ul>
+
+  <h2>Разделы настроек</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Раздел</th><th>Параметры</th></tr>
+    <tr><td><b>Basics</b></td><td>Game view (вид: Platformer, Top down и др.), Sprite size / Sprite dimensions, Pixel block size (крупные блоки дают более грубый вид), Size within sprite (какую часть холста занимает персонаж), Ground shadow (мягкая полупрозрачная тень под ногами).</td></tr>
+    <tr><td><b>Body &amp; proportions</b></td><td>Body build (Slim, Average, Athletic, Stocky, Bodybuilder, Custom), высота, ширина, глубина тела, голова (Head width / height), Shoulder width, Waist width, Hip width, Belly size, Arm length / thickness, Leg length / thickness, Muscle definition. Правка формы переключает build в Custom.</td></tr>
+    <tr><td><b>Species</b></td><td>Human и животные: Fox, Wolf, Bear, Cat, Rabbit, Deer, Boar, Dog - в двух вариантах (стоя и «на четырёх лапах»). Параметры: Body length, Ear size, Snout length, Tail size. Цвета: Skin - мех, Fur - морда, живот и кончик хвоста. Четвероногие не носят одежду; чтобы одеть их, выключите «Walks on four legs».</td></tr>
+    <tr><td><b>Hair</b></td><td>Hair style (Bald, Short hair, Long hair, Bob, Bun, Ponytail, Braids, Mohawk, Spiky и др.), Hair length, Hair volume, Parting, Tail / bun size; параметры зависят от выбранной причёски.</td></tr>
+    <tr><td><b>Clothing</b></td><td>Верх (Shirt, Tank top, Hoodie, Jacket, Coat, Robe, Shirtless), низ (Pants, Shorts, Leggings), обувь (Shoes, Boots, Bare feet), Sleeve length, Hem length. Цвета рубашки и штанов можно брать из текущей палитры.</td></tr>
+    <tr><td><b>Equipment</b></td><td>Headgear (Hood, Circlet, Wizard hat, Horned helmet, Open helmet, Great helm; <i>None</i> убирает предмет), Weapon (Sword, Dagger, Axe, Spear, Staff), Shield (Round shield, Kite shield), Armor, Cape (Cape length, Cape color, Fringe length), Belt and buckle; размер предметов (Weapon size, Headgear size).</td></tr>
+    <tr><td><b>Colors</b></td><td>Skin, Trim / accent, Cape color и др.; Use palette for fill / outline / clothes - брать цвета из палитры; Outline follows body.</td></tr>
+    <tr><td><b>Animations</b></td><td>Выбор анимаций для создания и скорость воспроизведения (Movement strength, Playback speed). Playback speed управляет и живым предпросмотром.</td></tr>
+    <tr><td><b>Directions to generate</b></td><td>Default direction и набор направлений: Down, Up, Left, Right, диагонали и «All eight». Чем больше анимаций и направлений, тем больше кадров.</td></tr>
+  </table></div>
+
+  <h2>Анимации</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Анимация</th><th>Кадров</th></tr>
+    <tr><td>Idle</td><td>4 (всегда включена)</td></tr>
+    <tr><td>Walk</td><td>8</td></tr>
+    <tr><td>Run</td><td>8</td></tr>
+    <tr><td>Attack</td><td>6</td></tr>
+    <tr><td>Hurt</td><td>4</td></tr>
+    <tr><td>Death</td><td>6</td></tr>
+    <tr><td>Roll</td><td>8</td></tr>
+    <tr><td>Cast spell</td><td>6</td></tr>
+    <tr><td>Jump pose</td><td>поза прыжка</td></tr>
+  </table></div>
+  <p>Кнопка <b>Generate character</b> создаёт спрайты. Результаты появляются в окне «Generated animations»: каждый вариант можно сохранить как отдельный GIF, добавить кадры в документ (<i>Insert all animation frames on the active layer</i>) или сохранить в библиотеку.</p>
+
+  <div class="note"><p>Живой предпросмотр в окне настроек строится из текущих значений (<i>Live example from current settings</i>), так что результат видно ещё до генерации.</p></div>
+</main>
+<script src="assets/search-index.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
