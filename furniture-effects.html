@@ -31,11 +31,11 @@
   </ul>
 
   <h2>Effects</h2>
-  <p>The <b>Effects</b> mode and the <b>Effect settings</b> window. Effects are organized into packs (<i>Effect pack</i>); a particular effect is chosen inside a pack. The <b>Apply effects to Drawing</b> checkbox at the top of the window runs generation of the whole effect pack from the drawing on the canvas. Next to it is <b>Fit effects to drawing</b> (active only while the add-on is on): each effect is scaled to the size of the drawing and centered on the drawing rather than on the canvas. Effects have readable names (for example "Lens Flare H"). The parameters are reset with the arrows next to the values.</p>
+  <p>The <b>Effects</b> mode and the <b>Effect settings</b> window. Effects are organized into packs (<i>Effect pack</i>); a particular effect is chosen inside a pack. The <b>Apply effects to Drawing</b> checkbox at the top of the window runs generation of the whole effect pack from the drawing on the canvas. Next to it is <b>Fit effects to drawing</b> (active only while the add-on is on): each effect is scaled to the size of the drawing and centered on the drawing rather than on the canvas. The name of the effect that produced a result is shown on its card in the Generated sprites window (appended to the card name, for example "Lens Flare H"). The parameters are reset with the arrows next to the values.</p>
   <h3>Effect packs</h3>
   <div class="table-wrap"><table>
     <tr><th>Group</th><th>Packs</th></tr>
-    <tr><td>Gameplay effects</td><td>Combat, GameFeedback (feedback: hits, pickups), StatusEffects, Movement, Gameplay</td></tr>
+    <tr><td>Gameplay effects</td><td>Combat, GameFeedback (feedback: hits, pickups), StatusEffects, Movement</td></tr>
     <tr><td>Elements and nature</td><td>Elemental, Nature, Environment, MagicAndEnergy</td></tr>
     <tr><td>Light</td><td>StarsAndFlares (stars and flares), Geometry</td></tr>
     <tr><td>Materials</td><td>Metals, Wood, StoneAndGround, Ceramics, GlassAndCrystals, Liquids, FabricsAndLeather, Organic</td></tr>
@@ -43,11 +43,15 @@
   <h3>Common parameters</h3>
   <ul>
     <li><b>Element count</b> - the number of elements, <b>Element scale</b> - their size, <b>Element spacing</b> - the distance.</li>
-    <li><b>Size</b>, <b>Line thickness</b>, <b>Edge softness</b> (0.5 by default), <b>Vignette</b>, <b>Noise</b>.</li>
-    <li><b>Seed</b> / <b>Random seed</b>.</li>
+    <li><b>Size</b> (0 - 1), <b>Line thickness</b> (0 - 8), <b>Edge softness</b> (0 - 1, 0.5 by default), <b>Vignette</b>, <b>Noise</b>.</li>
+    <li><b>Seed</b> (0 - 9999).</li>
     <li><b>Glass highlight</b> and other specific parameters appear depending on the selected effect.</li>
   </ul>
-  <p>Material packs (Metals, Wood, Liquids, etc.) create texture blanks, while gameplay packs create animated effects; multi-frame results behave like <a href="library.html">generated animations</a>.</p>
+  <h3>Edge softness</h3>
+  <p>Edge softness blurs the edges of an effect smoothly: small values give a barely noticeable one-pixel feather, the maximum blurs up to about 5% of the canvas. Pixels outside the canvas count as transparent, so effects fade out at the border. At 0.5 (the default) soft effects blend well with the drawing.</p>
+  <h3>Materials on the drawing</h3>
+  <p>With <b>Apply effects to Drawing</b> on, the material packs (Metals, Wood, StoneAndGround, Ceramics, GlassAndCrystals, Liquids, FabricsAndLeather, Organic) do not float around the drawing: the material is painted over the filled pixels of the drawing itself. The drawing's own transparency and outline are kept; the light and dark pattern of the material is recolored with a color picked at random from the palette. Other packs lay the effect over the drawing and recolor only its neutral (gray and white) pixels.</p>
+  <p>Material packs without the add-on create texture blanks, while gameplay packs create animated effects; multi-frame results behave like <a href="library.html">generated animations</a>.</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>
