@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auto noise и Canvas generator - SpriteForge</title>
+<title>Auto noise - SpriteForge</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body data-page="auto-noise">
 <main>
-  <h1><img class="ico page-ico" src="../assets/icons/jumble.png" alt="" width="40" height="40">Auto noise и Canvas generator</h1>
+  <h1><img class="ico page-ico" src="../assets/icons/jumble.png" alt="" width="40" height="40">Auto noise</h1>
   <p class="lead">Процедурная генерация форм из шума и настройка силуэта (области затухания) на холсте.</p>
 
   <p>Auto noise больше не выбирается как режим в списке: он добавляется из окна <b>Auto generator</b> (после добавления режим появляется в списке как текущий).</p>
@@ -23,6 +23,7 @@
   </ul>
 
   <h2>Auto generator</h2>
+  <p class="note" style="padding:10px 16px">Отдельного окна Canvas generator (области затухания по краям и углам с тепловой картой) больше нет; форма области затухания настраивается в окне Auto generator и инструментом Noise fade area.</p>
   <p>Окно <b>Auto generator</b> настраивает процедурные вариации:</p>
   <ul>
     <li><b>Overlay noise onto drawing</b> - накладывать шум на рисунок, а не заменять его.</li>
@@ -31,19 +32,3 @@
     <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add variation" width="26" height="26"><b>Add variation</b> / <img class="ico" src="../assets/icons/delete.png" alt="Remove selected variation" width="26" height="26"><b>Remove selected variation</b> - набор вариаций.</li>
   </ul>
   <div class="note"><p>Если вариаций нет, окно подсказывает: «Add a variation to configure procedural noise».</p></div>
-
-  <h2>Canvas generator</h2>
-  <p>Окно <b>Canvas generator</b> формирует силуэт Auto noise. Настройки действуют на все слои шума; они не меняют размер холста и не обрезают ваш рисунок.</p>
-  <ul>
-    <li><b>Edge fade areas (pixels)</b> - увеличьте значение, чтобы подавить шум вдоль соответствующего края.</li>
-    <li><b>Corner fade areas (pixels)</b> - срезает углы по диагонали, округляя силуэт.</li>
-    <li><b>Fade softness</b> - минимум и максимум; для каждой вариации значение выбирается из этого диапазона. Меньшие значения убирают больше шума.</li>
-    <li><b>Noise suppression preview</b> - тепловая карта: 0 - без изменений, 1 - полностью подавлено. Белые линии - пределы краёв, жёлтые - углов, подписи показывают расстояние в пикселях (нулевые пределы скрыты). Предпросмотр использует среднюю мягкость; итоговая форма зависит ещё от шума и falloff.</li>
-    <li><b>Reset shape</b> - вернуть форму по умолчанию.</li>
-  </ul>
-  <p>Если Auto noise не выбран как режим, окно предлагает «Switch to Auto noise».</p>
-</main>
-<script src="../assets/search-index-ru.js"></script>
-<script src="../assets/app.js"></script>
-</body>
-</html>

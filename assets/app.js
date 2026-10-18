@@ -29,7 +29,7 @@
       ["character", "Персонажи"],
       ["furniture-effects", "Мебель и эффекты"],
       ["tiles-ui", "Тайлы и UI"],
-      ["auto-noise", "Auto noise и Canvas generator"],
+      ["auto-noise", "Auto noise"],
       ["library", "Результаты и библиотека"]
     ]],
     ["Умные функции", [
@@ -77,7 +77,7 @@
       ["character", "Characters"],
       ["furniture-effects", "Furniture and effects"],
       ["tiles-ui", "Tiles and UI"],
-      ["auto-noise", "Auto noise and Canvas generator"],
+      ["auto-noise", "Auto noise"],
       ["library", "Results and library"]
     ]],
     ["Smart features", [

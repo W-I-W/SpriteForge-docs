@@ -9,18 +9,20 @@
 <body data-page="palettes">
 <main>
   <h1><img class="ico page-ico" src="../assets/icons/picker.png" alt="" width="40" height="40">Палитры и цвет</h1>
-  <p class="lead">Окно Palettes хранит цвета рисования и цвета генерации; каждый цвет несёт параметры того, как генераторы должны его использовать.</p>
+  <p class="lead">Палитра (вверху Tool settings) хранит цвета рисования и цвета генерации; каждый цвет несёт параметры того, как генераторы должны его использовать.</p>
 
-  <h2>Окно Palettes</h2>
+  <h2>Где находится палитра</h2>
+  <p>Отдельного окна Palettes больше нет. Палитра рисования показана <b>вверху окна Tool settings</b> (<code>View &gt; Tool settings</code>), над параметрами активного инструмента.</p>
   <ul>
-    <li>Клик по цвету выбирает его, повторный клик или ПКМ открывает редактирование (<i>Color Picker</i>). Подсказка: «click to select, click again to edit, right-click to edit».</li>
-    <li><b>Add random color</b> добавляет случайный цвет, <img class="ico" src="../assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> удаляет выбранный.</li>
-    <li>Кнопка пипетки (<i>Pick color from canvas</i>) берёт цвет прямо с холста.</li>
-    <li>Палитры рисования и генерации раздельны. <b>Generation colors</b> - набор цветов, из которых генератор выбирает случайно; <i>Add color to generation set</i> добавляет цвет, а цвет «Random color from set» можно заменить фиксированным.</li>
+    <li><b>Образцы</b> - клик выбирает цвет, повторный клик или ПКМ открывает редактирование (<i>Color Picker</i>). Подсказка: «click to select, click again to edit, right-click to edit». Если цветов больше, чем помещается, кнопки <b>&lt;</b> и <b>&gt;</b> со счётчиком «страница / страниц» листают страницы.</li>
+    <li><b>Current color</b> - после взятия цвета с холста над образцами показывается редактор текущего цвета.</li>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> добавляет случайный цвет, <img class="ico" src="../assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> удаляет выбранный.</li>
+    <li>Кнопка пипетки в редакторе цвета (<i>Pick color from canvas</i>) берёт цвет прямо с холста.</li>
+    <li><b>Цвета генерации</b> - отдельный набор, который настраивается в разделе <i>Fill</i> параметров рисования: <b>Generation colors</b> - набор цветов, из которых генератор выбирает случайно; <i>Add color to generation set</i> добавляет цвет, а цвет «Random color from set» можно заменить фиксированным.</li>
   </ul>
 
   <h3>Параметры цвета: Body и Outline</h3>
-  <p>Каждый цвет карандаша содержит настройки для двух ролей пикселя: <b>Body</b> (тело) и <b>Outline</b> (контур):</p>
+  <p>Каждый цвет карандаша содержит настройки для двух ролей пикселя: <b>Body</b> (тело) и <b>Outline</b> (контур). В интерфейсе они показаны как два сворачиваемых раздела Tool settings - <b>Fill</b> (тело) и <b>Outline</b>:</p>
   <ul>
     <li><b>Active</b> - участвует ли роль в генерации.</li>
     <li><b>Chance</b> (<i>Body chance</i>, <i>Outline chance</i>) - вероятность 0-100%, что пиксель будет использован генератором. Основную форму делают надёжной (100%), блики, капли и искры - менее вероятными.</li>
@@ -30,14 +32,13 @@
   <p>Подключите эти параметры через <a href="tools.html#pencil">Advanced paint settings</a> карандаша и заливки.</p>
 
   <h2>Управление палитрами</h2>
-  <p>Кнопки управления списком палитр (<code>Properties</code> и окно Palettes):</p>
+  <p>Кнопка <img class="ico" src="../assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> рядом с образцами (подсказка: «Open, import, save, and manage palettes») открывает всплывающее меню:</p>
   <ul>
-    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> и <img class="ico" src="../assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> - добавить случайный цвет и удалить выбранный.</li>
+    <li><b>Choose palette from folder...</b> - список сохранённых палитр; выбор применяет палитру.</li>
     <li><img class="ico" src="../assets/icons/save-png.png" alt="Import palette" width="26" height="26"><b>Import palette</b> - загрузить палитру из файла (PNG, HEX, GPL, JSON).</li>
-    <li><img class="ico" src="../assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - сохранить текущую палитру в файл.</li>
+    <li><img class="ico" src="../assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - запрашивает <i>Name</i> и сохраняет текущую палитру новым файлом.</li>
     <li><img class="ico" src="../assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> - перечитать папку палитр.</li>
     <li><img class="ico" src="../assets/icons/open.png" alt="Open settings folder" width="26" height="26"><b>Open settings folder</b> - открыть папку настроек.</li>
-    <li><img class="ico" src="../assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> - меню действий над палитрой.</li>
   </ul>
 
   <h2>Форматы палитр</h2>

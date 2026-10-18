@@ -9,18 +9,20 @@
 <body data-page="palettes">
 <main>
   <h1><img class="ico page-ico" src="assets/icons/picker.png" alt="" width="40" height="40">Palettes and color</h1>
-  <p class="lead">The Palettes window stores the drawing colors and the generation colors; each color carries parameters that tell generators how to use it.</p>
+  <p class="lead">The palette (at the top of Tool settings) stores the drawing colors and the generation colors; each color carries parameters that tell generators how to use it.</p>
 
-  <h2>The Palettes window</h2>
+  <h2>Where the palette is</h2>
+  <p>There is no separate Palettes window any more. The drawing palette is shown <b>at the top of the Tool settings window</b> (the <code>View &gt; Tool settings</code> window), above the parameters of the active tool.</p>
   <ul>
-    <li>A click selects a color; a second click or a right-click opens editing (<i>Color Picker</i>). The tooltip: "click to select, click again to edit, right-click to edit".</li>
-    <li><b>Add random color</b> adds a random color, <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> removes the selected one.</li>
-    <li>The picker button (<i>Pick color from canvas</i>) takes a color directly from the canvas.</li>
-    <li>The drawing and generation palettes are separate. <b>Generation colors</b> is a set of colors from which the generator picks at random; <i>Add color to generation set</i> adds a color, and the "Random color from set" color can be replaced with a fixed one.</li>
+    <li><b>Swatches</b> - a click selects a color; a second click or a right-click opens editing (<i>Color Picker</i>). The tooltip: "click to select, click again to edit, right-click to edit". When the palette has more colors than fit, <b>&lt;</b> and <b>&gt;</b> buttons with a "page / pages" counter switch between pages.</li>
+    <li><b>Current color</b> - after a color is picked from the canvas an editor with the current color is shown above the swatches.</li>
+    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> adds a random color, <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> removes the selected one.</li>
+    <li>The picker button in the color editor (<i>Pick color from canvas</i>) takes a color directly from the canvas.</li>
+    <li>The <b>generation colors</b> are a separate set, edited under the <i>Fill</i> section of the paint parameters: <b>Generation colors</b> is the set of colors from which the generator picks at random; <i>Add color to generation set</i> adds a color, and the "Random color from set" color can be replaced with a fixed one.</li>
   </ul>
 
   <h3>Color parameters: Body and Outline</h3>
-  <p>Each pencil color contains settings for two pixel roles: <b>Body</b> and <b>Outline</b>:</p>
+  <p>Each pencil color contains settings for two pixel roles, <b>Body</b> and <b>Outline</b>. In the interface they appear as two collapsible sections of Tool settings - <b>Fill</b> (the body) and <b>Outline</b>:</p>
   <ul>
     <li><b>Active</b> - whether the role takes part in generation.</li>
     <li><b>Chance</b> (<i>Body chance</i>, <i>Outline chance</i>) - the probability, 0-100%, that a pixel is used by the generator. The main shape is made reliable (100%), highlights, drops and sparks less likely.</li>
@@ -30,14 +32,13 @@
   <p>Connect these parameters through the <a href="tools.html#pencil">Advanced paint settings</a> of the pencil and fill.</p>
 
   <h2>Palette management</h2>
-  <p>Buttons that manage the palette list (<code>Properties</code> and the Palettes window):</p>
+  <p>The <img class="ico" src="assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> button next to the swatches (tooltip: "Open, import, save, and manage palettes") opens a popup:</p>
   <ul>
-    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> and <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> - add a random color and remove the selected one.</li>
+    <li><b>Choose palette from folder...</b> - a list of the saved palettes; choosing one applies it.</li>
     <li><img class="ico" src="assets/icons/save-png.png" alt="Import palette" width="26" height="26"><b>Import palette</b> - load a palette from a file (PNG, HEX, GPL, JSON).</li>
-    <li><img class="ico" src="assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - save the current palette to a file.</li>
+    <li><img class="ico" src="assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - asks for a <i>Name</i> and saves the current palette as a new file.</li>
     <li><img class="ico" src="assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> - re-read the palette folder.</li>
     <li><img class="ico" src="assets/icons/open.png" alt="Open settings folder" width="26" height="26"><b>Open settings folder</b> - open the settings folder.</li>
-    <li><img class="ico" src="assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> - a menu of palette actions.</li>
   </ul>
 
   <h2>Palette formats</h2>

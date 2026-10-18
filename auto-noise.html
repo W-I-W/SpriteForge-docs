@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auto noise and Canvas generator - SpriteForge</title>
+<title>Auto noise - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="auto-noise">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/jumble.png" alt="" width="40" height="40">Auto noise and Canvas generator</h1>
+  <h1><img class="ico page-ico" src="assets/icons/jumble.png" alt="" width="40" height="40">Auto noise</h1>
   <p class="lead">Procedural generation of shapes from noise and the setup of the silhouette (fade area) on the canvas.</p>
 
   <p>Auto noise is no longer chosen as a mode in the list: it is added from the <b>Auto generator</b> window (after it is added, the mode appears in the list as the current one).</p>
@@ -23,6 +23,7 @@
   </ul>
 
   <h2>Auto generator</h2>
+  <p class="note" style="padding:10px 16px">The separate Canvas generator window (edge and corner fade areas with a suppression heat map) no longer exists; the fade area is shaped in the Auto generator window and with the Noise fade area tool.</p>
   <p>The <b>Auto generator</b> window configures the procedural variations:</p>
   <ul>
     <li><b>Overlay noise onto drawing</b> - overlay the noise onto the drawing instead of replacing it.</li>
@@ -31,19 +32,3 @@
     <li><img class="ico" src="assets/icons/add-layer.png" alt="Add variation" width="26" height="26"><b>Add variation</b> / <img class="ico" src="assets/icons/delete.png" alt="Remove selected variation" width="26" height="26"><b>Remove selected variation</b> - the set of variations.</li>
   </ul>
   <div class="note"><p>If there are no variations the window hints: "Add a variation to configure procedural noise".</p></div>
-
-  <h2>Canvas generator</h2>
-  <p>The <b>Canvas generator</b> window shapes the Auto noise silhouette. The settings affect all noise layers; they do not resize the canvas and do not crop your drawing.</p>
-  <ul>
-    <li><b>Edge fade areas (pixels)</b> - increase a value to suppress noise along the corresponding edge.</li>
-    <li><b>Corner fade areas (pixels)</b> - cuts the corners diagonally, rounding the silhouette.</li>
-    <li><b>Fade softness</b> - a minimum and a maximum; for each variation the value is chosen from this range. Lower values remove more noise.</li>
-    <li><b>Noise suppression preview</b> - a heat map: 0 - unchanged, 1 - fully suppressed. White lines are the edge limits, yellow lines the corner limits, the labels show the distance in pixels (zero limits are hidden). The preview uses the average softness; the final shape also depends on the noise and the falloff.</li>
-    <li><b>Reset shape</b> - restore the default shape.</li>
-  </ul>
-  <p>If Auto noise is not chosen as the mode, the window offers "Switch to Auto noise".</p>
-</main>
-<script src="assets/search-index.js"></script>
-<script src="assets/app.js"></script>
-</body>
-</html>
