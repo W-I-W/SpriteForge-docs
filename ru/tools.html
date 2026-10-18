@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Инструменты - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="tools">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/pencil.png" alt="" width="40" height="40">Инструменты</h1>
+  <p class="lead">В программе 28 инструментов: рисование, фигуры, выделение, навигация и три специальных инструмента (освещение, зеркало, область затухания шума).</p>
+
+  <h2>Панель Tools</h2>
+  <p>Рядом с кнопками инструментов в Tool settings всегда видны значения по умолчанию: если параметр изменён, возле него появляется стрелка сброса.</p>
+  <figure class="shot narrow"><img src="../assets/screens/tools-panel.png" alt="Панель Tools" loading="lazy"><figcaption>Панель Tools: каждая кнопка - семейство инструментов; маленькая стрелка в углу означает вложенные варианты.</figcaption></figure>
+
+  <p>Панель <b>Tools</b> показывает десять кнопок. Кнопка со стрелкой в углу скрывает семейство родственных инструментов: <b>удерживайте</b> её около 0,1 секунды (или кликните и подержите), появится меню вариантов. Отпустите кнопку мыши над нужным вариантом - он станет выбранным для этой кнопки. Простой клик выбирает тот инструмент, который сейчас показан на кнопке.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Кнопка</th><th>Инструменты в семействе</th></tr>
+    <tr><td>1</td><td>Pencil, Spray</td></tr>
+    <tr><td>2</td><td>Eraser</td></tr>
+    <tr><td>3</td><td>Color picker</td></tr>
+    <tr><td>4</td><td>Fill, Gradient</td></tr>
+    <tr><td>5</td><td>Blur, Jumble, Frame lighting, Mirror</td></tr>
+    <tr><td>6</td><td>Line, Curve</td></tr>
+    <tr><td>7</td><td>Rectangle, Filled rectangle, Ellipse, Filled ellipse, Contour, Polygon</td></tr>
+    <tr><td>8</td><td>Rectangular marquee, Elliptical marquee, Lasso, Polygonal lasso, Magic wand</td></tr>
+    <tr><td>9</td><td>Move, Slice</td></tr>
+    <tr><td>10</td><td>Hand, Zoom</td></tr>
+  </table></div>
+  <div class="icon-row">
+    <figure><img class="ico" src="../assets/icons/pencil.png" alt="Pencil" width="28" height="28">1</figure>
+    <figure><img class="ico" src="../assets/icons/eraser.png" alt="Eraser" width="28" height="28">2</figure>
+    <figure><img class="ico" src="../assets/icons/picker.png" alt="Picker" width="28" height="28">3</figure>
+    <figure><img class="ico" src="../assets/icons/fill.png" alt="Fill" width="28" height="28">4</figure>
+    <figure><img class="ico" src="../assets/icons/mirror.png" alt="Mirror" width="28" height="28">5</figure>
+    <figure><img class="ico" src="../assets/icons/line.png" alt="Line" width="28" height="28">6</figure>
+    <figure><img class="ico" src="../assets/icons/rectangle.png" alt="Rectangle" width="28" height="28">7</figure>
+    <figure><img class="ico" src="../assets/icons/marquee-rect.png" alt="Marquee" width="28" height="28">8</figure>
+    <figure><img class="ico" src="../assets/icons/move.png" alt="Move" width="28" height="28">9</figure>
+    <figure><img class="ico" src="../assets/icons/hand.png" alt="Hand" width="28" height="28">10</figure>
+  </div>
+  <p>Параметры выбранного инструмента показываются в панели <b>Tool settings</b>. Любой инструмент можно также выбрать в меню <code>Tool</code>. Клавиша <kbd>Esc</kbd> отменяет текущую операцию (вершины полигона, кривую, перетаскивание).</p>
+
+  <h2>Сводная таблица</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Инструмент</th><th>Клавиша</th><th>Кратко</th></tr>
+    <tr><td><img class="ico" src="../assets/icons/pencil.png" alt="Pencil" width="28" height="28"><a href="#pencil">Pencil</a></td><td><kbd>B</kbd></td><td>Рисование цветом с кистью любой формы</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/spray.png" alt="Spray" width="28" height="28"><a href="#spray">Spray</a></td><td><kbd>Shift</kbd>+<kbd>B</kbd></td><td>Случайное напыление</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/eraser.png" alt="Eraser" width="28" height="28"><a href="#eraser">Eraser</a></td><td><kbd>E</kbd></td><td>Стирание на активном слое</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/picker.png" alt="Color picker" width="28" height="28"><a href="#picker">Color picker</a></td><td><kbd>I</kbd> / <kbd>Ctrl</kbd></td><td>Взять цвет и свойства пикселя</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/fill.png" alt="Fill" width="28" height="28"><a href="#fill">Fill</a></td><td><kbd>G</kbd></td><td>Заливка по области или по цвету</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/gradient.png" alt="Gradient" width="28" height="28"><a href="#gradient">Gradient</a></td><td><kbd>Shift</kbd>+<kbd>G</kbd></td><td>Градиент к конечному цвету</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/blur.png" alt="Blur" width="28" height="28"><a href="#blur">Blur</a></td><td>-</td><td>Размытие кистью</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/jumble.png" alt="Jumble" width="28" height="28"><a href="#jumble">Jumble</a></td><td>-</td><td>Перемешивание пикселей кистью</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/line.png" alt="Line" width="28" height="28"><a href="#line">Line</a></td><td><kbd>L</kbd></td><td>Прямая линия</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/curve.png" alt="Curve" width="28" height="28"><a href="#curve">Curve</a></td><td><kbd>Shift</kbd>+<kbd>L</kbd></td><td>Изогнутая линия</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/rectangle.png" alt="Rectangle" width="26" height="26"><a href="#rectangle">Rectangle</a></td><td><kbd>U</kbd></td><td>Контур прямоугольника</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/rectangle-filled.png" alt="Filled rectangle" width="26" height="26"><a href="#rectangle">Filled rectangle</a></td><td>-</td><td>Закрашенный прямоугольник</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/ellipse.png" alt="Ellipse" width="26" height="26"><a href="#ellipse">Ellipse</a></td><td><kbd>Shift</kbd>+<kbd>U</kbd></td><td>Контур эллипса или круга</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/ellipse-filled.png" alt="Filled ellipse" width="26" height="26"><a href="#ellipse">Filled ellipse</a></td><td>-</td><td>Закрашенный эллипс</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/contour.png" alt="Contour" width="28" height="28"><a href="#contour">Contour</a></td><td><kbd>D</kbd></td><td>Произвольная граница с заливкой</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/polygon.png" alt="Polygon" width="28" height="28"><a href="#polygon">Polygon</a></td><td><kbd>Shift</kbd>+<kbd>D</kbd></td><td>Многоугольник по вершинам</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/marquee-rect.png" alt="Rectangular marquee" width="26" height="26"><a href="#rect-marquee">Rectangular marquee</a></td><td><kbd>M</kbd></td><td>Прямоугольное выделение</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/marquee-ellipse.png" alt="Elliptical marquee" width="26" height="26"><a href="#ellipse-marquee">Elliptical marquee</a></td><td><kbd>Shift</kbd>+<kbd>M</kbd></td><td>Эллиптическое выделение</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/lasso.png" alt="Lasso" width="26" height="26"><a href="#lasso">Lasso</a></td><td><kbd>Q</kbd></td><td>Выделение от руки</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/lasso-polygon.png" alt="Polygonal lasso" width="26" height="26"><a href="#poly-lasso">Polygonal lasso</a></td><td><kbd>Shift</kbd>+<kbd>Q</kbd></td><td>Выделение по вершинам</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/wand.png" alt="Magic wand" width="28" height="28"><a href="#wand">Magic wand</a></td><td><kbd>W</kbd></td><td>Выделение по цвету</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/move.png" alt="Move" width="28" height="28"><a href="#move">Move</a></td><td><kbd>V</kbd></td><td>Перемещение выделения или ячейки</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/hand.png" alt="Hand" width="28" height="28"><a href="#hand">Hand</a></td><td><kbd>H</kbd></td><td>Перемещение холста в окне</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/zoom.png" alt="Zoom" width="28" height="28"><a href="#zoom">Zoom</a></td><td><kbd>Z</kbd></td><td>Масштаб перетаскиванием</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/slice.png" alt="Slice" width="28" height="28"><a href="#slice">Slice</a></td><td><kbd>Shift</kbd>+<kbd>C</kbd></td><td>Именованные области с pivot и 9-slice</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/frame-lighting.png" alt="Frame lighting" width="26" height="26"><a href="#lighting">Frame lighting</a></td><td>-</td><td>Источник света кадра</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/mirror.png" alt="Mirror" width="26" height="26"><a href="#mirror">Mirror</a></td><td>-</td><td>Ось симметрии на холсте</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/crosshair.png" alt="Noise fade area" width="26" height="26"><a href="#fade">Noise fade area</a></td><td>-</td><td>Форма области затухания Auto noise</td></tr>
+  </table></div>
+
+  <div class="note"><p>Общие правила для всех инструментов рисования: они работают на <b>активном слое и кадре</b>; заблокированные и скрытые слои не изменяются; если есть активное выделение, рисование ограничено им; штрихи записываются в историю Undo. При включённых Mirror и Tile Repeat действие отражается/повторяется автоматически (<a href="mirror-tile.html">подробнее</a>).</p></div>
+
+  <h2 id="drawing">Рисование</h2>
+
+  <section class="tool" id="pencil">
+    <h3><img class="ico" src="../assets/icons/pencil.png" alt="Pencil" width="28" height="28">Pencil <span class="keys"><kbd>B</kbd></span></h3>
+    <p>Основной инструмент рисования. Рисует текущим цветом палитры (Color Pencil) кистью заданного размера и формы. Зажмите <kbd>Ctrl</kbd>, чтобы временно переключиться на пипетку.</p>
+    <ul>
+      <li><b>Brush size</b> - размер кисти в пикселях (1-50, по умолчанию 1); также меняется <kbd>Ctrl</kbd>+колесом на холсте.</li>
+      <li><b>Brush shape</b> - Square, Circle, Diamond или Custom. Для круга и квадрата доступен <b>Brush corner radius (px)</b>.</li>
+      <li><b>Custom</b> - свой штамп до 32 x 32: кликайте по клеткам в окне <i>Edit pencil stamp</i>, меняйте Stamp width / Stamp height, загружайте штамп из JSON или прозрачного PNG, сохраняйте стиль (<i>Save pencil style</i> / <i>Load pencil style</i>). Кнопка <i>Copy selection to pencil</i> превращает текущее выделение (до 32 x 32, с закрашенными пикселями активного слоя) в штамп.</li>
+      <li><b>Pixel-perfect</b> - убирает лишние угловые пиксели при кисти 1 px, чтобы линия была «чистой».</li>
+      <li><b>Advanced paint settings</b> - параметры генерации для рисуемых пикселей: Body и Outline (включены ли), Chance (вероятность использования), AutoColor и цвета генерации. Они сохраняются в ячейках вместе с пикселями и определяют, как генераторы будут трактовать рисунок. См. <a href="palettes.html">Палитры</a>.</li>
+    </ul>
+    <figure class="dg"><svg viewBox="0 0 700 170" role="img" aria-label="Формы кисти" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="10" width="160" height="150" rx="8" class="box" /><rect x="34" y="37" width="25" height="25" class="ac"/><rect x="60" y="37" width="25" height="25" class="ac"/><rect x="86" y="37" width="25" height="25" class="ac"/><rect x="34" y="63" width="25" height="25" class="ac"/><rect x="60" y="63" width="25" height="25" class="ac"/><rect x="86" y="63" width="25" height="25" class="ac"/><rect x="34" y="89" width="25" height="25" class="ac"/><rect x="60" y="89" width="25" height="25" class="ac"/><rect x="86" y="89" width="25" height="25" class="ac"/><text x="92" y="150" class="t" text-anchor="middle" font-size="14">Square</text><rect x="187" y="10" width="160" height="150" rx="8" class="box" /><rect x="229" y="26" width="19" height="19" class="ac"/><rect x="249" y="26" width="19" height="19" class="ac"/><rect x="269" y="26" width="19" height="19" class="ac"/><rect x="209" y="46" width="19" height="19" class="ac"/><rect x="229" y="46" width="19" height="19" class="ac"/><rect x="249" y="46" width="19" height="19" class="ac"/><rect x="269" y="46" width="19" height="19" class="ac"/><rect x="289" y="46" width="19" height="19" class="ac"/><rect x="209" y="66" width="19" height="19" class="ac"/><rect x="229" y="66" width="19" height="19" class="ac"/><rect x="249" y="66" width="19" height="19" class="ac"/><rect x="269" y="66" width="19" height="19" class="ac"/><rect x="289" y="66" width="19" height="19" class="ac"/><rect x="209" y="86" width="19" height="19" class="ac"/><rect x="229" y="86" width="19" height="19" class="ac"/><rect x="249" y="86" width="19" height="19" class="ac"/><rect x="269" y="86" width="19" height="19" class="ac"/><rect x="289" y="86" width="19" height="19" class="ac"/><rect x="229" y="106" width="19" height="19" class="ac"/><rect x="249" y="106" width="19" height="19" class="ac"/><rect x="269" y="106" width="19" height="19" class="ac"/><text x="267" y="150" class="t" text-anchor="middle" font-size="14">Circle</text><rect x="362" y="10" width="160" height="150" rx="8" class="box" /><rect x="424" y="26" width="19" height="19" class="ac"/><rect x="404" y="46" width="19" height="19" class="ac"/><rect x="424" y="46" width="19" height="19" class="ac"/><rect x="444" y="46" width="19" height="19" class="ac"/><rect x="384" y="66" width="19" height="19" class="ac"/><rect x="404" y="66" width="19" height="19" class="ac"/><rect x="424" y="66" width="19" height="19" class="ac"/><rect x="444" y="66" width="19" height="19" class="ac"/><rect x="464" y="66" width="19" height="19" class="ac"/><rect x="404" y="86" width="19" height="19" class="ac"/><rect x="424" y="86" width="19" height="19" class="ac"/><rect x="444" y="86" width="19" height="19" class="ac"/><rect x="424" y="106" width="19" height="19" class="ac"/><text x="442" y="150" class="t" text-anchor="middle" font-size="14">Diamond</text><rect x="537" y="10" width="160" height="150" rx="8" class="box" /><rect x="559" y="26" width="19" height="19" class="ac"/><rect x="599" y="26" width="19" height="19" class="ac"/><rect x="639" y="26" width="19" height="19" class="ac"/><rect x="579" y="46" width="19" height="19" class="ac"/><rect x="599" y="46" width="19" height="19" class="ac"/><rect x="619" y="46" width="19" height="19" class="ac"/><rect x="559" y="66" width="19" height="19" class="ac"/><rect x="579" y="66" width="19" height="19" class="ac"/><rect x="619" y="66" width="19" height="19" class="ac"/><rect x="639" y="66" width="19" height="19" class="ac"/><rect x="579" y="86" width="19" height="19" class="ac"/><rect x="599" y="86" width="19" height="19" class="ac"/><rect x="619" y="86" width="19" height="19" class="ac"/><rect x="559" y="106" width="19" height="19" class="ac"/><rect x="599" y="106" width="19" height="19" class="ac"/><rect x="639" y="106" width="19" height="19" class="ac"/><text x="617" y="150" class="t" text-anchor="middle" font-size="14">Custom</text></svg><figcaption>Формы кисти Pencil: Square, Circle, Diamond и Custom (свой штамп до 32 x 32).</figcaption></figure>
+  </section>
+
+  <section class="tool" id="spray">
+    <h3><img class="ico" src="../assets/icons/spray.png" alt="Spray" width="28" height="28">Spray <span class="keys"><kbd>Shift</kbd>+<kbd>B</kbd></span></h3>
+    <p>Напыление: на каждом шаге кисть закрашивает случайную часть своих пикселей. Параметр <b>Density %</b> (1-100, по умолчанию 25) задаёт долю закрашиваемых пикселей. Для спрея также доступны параметры рисования Body/Outline и Chance. Размер и форма кисти - как у карандаша.</p>
+  </section>
+
+  <section class="tool" id="eraser">
+    <h3><img class="ico" src="../assets/icons/eraser.png" alt="Eraser" width="28" height="28">Eraser <span class="keys"><kbd>E</kbd></span></h3>
+    <p>Стирает пиксели на активном слое (делает их прозрачными). Размер и форма кисти настраиваются так же, как у карандаша.</p>
+  </section>
+
+  <section class="tool" id="picker">
+    <h3><img class="ico" src="../assets/icons/picker.png" alt="Color picker" width="28" height="28">Color picker <span class="keys"><kbd>I</kbd> или удержание <kbd>Ctrl</kbd></span></h3>
+    <p>Клик по пикселю на холсте берёт его цвет <b>и свойства рисования</b> (Body/Outline, Chance и др.). Пока инструмент пипетки активен, остальной выбор инструмента не теряется: при удержании <kbd>Ctrl</kbd> любой инструмент рисования временно работает как пипетка.</p>
+  </section>
+
+  <section class="tool" id="fill">
+    <h3><img class="ico" src="../assets/icons/fill.png" alt="Fill" width="28" height="28">Fill <span class="keys"><kbd>G</kbd></span></h3>
+    <p>Заливает область цветом. Два режима:</p>
+    <ul>
+      <li><b>Contiguous</b> (по умолчанию) - заливается только связная область под курсором.</li>
+      <li><b>Fill by color</b> - заменяются все подходящие пиксели активного слоя (в пределах выделения, если оно есть).</li>
+      <li><b>Tolerance</b> (0-255, по умолчанию 0) - допуск различия цветов при определении «такого же» цвета.</li>
+    </ul>
+    <p>В настройках Fill также доступны Fill/Outline параметры генерации для заливаемых пикселей (как у карандаша).</p>
+    <figure class="dg"><svg viewBox="0 0 700 190" role="img" aria-label="Режимы заливки" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="320" height="170" rx="8" class="box" /><rect x="40" y="30" width="27" height="27" fill="#2f3b52"/><rect x="68" y="30" width="27" height="27" fill="#2f3b52"/><rect x="96" y="30" width="27" height="27" fill="#2f3b52"/><rect x="124" y="30" width="27" height="27" fill="#2f3b52"/><rect x="152" y="30" width="27" height="27" class="ck2"/><rect x="180" y="30" width="27" height="27" fill="#2f3b52"/><rect x="208" y="30" width="27" height="27" fill="#2f3b52"/><rect x="236" y="30" width="27" height="27" fill="#2f3b52"/><rect x="264" y="30" width="27" height="27" fill="#2f3b52"/><rect x="40" y="58" width="27" height="27" fill="#2f3b52"/><rect x="68" y="58" width="27" height="27" class="gd"/><rect x="96" y="58" width="27" height="27" class="gd"/><rect x="124" y="58" width="27" height="27" fill="#2f3b52"/><rect x="152" y="58" width="27" height="27" class="ck2"/><rect x="180" y="58" width="27" height="27" fill="#2f3b52"/><rect x="208" y="58" width="27" height="27" class="ck2"/><rect x="236" y="58" width="27" height="27" class="ck2"/><rect x="264" y="58" width="27" height="27" fill="#2f3b52"/><rect x="40" y="86" width="27" height="27" fill="#2f3b52"/><rect x="68" y="86" width="27" height="27" class="gd"/><rect x="96" y="86" width="27" height="27" class="gd"/><rect x="124" y="86" width="27" height="27" fill="#2f3b52"/><rect x="152" y="86" width="27" height="27" fill="#2f3b52"/><rect x="180" y="86" width="27" height="27" fill="#2f3b52"/><rect x="208" y="86" width="27" height="27" fill="#2f3b52"/><rect x="236" y="86" width="27" height="27" class="ck2"/><rect x="264" y="86" width="27" height="27" fill="#2f3b52"/><rect x="40" y="114" width="27" height="27" fill="#2f3b52"/><rect x="68" y="114" width="27" height="27" fill="#2f3b52"/><rect x="96" y="114" width="27" height="27" fill="#2f3b52"/><rect x="124" y="114" width="27" height="27" fill="#2f3b52"/><rect x="152" y="114" width="27" height="27" class="ck2"/><rect x="180" y="114" width="27" height="27" class="ck2"/><rect x="208" y="114" width="27" height="27" class="ck2"/><rect x="236" y="114" width="27" height="27" fill="#2f3b52"/><rect x="264" y="114" width="27" height="27" fill="#2f3b52"/><text x="160" y="164" class="t" text-anchor="middle" font-size="12">Contiguous: заливается связная область</text><rect x="350" y="10" width="320" height="170" rx="8" class="box" /><rect x="380" y="30" width="27" height="27" fill="#2f3b52"/><rect x="408" y="30" width="27" height="27" fill="#2f3b52"/><rect x="436" y="30" width="27" height="27" fill="#2f3b52"/><rect x="464" y="30" width="27" height="27" fill="#2f3b52"/><rect x="492" y="30" width="27" height="27" class="gd"/><rect x="520" y="30" width="27" height="27" fill="#2f3b52"/><rect x="548" y="30" width="27" height="27" fill="#2f3b52"/><rect x="576" y="30" width="27" height="27" fill="#2f3b52"/><rect x="604" y="30" width="27" height="27" fill="#2f3b52"/><rect x="380" y="58" width="27" height="27" fill="#2f3b52"/><rect x="408" y="58" width="27" height="27" class="gd"/><rect x="436" y="58" width="27" height="27" class="gd"/><rect x="464" y="58" width="27" height="27" fill="#2f3b52"/><rect x="492" y="58" width="27" height="27" class="gd"/><rect x="520" y="58" width="27" height="27" fill="#2f3b52"/><rect x="548" y="58" width="27" height="27" class="gd"/><rect x="576" y="58" width="27" height="27" class="gd"/><rect x="604" y="58" width="27" height="27" fill="#2f3b52"/><rect x="380" y="86" width="27" height="27" fill="#2f3b52"/><rect x="408" y="86" width="27" height="27" class="gd"/><rect x="436" y="86" width="27" height="27" class="gd"/><rect x="464" y="86" width="27" height="27" fill="#2f3b52"/><rect x="492" y="86" width="27" height="27" fill="#2f3b52"/><rect x="520" y="86" width="27" height="27" fill="#2f3b52"/><rect x="548" y="86" width="27" height="27" fill="#2f3b52"/><rect x="576" y="86" width="27" height="27" class="gd"/><rect x="604" y="86" width="27" height="27" fill="#2f3b52"/><rect x="380" y="114" width="27" height="27" fill="#2f3b52"/><rect x="408" y="114" width="27" height="27" fill="#2f3b52"/><rect x="436" y="114" width="27" height="27" fill="#2f3b52"/><rect x="464" y="114" width="27" height="27" fill="#2f3b52"/><rect x="492" y="114" width="27" height="27" class="gd"/><rect x="520" y="114" width="27" height="27" class="gd"/><rect x="548" y="114" width="27" height="27" class="gd"/><rect x="576" y="114" width="27" height="27" fill="#2f3b52"/><rect x="604" y="114" width="27" height="27" fill="#2f3b52"/><text x="500" y="164" class="t" text-anchor="middle" font-size="12">Fill by color: все совпадающие пиксели</text></svg><figcaption>Режимы заливки: жёлтым показаны закрашенные клетки при клике во внутреннюю область.</figcaption></figure>
+  </section>
+
+  <section class="tool" id="gradient">
+    <h3><img class="ico" src="../assets/icons/gradient.png" alt="Gradient" width="28" height="28">Gradient <span class="keys"><kbd>Shift</kbd>+<kbd>G</kbd></span></h3>
+    <p>Перетащите от точки с основным цветом к точке с <b>End color</b>. Градиент заполняет слой или активное выделение. Флажок <b>Ordered dithering</b> заменяет плавный переход упорядоченным дизерингом - так градиент остаётся «пиксельным» и использует ограниченное число цветов.</p>
+    <figure class="dg"><svg viewBox="0 0 720 190" role="img" aria-label="Градиент и дизеринг" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="170" rx="8" class="box" /><text x="30" y="36" class="t" text-anchor="start" font-size="13">Плавный градиент</text><rect x="30.0" y="46" width="14" height="36" fill="rgb(30,60,110)"/><rect x="46.2" y="46" width="14" height="36" fill="rgb(33,63,113)"/><rect x="62.4" y="46" width="14" height="36" fill="rgb(36,67,116)"/><rect x="78.6" y="46" width="14" height="36" fill="rgb(40,71,119)"/><rect x="94.8" y="46" width="14" height="36" fill="rgb(43,75,122)"/><rect x="111.0" y="46" width="14" height="36" fill="rgb(46,79,125)"/><rect x="127.19999999999999" y="46" width="14" height="36" fill="rgb(50,83,128)"/><rect x="143.39999999999998" y="46" width="14" height="36" fill="rgb(53,86,131)"/><rect x="159.6" y="46" width="14" height="36" fill="rgb(56,90,134)"/><rect x="175.79999999999998" y="46" width="14" height="36" fill="rgb(60,94,137)"/><rect x="192.0" y="46" width="14" height="36" fill="rgb(63,98,140)"/><rect x="208.2" y="46" width="14" height="36" fill="rgb(66,102,143)"/><rect x="224.39999999999998" y="46" width="14" height="36" fill="rgb(70,106,146)"/><rect x="240.6" y="46" width="14" height="36" fill="rgb(73,110,150)"/><rect x="256.79999999999995" y="46" width="14" height="36" fill="rgb(76,113,153)"/><rect x="273.0" y="46" width="14" height="36" fill="rgb(80,117,156)"/><rect x="289.2" y="46" width="14" height="36" fill="rgb(83,121,159)"/><rect x="305.4" y="46" width="14" height="36" fill="rgb(86,125,162)"/><rect x="321.59999999999997" y="46" width="14" height="36" fill="rgb(90,129,165)"/><rect x="337.8" y="46" width="14" height="36" fill="rgb(93,133,168)"/><rect x="354.0" y="46" width="14" height="36" fill="rgb(96,136,171)"/><rect x="370.2" y="46" width="14" height="36" fill="rgb(100,140,174)"/><rect x="386.4" y="46" width="14" height="36" fill="rgb(103,144,177)"/><rect x="402.59999999999997" y="46" width="14" height="36" fill="rgb(106,148,180)"/><rect x="418.79999999999995" y="46" width="14" height="36" fill="rgb(110,152,183)"/><rect x="435.0" y="46" width="14" height="36" fill="rgb(113,156,186)"/><rect x="451.2" y="46" width="14" height="36" fill="rgb(116,160,190)"/><rect x="467.4" y="46" width="14" height="36" fill="rgb(120,163,193)"/><rect x="483.59999999999997" y="46" width="14" height="36" fill="rgb(123,167,196)"/><rect x="499.79999999999995" y="46" width="14" height="36" fill="rgb(126,171,199)"/><rect x="516.0" y="46" width="14" height="36" fill="rgb(130,175,202)"/><rect x="532.2" y="46" width="14" height="36" fill="rgb(133,179,205)"/><rect x="548.4" y="46" width="14" height="36" fill="rgb(136,183,208)"/><rect x="564.6" y="46" width="14" height="36" fill="rgb(140,186,211)"/><rect x="580.8" y="46" width="14" height="36" fill="rgb(143,190,214)"/><rect x="597.0" y="46" width="14" height="36" fill="rgb(146,194,217)"/><rect x="613.1999999999999" y="46" width="14" height="36" fill="rgb(150,198,220)"/><rect x="629.4" y="46" width="14" height="36" fill="rgb(153,202,223)"/><rect x="645.6" y="46" width="14" height="36" fill="rgb(156,206,226)"/><rect x="661.8" y="46" width="14" height="36" fill="rgb(160,210,230)"/><text x="30" y="112" class="t" text-anchor="start" font-size="13">Ordered dithering (ограниченная палитра)</text><rect x="30.0" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="46.2" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="62.4" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="78.6" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="94.8" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="111.0" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="127.19999999999999" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="143.39999999999998" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="159.6" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="175.79999999999998" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="192.0" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="208.2" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="224.39999999999998" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="240.6" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="256.79999999999995" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="273.0" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="289.2" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="305.4" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="321.59999999999997" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="337.8" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="354.0" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="370.2" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="386.4" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="402.59999999999997" y="122" width="16.2" height="9" fill="#1d3557"/><rect x="418.79999999999995" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="435.0" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="451.2" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="467.4" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="483.59999999999997" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="499.79999999999995" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="516.0" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="532.2" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="548.4" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="564.6" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="580.8" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="597.0" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="613.1999999999999" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="629.4" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="645.6" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="661.8" y="122" width="16.2" height="9" fill="#a9d6ec"/><rect x="30.0" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="46.2" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="62.4" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="78.6" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="94.8" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="111.0" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="127.19999999999999" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="143.39999999999998" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="159.6" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="175.79999999999998" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="192.0" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="208.2" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="224.39999999999998" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="240.6" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="256.79999999999995" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="273.0" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="289.2" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="305.4" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="321.59999999999997" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="337.8" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="354.0" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="370.2" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="386.4" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="402.59999999999997" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="418.79999999999995" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="435.0" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="451.2" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="467.4" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="483.59999999999997" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="499.79999999999995" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="516.0" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="532.2" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="548.4" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="564.6" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="580.8" y="131" width="16.2" height="9" fill="#1d3557"/><rect x="597.0" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="613.1999999999999" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="629.4" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="645.6" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="661.8" y="131" width="16.2" height="9" fill="#a9d6ec"/><rect x="30.0" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="46.2" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="62.4" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="78.6" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="94.8" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="111.0" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="127.19999999999999" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="143.39999999999998" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="159.6" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="175.79999999999998" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="192.0" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="208.2" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="224.39999999999998" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="240.6" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="256.79999999999995" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="273.0" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="289.2" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="305.4" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="321.59999999999997" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="337.8" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="354.0" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="370.2" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="386.4" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="402.59999999999997" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="418.79999999999995" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="435.0" y="140" width="16.2" height="9" fill="#1d3557"/><rect x="451.2" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="467.4" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="483.59999999999997" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="499.79999999999995" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="516.0" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="532.2" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="548.4" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="564.6" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="580.8" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="597.0" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="613.1999999999999" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="629.4" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="645.6" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="661.8" y="140" width="16.2" height="9" fill="#a9d6ec"/><rect x="30.0" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="46.2" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="62.4" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="78.6" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="94.8" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="111.0" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="127.19999999999999" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="143.39999999999998" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="159.6" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="175.79999999999998" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="192.0" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="208.2" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="224.39999999999998" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="240.6" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="256.79999999999995" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="273.0" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="289.2" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="305.4" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="321.59999999999997" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="337.8" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="354.0" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="370.2" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="386.4" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="402.59999999999997" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="418.79999999999995" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="435.0" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="451.2" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="467.4" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="483.59999999999997" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="499.79999999999995" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="516.0" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="532.2" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="548.4" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="564.6" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="580.8" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="597.0" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="613.1999999999999" y="149" width="16.2" height="9" fill="#1d3557"/><rect x="629.4" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="645.6" y="149" width="16.2" height="9" fill="#a9d6ec"/><rect x="661.8" y="149" width="16.2" height="9" fill="#a9d6ec"/></svg><figcaption>Gradient: плавный переход и упорядоченный дизеринг, который сохраняет «пиксельность».</figcaption></figure>
+  </section>
+
+  <section class="tool" id="blur">
+    <h3><img class="ico" src="../assets/icons/blur.png" alt="Blur" width="28" height="28">Blur</h3>
+    <p>Кисть, которая смягчает переходы между цветами под ней. Параметр <b>Strength</b> (0,01-1, по умолчанию 0,5) - сила эффекта. Размер кисти задаётся как у карандаша.</p>
+  </section>
+
+  <section class="tool" id="jumble">
+    <h3><img class="ico" src="../assets/icons/jumble.png" alt="Jumble" width="28" height="28">Jumble</h3>
+    <p>Кисть, перемешивающая пиксели под собой: полезна для «рваных» краёв, шума и текстуры. <b>Strength</b> задаёт интенсивность.</p>
+  </section>
+
+  <h2 id="shapes">Линии и фигуры</h2>
+
+  <section class="tool" id="line">
+    <h3><img class="ico" src="../assets/icons/line.png" alt="Line" width="28" height="28">Line <span class="keys"><kbd>L</kbd></span></h3>
+    <p>Протяните курсор между двумя пикселями - получится прямая линия толщиной в размер кисти.</p>
+  </section>
+
+  <section class="tool" id="curve">
+    <h3><img class="ico" src="../assets/icons/curve.png" alt="Curve" width="28" height="28">Curve <span class="keys"><kbd>Shift</kbd>+<kbd>L</kbd></span></h3>
+    <p>Протяните линию, затем перетащите концы или кликните/потяните в нужном месте, чтобы изогнуть кривую. <kbd>Enter</kbd> принимает прямую кривую, <kbd>Esc</kbd> отменяет.</p>
+  </section>
+
+  <section class="tool" id="rectangle">
+    <h3><img class="ico" src="../assets/icons/rectangle.png" alt="Rectangle / Filled rectangle" width="28" height="28">Rectangle / Filled rectangle <span class="keys"><kbd>U</kbd></span></h3>
+    <p>Протяните курсор по диагонали. Rectangle рисует контур, Filled rectangle - закрашенный прямоугольник. Толщина контура равна размеру кисти.</p>
+  </section>
+
+  <section class="tool" id="ellipse">
+    <h3><img class="ico" src="../assets/icons/ellipse.png" alt="Ellipse / Filled ellipse" width="28" height="28">Ellipse / Filled ellipse <span class="keys"><kbd>Shift</kbd>+<kbd>U</kbd></span></h3>
+    <p>Протяните курсор, чтобы нарисовать эллипс (или круг). Версия Filled закрашивает внутреннюю область.</p>
+  </section>
+
+  <section class="tool" id="contour">
+    <h3><img class="ico" src="../assets/icons/contour.png" alt="Contour" width="28" height="28">Contour <span class="keys"><kbd>D</kbd></span></h3>
+    <p>Обведите область от руки. После отпускания кнопки граница замыкается, а внутренняя область закрашивается.</p>
+  </section>
+
+  <section class="tool" id="polygon">
+    <h3><img class="ico" src="../assets/icons/polygon.png" alt="Polygon" width="28" height="28">Polygon <span class="keys"><kbd>Shift</kbd>+<kbd>D</kbd></span></h3>
+    <p>Кликайте, добавляя вершины. Двойной клик или <kbd>Enter</kbd> завершают многоугольник, <kbd>Esc</kbd> отменяет. Кнопки <b>Finish</b> и <b>Cancel</b> дублируют эти действия в Tool settings.</p>
+  </section>
+
+  <h2 id="select-tools">Выделение</h2>
+  <p>Все инструменты выделения работают с общим набором режимов: <b>Replace</b>, <b>Add</b>, <b>Subtract</b>, <b>Intersect</b> (меню <code>Select &gt; Mode</code>). Модификаторы клавиатуры: <kbd>Shift</kbd> - добавить, <kbd>Ctrl</kbd> или <kbd>Alt</kbd> - вычесть, <kbd>Shift</kbd>+<kbd>Ctrl</kbd> - пересечение. <kbd>Delete</kbd> очищает выделенные пиксели, <kbd>Ctrl</kbd>+<kbd>D</kbd> снимает выделение. Подробнее: <a href="selection.html">Выделение и преобразование</a>.</p>
+
+  <section class="tool" id="rect-marquee">
+    <h3><img class="ico" src="../assets/icons/marquee-rect.png" alt="Rectangular marquee" width="28" height="28">Rectangular marquee <span class="keys"><kbd>M</kbd></span></h3>
+    <p>Перетащите, чтобы выделить прямоугольник. Перетаскивание внутри выделения перемещает его пиксели.</p>
+  </section>
+  <section class="tool" id="ellipse-marquee">
+    <h3><img class="ico" src="../assets/icons/marquee-ellipse.png" alt="Elliptical marquee" width="28" height="28">Elliptical marquee <span class="keys"><kbd>Shift</kbd>+<kbd>M</kbd></span></h3>
+    <p>Перетащите, чтобы выделить эллипс.</p>
+  </section>
+  <section class="tool" id="lasso">
+    <h3><img class="ico" src="../assets/icons/lasso.png" alt="Lasso" width="28" height="28">Lasso <span class="keys"><kbd>Q</kbd></span></h3>
+    <p>Обведите область от руки; при отпускании кнопки контур замыкается.</p>
+  </section>
+  <section class="tool" id="poly-lasso">
+    <h3><img class="ico" src="../assets/icons/lasso-polygon.png" alt="Polygonal lasso" width="28" height="28">Polygonal lasso <span class="keys"><kbd>Shift</kbd>+<kbd>Q</kbd></span></h3>
+    <p>Расставьте вершины кликами; двойной клик или <kbd>Enter</kbd> замыкает выделение.</p>
+  </section>
+  <section class="tool" id="wand">
+    <h3><img class="ico" src="../assets/icons/wand.png" alt="Magic wand" width="28" height="28">Magic wand <span class="keys"><kbd>W</kbd></span></h3>
+    <p>Выделяет пиксели, похожие по цвету на пиксель под курсором. <b>Contiguous</b> ограничивает выбор связной областью, <b>Tolerance</b> (0-255) задаёт допустимое различие цветов. Параметры доступны также в меню <code>Select &gt; Magic Wand</code>.</p>
+  </section>
+
+  <h2 id="navigation">Перемещение и навигация</h2>
+
+  <section class="tool" id="move">
+    <h3><img class="ico" src="../assets/icons/move.png" alt="Move" width="28" height="28">Move <span class="keys"><kbd>V</kbd></span></h3>
+    <p>Перемещает выделение или, если выделения нет, <b>всю активную ячейку</b> (слой в текущем кадре). <kbd>Esc</kbd> отменяет перетаскивание, а Undo откатывает перемещение.</p>
+  </section>
+  <section class="tool" id="hand">
+    <h3><img class="ico" src="../assets/icons/hand.png" alt="Hand" width="28" height="28">Hand <span class="keys"><kbd>H</kbd></span></h3>
+    <p>Перетаскивайте в области холста, чтобы сдвинуть вид.</p>
+  </section>
+  <section class="tool" id="zoom">
+    <h3><img class="ico" src="../assets/icons/zoom.png" alt="Zoom" width="28" height="28">Zoom <span class="keys"><kbd>Z</kbd></span></h3>
+    <p>Удерживайте левую кнопку мыши и тяните вправо, чтобы приблизить, влево - чтобы отдалить. Точка, с которой начато перетаскивание, остаётся неподвижной. <kbd>F</kbd> вписывает холст в окно.</p>
+  </section>
+  <section class="tool" id="slice">
+    <h3><img class="ico" src="../assets/icons/slice.png" alt="Slice" width="28" height="28">Slice <span class="keys"><kbd>Shift</kbd>+<kbd>C</kbd></span></h3>
+    <p>Создаёт именованные прямоугольные области («слайсы») документа: перетащите область, кликните по слайсу, чтобы выбрать его. В настройках:</p>
+    <ul>
+      <li><b>Name</b>, <b>X</b>, <b>Y</b>, <b>Width</b>, <b>Height</b> - границы в координатах холста от левого верхнего угла.</li>
+      <li><b>Pivot</b> с относительными координатами <i>Pivot X / Pivot Y</i>.</li>
+      <li><b>9-slice center</b> - центральная область для масштабируемых UI-элементов (Center X, Center Y, Center width, Center height).</li>
+      <li><b>Export PNG</b> - сохранить содержимое слайса; <b>Delete slice</b> - удалить.</li>
+    </ul>
+    <p>Клавиша <kbd>C</kbd> (без Shift) отвечает за изменение размера холста: после нажатия потяните за край или угол.</p>
+    <figure class="dg"><svg viewBox="0 0 720 220" role="img" aria-label="9-slice" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="200" rx="8" class="box" /><rect x="40" y="30" width="240" height="150" rx="4" fill="#5a7fa8" opacity=".35"/><line x1="90" y1="30" x2="90" y2="180" class="ln2" stroke-dasharray="5 4"/><line x1="230" y1="30" x2="230" y2="180" class="ln2" stroke-dasharray="5 4"/><line x1="40" y1="75" x2="280" y2="75" class="ln2" stroke-dasharray="5 4"/><line x1="40" y1="135" x2="280" y2="135" class="ln2" stroke-dasharray="5 4"/><text x="160.0" y="110.0" class="t" text-anchor="middle" font-size="14">center</text><text x="330" y="70" class="t" text-anchor="start" font-size="13">Slice + 9-slice center задают</text><text x="330" y="94" class="t" text-anchor="start" font-size="13">растягиваемую центральную область.</text><text x="330" y="126" class="m" text-anchor="start" font-size="13">Углы и края сохраняют размер,</text><text x="330" y="148" class="m" text-anchor="start" font-size="13">центр масштабируется - как в UI Image.</text></svg><figcaption>Slice с 9-slice center: углы остаются неизменными, центр растягивается.</figcaption></figure>
+  </section>
+
+  <h2 id="special">Специальные инструменты</h2>
+
+  <section class="tool" id="lighting">
+    <h3><img class="ico" src="../assets/icons/frame-lighting.png" alt="Frame lighting" width="28" height="28">Frame lighting</h3>
+    <p>Размещает источник света для текущего кадра: клик или перетаскивание по холсту двигает свет (для направленного света - задаёт направление от центра). Параметры освещения - в окне Lighting и в Tool settings. См. <a href="lighting.html">Освещение кадра</a>.</p>
+  </section>
+  <section class="tool" id="mirror">
+    <h3><img class="ico" src="../assets/icons/mirror.png" alt="Mirror" width="28" height="28">Mirror</h3>
+    <p>При выборе инструмента включаются симметрия и отображение осей; центр можно перетащить мышью. Параметры: переключатель Canvas symmetry, режим (During drawing / During generation), четыре независимые оси (лево-право, верх-низ и две диагонали), Show mirror lines, Center (px), Center in canvas. <kbd>Esc</kbd> выходит из инструмента. См. <a href="mirror-tile.html">Зеркало и Tile Repeat</a>.</p>
+  </section>
+  <section class="tool" id="fade">
+    <h3>Noise fade area</h3>
+    <p>Появляется при редактировании области затухания Auto noise: перетаскивайте границы и углы, чтобы изменить форму силуэта шума. См. <a href="auto-noise.html">Auto noise и Canvas generator</a>.</p>
+  </section>
+
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

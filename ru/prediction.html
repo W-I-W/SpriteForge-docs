@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Предсказание правок - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="prediction">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/check.png" alt="" width="40" height="40">Предсказание следующей правки</h1>
+  <p class="lead">Подсказки появляются после паузы в рисовании: программа предлагает продолжить контур, повторить узор, отзеркалить правку или перенести её на другой кадр. Всё считается локально по геометрии, без нейросети и сети.</p>
+
+  <figure class="dg"><svg viewBox="0 0 720 220" role="img" aria-label="Предсказание правок" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="200" rx="8" class="box" /><text x="30" y="34" class="t" text-anchor="start" font-size="13">Продолжение контура</text><text x="250" y="34" class="t" text-anchor="start" font-size="13">Повтор узора</text><text x="470" y="34" class="t" text-anchor="start" font-size="13">Симметрия</text><rect x="30" y="111" width="16" height="16" fill="#2f3b52"/><rect x="47" y="111" width="16" height="16" fill="#2f3b52"/><rect x="64" y="94" width="16" height="16" fill="#2f3b52"/><rect x="81" y="94" width="16" height="16" fill="#2f3b52"/><rect x="98" y="77" width="16" height="16" fill="#2f3b52"/><rect x="115" y="77" width="16" height="16" fill="none" class="acs" stroke-dasharray="3 3"/><rect x="132" y="60" width="16" height="16" fill="none" class="acs" stroke-dasharray="3 3"/><rect x="266" y="70" width="8" height="8" fill="#2f3b52"/><rect x="258" y="78" width="8" height="8" fill="#2f3b52"/><rect x="266" y="78" width="8" height="8" fill="#2f3b52"/><rect x="274" y="78" width="8" height="8" fill="#2f3b52"/><rect x="266" y="86" width="8" height="8" fill="#2f3b52"/><rect x="316" y="70" width="8" height="8" fill="#2f3b52"/><rect x="308" y="78" width="8" height="8" fill="#2f3b52"/><rect x="316" y="78" width="8" height="8" fill="#2f3b52"/><rect x="324" y="78" width="8" height="8" fill="#2f3b52"/><rect x="316" y="86" width="8" height="8" fill="#2f3b52"/><rect x="366" y="70" width="8" height="8" fill="#2f3b52"/><rect x="358" y="78" width="8" height="8" fill="#2f3b52"/><rect x="366" y="78" width="8" height="8" fill="#2f3b52"/><rect x="374" y="78" width="8" height="8" fill="#2f3b52"/><rect x="366" y="86" width="8" height="8" fill="#2f3b52"/><rect x="400" y="70" width="40" height="24" fill="none" class="acs" stroke-dasharray="3 3"/><rect x="470" y="70" width="10" height="10" fill="#c0504d"/><rect x="480" y="70" width="10" height="10" fill="#c0504d"/><rect x="470" y="80" width="10" height="10" fill="#c0504d"/><rect x="480" y="80" width="10" height="10" fill="#c0504d"/><rect x="490" y="80" width="10" height="10" fill="#c0504d"/><rect x="470" y="90" width="10" height="10" fill="#c0504d"/><rect x="480" y="90" width="10" height="10" fill="#c0504d"/><rect x="490" y="90" width="10" height="10" fill="#c0504d"/><rect x="500" y="90" width="10" height="10" fill="#c0504d"/><rect x="540" y="70" width="60" height="30" fill="none" class="acs" stroke-dasharray="3 3"/><line x1="535" y1="56" x2="535" y2="120" class="ln2" stroke-dasharray="4 3"/><text x="30" y="170" class="m" text-anchor="start" font-size="12">Tab - принять, Esc - отклонить, Shift+Tab - следующий вариант</text><text x="30" y="192" class="m" text-anchor="start" font-size="12">Пунктир - предложение (бирюзовая рамка в программе)</text></svg><figcaption>Предсказание правок: пунктиром показано предложение, которое принимается клавишей Tab.</figcaption></figure>
+
+  <h2>Как пользоваться</h2>
+  <ul>
+    <li>Функция включена по умолчанию. Флажок <b>Predict next edit</b> находится в <code>Properties &gt; General</code>; там же включается перенос правок между кадрами.</li>
+    <li>После окончания штриха и паузы около 350 мс на холсте появляется полупрозрачный вариант правки с бирюзовой рамкой и подписью.</li>
+    <li><kbd>Tab</kbd> принимает подсказку (когда холст в фокусе или курсор над ним), <kbd>Esc</kbd> отклоняет. <kbd>Shift</kbd>+<kbd>Tab</kbd> - следующий вариант. Новое рисование убирает подсказку.</li>
+    <li>Принятие - один шаг Undo. Превью не меняет документ, историю и экспорт.</li>
+  </ul>
+
+  <h2>Что предсказывается</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Подсказка</th><th>Когда появляется</th></tr>
+    <tr><td>Continue contour</td><td>две соседние точки одного цвета дают подсказку на один пиксель; дальнейшие точки уточняют наклон</td></tr>
+    <tr><td>Complete rectangle</td><td>три стороны тонкого контура вдоль осей предлагают четвёртую</td></tr>
+    <tr><td>Continue arc</td><td>не менее пяти упорядоченных точек дуги с заметным изгибом</td></tr>
+    <tr><td>Continue direction pattern</td><td>повторяющиеся циклы направлений («вправо - вниз - вправо») и пиксельные ступени</td></tr>
+    <tr><td>Repeat pattern</td><td>три одинаковых штриха или штампа с одинаковым шагом предлагают четвёртый</td></tr>
+    <tr><td>Repeat grid pattern</td><td>регулярная сетка элементов минимум 2 x 2 с единственным пустым местом</td></tr>
+    <tr><td>Mirror horizontally / vertically</td><td>рисунок симметричен по оси минимум на 90% (не менее трёх пар): последняя правка переносится на парное место</td></tr>
+    <tr><td>Apply edit to similar drawing</td><td>на холсте есть похожие фигуры (по форме и цветам): правка предлагается и для них; <kbd>Shift</kbd>+<kbd>Tab</kbd> выбирает другую фигуру</td></tr>
+    <tr><td>Transfer to adjacent frame</td><td>тот же фрагмент находится в предыдущем или следующем кадре (поиск смещения до ±12 пикселей, совпадение не менее 94%): правка показывается в увеличенном виде с номером кадра и смещением</td></tr>
+  </table></div>
+
+  <h2>Ограничения</h2>
+  <ul>
+    <li>Предсказания работают на холстах до 262144 пикселей и для штрихов до 128 изменённых пикселей.</li>
+    <li>После принятия контура, дуги или узора сразу готовится следующее продолжение того же действия; повторный <kbd>Tab</kbd> принимает его отдельным шагом Undo.</li>
+    <li>Сохраняются Body/Outline, Chance, AutoColor и индекс палитры исходных пикселей.</li>
+    <li>Удаляемые при переносе пиксели помечаются красной диагональю.</li>
+  </ul>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

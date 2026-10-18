@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Слои и Timeline - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="layers-timeline">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/copy-frame.png" alt="" width="40" height="40">Слои и Timeline</h1>
+  <p class="lead">Окно Timeline объединяет слои, кадры, теги анимаций и воспроизведение. Максимум - 120 кадров в документе.</p>
+
+
+  <figure class="dg"><svg viewBox="0 0 720 270" role="img" aria-label="Устройство Timeline" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="0" y="0" width="720" height="270" rx="10" class="bg" /><rect x="10" y="10" width="700" height="26" rx="4" class="box" /><text x="22" y="28" class="m" text-anchor="start" font-size="12">Play &nbsp;|&nbsp; Loop &nbsp;|&nbsp; 12 FPS &nbsp;|&nbsp; |&lt; &nbsp;&lt; &nbsp;1/8 &nbsp;&gt; &nbsp;&gt;| &nbsp;|&nbsp; Duplicate &nbsp; Delete &nbsp; Onion skin</text><rect x="170" y="48" width="200" height="22" rx="4" fill="#4a8fe0" opacity=".8"/><text x="270" y="64" class="w" text-anchor="middle" font-size="12">idle</text><rect x="376" y="48" width="260" height="22" rx="4" fill="#4aa36b" opacity=".8"/><text x="506" y="64" class="w" text-anchor="middle" font-size="12">walk</text><rect x="10" y="80" width="150" height="34" rx="4" class="box" /><text x="22" y="102" class="t" text-anchor="start" font-size="13">Head</text><text x="140" y="102" class="m" text-anchor="end" font-size="11">o  L</text><rect x="170" y="80" width="41" height="34" rx="4" class="box" /><rect x="215" y="80" width="41" height="34" rx="4" class="box" /><rect x="260" y="80" width="41" height="34" rx="4" class="box" /><rect x="305" y="80" width="41" height="34" rx="4" class="box" /><rect x="350" y="80" width="41" height="34" rx="4" class="box" /><rect x="395" y="80" width="41" height="34" rx="4" class="box" /><rect x="440" y="80" width="41" height="34" rx="4" class="box" /><rect x="485" y="80" width="41" height="34" rx="4" class="box" /><rect x="530" y="80" width="41" height="34" rx="4" class="box" /><rect x="575" y="80" width="41" height="34" rx="4" class="box" /><rect x="620" y="80" width="41" height="34" rx="4" class="box" /><rect x="665" y="80" width="41" height="34" rx="4" class="box" /><rect x="10" y="120" width="150" height="34" rx="4" class="box" /><text x="22" y="142" class="t" text-anchor="start" font-size="13">Body</text><text x="140" y="142" class="m" text-anchor="end" font-size="11">o  L</text><rect x="170" y="120" width="41" height="34" rx="4" class="box" /><rect x="215" y="120" width="41" height="34" rx="4" class="box" /><rect x="260" y="120" width="41" height="34" rx="4" class="box" /><rect x="305" y="120" width="41" height="34" rx="4" class="ac" opacity=".55"/><rect x="350" y="120" width="41" height="34" rx="4" class="box" /><rect x="395" y="120" width="41" height="34" rx="4" class="box" /><rect x="440" y="120" width="41" height="34" rx="4" class="box" /><rect x="485" y="120" width="41" height="34" rx="4" class="box" /><rect x="530" y="120" width="41" height="34" rx="4" class="box" /><rect x="575" y="120" width="41" height="34" rx="4" class="box" /><rect x="620" y="120" width="41" height="34" rx="4" class="box" /><rect x="665" y="120" width="41" height="34" rx="4" class="box" /><rect x="10" y="160" width="150" height="34" rx="4" class="box" /><text x="22" y="182" class="t" text-anchor="start" font-size="13">Shadow</text><text x="140" y="182" class="m" text-anchor="end" font-size="11">o  L</text><rect x="170" y="160" width="41" height="34" rx="4" class="box" /><rect x="215" y="160" width="41" height="34" rx="4" class="box" /><rect x="260" y="160" width="41" height="34" rx="4" class="box" /><rect x="305" y="160" width="41" height="34" rx="4" class="box" /><rect x="350" y="160" width="41" height="34" rx="4" class="box" /><rect x="395" y="160" width="41" height="34" rx="4" class="box" /><rect x="440" y="160" width="41" height="34" rx="4" class="box" /><rect x="485" y="160" width="41" height="34" rx="4" class="box" /><rect x="530" y="160" width="41" height="34" rx="4" class="box" /><rect x="575" y="160" width="41" height="34" rx="4" class="box" /><rect x="620" y="160" width="41" height="34" rx="4" class="box" /><rect x="665" y="160" width="41" height="34" rx="4" class="box" /><text x="190" y="218" class="m" text-anchor="middle" font-size="12">1</text><text x="235" y="218" class="m" text-anchor="middle" font-size="12">2</text><text x="280" y="218" class="m" text-anchor="middle" font-size="12">3</text><text x="325" y="218" class="m" text-anchor="middle" font-size="12">4</text><text x="370" y="218" class="m" text-anchor="middle" font-size="12">5</text><text x="415" y="218" class="m" text-anchor="middle" font-size="12">6</text><text x="460" y="218" class="m" text-anchor="middle" font-size="12">7</text><text x="505" y="218" class="m" text-anchor="middle" font-size="12">8</text><text x="550" y="218" class="m" text-anchor="middle" font-size="12">9</text><text x="595" y="218" class="m" text-anchor="middle" font-size="12">10</text><text x="640" y="218" class="m" text-anchor="middle" font-size="12">11</text><text x="685" y="218" class="m" text-anchor="middle" font-size="12">12</text><text x="170" y="250" class="m" text-anchor="start" font-size="13">Теги над слоями задают анимации; номер кадра можно перетаскивать</text><line x1="60" y1="214" x2="60" y2="150" class="ln" marker-end="url(#ah)"/><text x="10" y="234" class="m" text-anchor="start" font-size="11">Слои (drag: порядок)</text></svg><figcaption>Timeline: управление воспроизведением, цветные теги анимаций, слои (строки) и кадры (столбцы).</figcaption></figure>
+
+  <h2>Слои</h2>
+  <ul>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add layer" width="28" height="28"><b>+ Layer</b> / <i>Add layer</i> добавляет слой. Перетаскивайте слой за имя, чтобы изменить порядок.</li>
+    <li>Значки <b>Show / hide layer</b> (<img class="ico" src="../assets/icons/visible.png" alt="Show / hide layer" width="28" height="28">, глаз) и <b>Lock layer</b> (<img class="ico" src="../assets/icons/lock.png" alt="Lock layer" width="28" height="28">, замок): скрытые и заблокированные слои не рисуются инструментами и не меняются фильтрами.</li>
+    <li>Клик по имени слоя (двойной клик) открывает его параметры:
+      <ul>
+        <li><b>Opacity</b> и <b>Blend mode</b>: Normal, Multiply, Screen, Add. Влияют на холст и экспорт.</li>
+        <li><b>Chance</b> - вероятность использования слоя генератором.</li>
+        <li><b>Layer group</b> - создать/назначить группу, переименовать, <i>Group visible</i>, <i>Group locked</i>, <i>Remove layer group</i> (слои остаются). Группы плоские.</li>
+        <li><b>Alpha mask layer</b> - маска по альфа-каналу другого слоя в том же кадре, с <i>Invert mask</i>. Скройте слой-источник, если он нужен только как маска. Маски не вычисляются рекурсивно.</li>
+      </ul>
+    </li>
+    <li>Группы и маски сохраняются при перестановке слоёв, Undo и сохранении <code>.sf</code>; старые файлы открываются как раньше.</li>
+    <li><img class="ico" src="../assets/icons/delete.png" alt="Delete layer" width="26" height="26"><b>Delete layer</b> удаляет слой (<kbd>Delete</kbd> удаляет выбранный кадр или слой).</li>
+  </ul>
+
+  <h2>Кадры</h2>
+  <ul>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="+ Frame" width="26" height="26"><b>+ Frame</b> / <i>Add frame</i> (<kbd>Insert</kbd>) добавляет пустой кадр, <img class="ico" src="../assets/icons/copy-frame.png" alt="Duplicate frame" width="26" height="26"><i>Duplicate frame</i> (<kbd>Ctrl</kbd>+<kbd>Insert</kbd>) дублирует.</li>
+    <li><img class="ico" src="../assets/icons/delete.png" alt="Delete frame" width="26" height="26"><i>Delete frame</i> / <kbd>Backspace</kbd> - удалить текущий кадр; <kbd>Delete</kbd> - выбранные кадры.</li>
+    <li>Выбор кадров: <kbd>Ctrl</kbd>+клик - несколько, <kbd>Shift</kbd>+клик - диапазон, <kbd>Ctrl</kbd>+<kbd>A</kbd> - все.</li>
+    <li>Копирование кадров <kbd>Ctrl</kbd>+<kbd>C</kbd> и вставка после текущего <kbd>Ctrl</kbd>+<kbd>V</kbd>. Лимит - 120 кадров.</li>
+    <li>Перетаскивайте номер кадра, чтобы переставить: на левый или правый край чужого кадра (вставка до/после), на цветную полосу тега (в начало или конец диапазона). <kbd>Alt</kbd> при отпускании вставляет без тега; зона <i>Untagged</i> переносит кадр за пределы всех тегов.</li>
+    <li>Длительность каждого кадра: <b>Frame duration (ms, 0 = FPS)</b>. Значение 0 использует общий FPS.</li>
+  </ul>
+
+  <h2>Теги анимаций</h2>
+  <figure class="dg"><svg viewBox="0 0 720 170" role="img" aria-label="Набор слоёв тега" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="150" rx="8" class="box" /><rect x="30" y="30" width="130" height="30" rx="6" class="bg" /><text x="95" y="50" class="t" text-anchor="middle" font-size="12">Layer: Head</text><rect x="230" y="30" width="200" height="30" rx="6" fill="#4aa36b" opacity=".8"/><text x="330" y="50" class="w" text-anchor="middle" font-size="13">tag: walk</text><line x1="160" y1="45" x2="230" y2="45" class="ln" marker-end="url(#ah)"/><text x="195" y="28" class="m" text-anchor="middle" font-size="10">drag</text><text x="30" y="100" class="t" text-anchor="start" font-size="12">Перетащите слой за имя на тег - слой войдёт в набор анимации.</text><text x="30" y="124" class="m" text-anchor="start" font-size="12">Состав набора можно править флажками в настройках тега.</text></svg><figcaption>Набор слоёв анимации: слой перетаскивается на цветной тег.</figcaption></figure>
+  <p>Над слоями показываются цветные полосы с именами анимаций (<code>idle</code>, <code>walk</code>, <code>attack</code>, <code>run</code>, <code>jump</code>, <code>hurt</code>, <code>death</code>, <code>roll</code>, <code>cast</code> или своё имя).</p>
+  <ul>
+    <li><b>Создать</b>: выделите диапазон кадров слоя и нажмите ПКМ &rarr; <i>Add tag</i>, либо <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>, либо введите имя и диапазон в окне <i>Animation and onion settings</i> (<i>Create animation</i>).</li>
+    <li>Клик по полосе выбирает диапазон и его первый кадр; <img class="ico" src="../assets/icons/play.png" alt="Play" width="26" height="26"><b>Play</b> проигрывает выбранную анимацию. Пересекающиеся диапазоны размещаются в отдельных строках.</li>
+    <li>Клик по цветному тегу открывает его параметры: имя, диапазон, цикл (<img class="ico" src="../assets/icons/loop.png" alt="Loop" width="26" height="26"><i>Loop</i>), набор слоёв (<i>Layers in this tag</i>), удаление (<i>Delete tag</i>).</li>
+    <li>Слой можно перетащить за имя на тег, чтобы включить в набор; состав сохраняется в проекте.</li>
+    <li>Ячейки кадров получают цвет своего набора. Если извлечён последний кадр, пустой тег удаляется; вставка без тега внутрь диапазона разделяет его на две полосы с тем же именем.</li>
+  </ul>
+
+  <figure class="dg"><svg viewBox="0 0 720 190" role="img" aria-label="Перенос кадров" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="170" rx="8" class="box" /><rect x="40" y="40" width="200" height="22" rx="4" fill="#4a8fe0" opacity=".8"/><text x="140" y="56" class="w" text-anchor="middle" font-size="12">idle</text><rect x="250" y="40" width="200" height="22" rx="4" fill="#4aa36b" opacity=".8"/><text x="350" y="56" class="w" text-anchor="middle" font-size="12">walk</text><rect x="40" y="70" width="42" height="30" rx="4" class="bg" /><text x="61" y="90" class="m" text-anchor="middle" font-size="12">1</text><rect x="86" y="70" width="42" height="30" rx="4" class="bg" /><text x="107" y="90" class="m" text-anchor="middle" font-size="12">2</text><rect x="132" y="70" width="42" height="30" rx="4" class="bg" /><text x="153" y="90" class="m" text-anchor="middle" font-size="12">3</text><rect x="178" y="70" width="42" height="30" rx="4" class="bg" /><text x="199" y="90" class="m" text-anchor="middle" font-size="12">4</text><rect x="224" y="70" width="42" height="30" rx="4" class="bg" /><text x="245" y="90" class="m" text-anchor="middle" font-size="12">5</text><rect x="270" y="70" width="42" height="30" rx="4" class="bg" /><text x="291" y="90" class="m" text-anchor="middle" font-size="12">6</text><rect x="316" y="70" width="42" height="30" rx="4" class="bg" /><text x="337" y="90" class="m" text-anchor="middle" font-size="12">7</text><rect x="362" y="70" width="42" height="30" rx="4" class="bg" /><text x="383" y="90" class="m" text-anchor="middle" font-size="12">8</text><rect x="408" y="70" width="42" height="30" rx="4" class="bg" /><text x="429" y="90" class="m" text-anchor="middle" font-size="12">9</text><rect x="454" y="70" width="42" height="30" rx="4" class="bg" /><text x="475" y="90" class="m" text-anchor="middle" font-size="12">10</text><rect x="500" y="70" width="42" height="30" rx="4" class="bg" /><text x="521" y="90" class="m" text-anchor="middle" font-size="12">11</text><rect x="546" y="70" width="42" height="30" rx="4" class="bg" /><text x="567" y="90" class="m" text-anchor="middle" font-size="12">12</text><rect x="592" y="70" width="42" height="30" rx="4" class="bg" /><text x="613" y="90" class="m" text-anchor="middle" font-size="12">13</text><rect x="638" y="70" width="42" height="30" rx="4" class="bg" /><text x="659" y="90" class="m" text-anchor="middle" font-size="12">14</text><rect x="40" y="70" width="42" height="30" rx="4" class="gd" opacity=".9"/><text x="61" y="90" class="t" text-anchor="middle" font-size="12">1</text><line x1="61" y1="106" x2="330" y2="130" class="ln" marker-end="url(#ah)"/><text x="340" y="138" class="t" text-anchor="start" font-size="12">на край чужого кадра: вставка до/после</text><text x="40" y="164" class="m" text-anchor="start" font-size="12">Alt при отпускании - без тега. Зона Untagged - вне тегов.</text></svg><figcaption>Перенос кадра за номер: вставка до/после другого кадра с включением в тег назначения.</figcaption></figure>
+
+  <h2>Параметры анимаций и кадров</h2>
+  <ul>
+    <li>Кнопка <b>Settings</b> в Timeline открывает компактные параметры: <i>Frame duration (ms, 0 = FPS)</i> текущего кадра, <i>Animation name</i> (переименование выбранной анимации), <i>Delete animation</i>, onion skin и график ImPlot.</li>
+    <li>Список слева позволяет показать <b>All frames</b> или кадры конкретной анимации; пункт <b>+ Animation</b> создаёт новый тег.</li>
+    <li>Выпадающие списки <i>Play from / Play through</i> и флажок <img class="ico" src="../assets/icons/loop.png" alt="Loop" width="26" height="26"><i>Loop</i> определяют воспроизведение диапазона.</li>
+    <li>Имя анимации не может быть пустым («Enter an animation name»); без выбранной анимации rename недоступен («Select an animation to rename it»).</li>
+  </ul>
+
+  <h2>Воспроизведение</h2>
+  <ul>
+    <li><kbd>Space</kbd> - играть/остановить (когда Timeline в фокусе); кнопки First frame (<kbd>Home</kbd>), Previous (<kbd>&larr;</kbd>), Next (<kbd>&rarr;</kbd>), Last frame (<kbd>End</kbd>).</li>
+    <li><b>Frames per second</b> - общий FPS. <b>Play from / Play through</b>, <b>Play once</b>, <b>Loop range</b> - режимы диапазона.</li>
+    <li>Кнопки «Previous 60 frames» / «Next 60 frames» листают страницы таймлайна (<code>Frames N-M / total</code>).</li>
+    <li>График <b>Frame timing</b> (ImPlot) показывает длительность каждого кадра, если собрано с <code>UIMGUI_ENABLE_IMPLOT</code>.</li>
+  </ul>
+
+  <h2>Onion skin</h2>
+  <p>Показывает до 4 предыдущих и до 4 следующих кадров полупрозрачно (<i>Previous onion frames</i>, <i>Next onion frames</i>, <i>Onion opacity</i>). В окне предпросмотра подсказка: «Frame preview (onion skin): previous and next frames».</p>
+
+  <h2>Inbetween: промежуточные кадры</h2>
+  <p><kbd>Ctrl</kbd>+<kbd>I</kbd> открывает режимы Inbetween для двух выбранных кадров (<kbd>Ctrl</kbd>+клик):</p>
+  <ul>
+    <li><img class="ico" src="../assets/icons/midpoint.png" alt="Midpoint" width="26" height="26"><b>Midpoint</b> - сдвинуть спрайт в середину без растяжения.</li>
+    <li><img class="ico" src="../assets/icons/motion-stretch.png" alt="Motion stretch" width="26" height="26"><b>Motion stretch</b> - нарисовать слегка вытянутую промежуточную позу.</li>
+    <li><img class="ico" src="../assets/icons/motion-trail.png" alt="Full motion trail" width="26" height="26"><b>Full motion trail</b> - нарисовать путь от первого кадра ко второму.</li>
+    <li>Режимы можно выбрать для диагонального, горизонтального и вертикального направления.</li>
+  </ul>
+  <p>Новый кадр добавляется после первого из двух; программа пишет: «Intermediate frame (режим) added after frame N».</p>
+
+  <h2>Клавиши таймлайна</h2>
+  <div class="table-wrap"><table>
+    <tr><td><kbd>&larr;</kbd> / <kbd>&rarr;</kbd></td><td>предыдущий / следующий кадр (<kbd>Shift</kbd> - выделение диапазона)</td></tr>
+    <tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>первый / последний кадр</td></tr>
+    <tr><td><kbd>&uarr;</kbd> / <kbd>&darr;</kbd></td><td>слой выше / ниже</td></tr>
+    <tr><td><kbd>Insert</kbd>, <kbd>Ctrl</kbd>+<kbd>Insert</kbd></td><td>добавить / дублировать кадр</td></tr>
+    <tr><td><kbd>Delete</kbd>, <kbd>Backspace</kbd></td><td>удалить выбранное / текущий кадр</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>режимы Inbetween</td></tr>
+    <tr><td><kbd>Space</kbd></td><td>воспроизведение / пауза</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td>создать анимацию (тег)</td></tr>
+  </table></div>
+  <p>Клавиши работают, когда фокус на холсте или Timeline.</p>
+
+  <h2>Импорт листа спрайтов</h2>
+  <p><code>File &gt; Import sprite sheet</code> открывает предпросмотр изображения с параметрами: <b>Cell width / height</b>, <b>Horizontal / Vertical margin</b>, <b>Horizontal / Vertical spacing</b>, <b>Columns (0 = auto)</b>, <b>Rows (0 = auto)</b>, <b>Frame limit (0 = all)</b>, FPS. Ячейки читаются слева направо и сверху вниз в новый несохранённый документ с анимацией. Кнопка <b>Import frames</b> создаёт документ.</p>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

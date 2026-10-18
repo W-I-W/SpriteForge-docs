@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,32 +9,31 @@
 <body data-page="quick-tour">
 <main>
   <h1><img class="ico page-ico" src="assets/icons/wand.png" alt="" width="40" height="40">Quick tour</h1>
-  <p class="lead">Короткий интерактивный тур по главному сценарию: создать, нарисовать, включить зеркало, сгенерировать, разместить и экспортировать. Заменил прежнюю обучающую игру.</p>
+  <p class="lead">A short interactive tour of the main workflow: create, draw, turn on the mirror, generate, place and export. It replaces the former learning game.</p>
 
-  <h2>Как запустить</h2>
+  <h2>How to start it</h2>
   <ul>
-    <li>Меню <code>Help &gt; Quick tour</code> (в меню Help также есть Documentation на <kbd>F1</kbd>, Getting started guide и Keyboard shortcuts).</li>
-    <li>Тур затемняет остальной экран и обводит элемент, которым нужно воспользоваться. Затемнение <b>не блокирует ввод</b>.</li>
-    <li>Каждый шаг завершается сам, когда вы выполните действие. Тур можно прервать на любом шаге кнопкой <b>Skip tour</b>; в конце показывается «Tour complete».</li>
+    <li>Menu <code>Help &gt; Quick tour</code> (the Help menu also contains Documentation on <kbd>F1</kbd>, Getting started guide and Keyboard shortcuts).</li>
+    <li>The tour dims the rest of the screen and outlines the element you need to use. The dimming <b>does not block input</b>.</li>
+    <li>Each step finishes by itself when you perform the action. The tour can be skipped at any step with the <b>Skip tour</b> button; at the end "Tour complete" is shown.</li>
   </ul>
 
-  <h2>Шаги</h2>
+  <h2>Steps</h2>
   <ol class="steps">
-    <li><b>New document.</b> Откройте <code>File</code> и выберите <code>New document</code> - это ваш холст.</li>
-    <li><b>Canvas size.</b> Выберите размер, например 32 px, и нажмите <i>Create document</i>.</li>
-    <li><b>Draw a base.</b> Нарисуйте карандашом простую фигуру, хотя бы квадрат: генератор раскрасит её и предложит варианты.</li>
-    <li><img class="ico" src="assets/icons/light.png" alt="Lighting" width="26" height="26"><b>Lighting.</b> Свет работает при генерации. Включите его, перетащите точку света и подберите силу и размер; эффект виден в Preview.</li>
-    <li><b>Symmetry.</b> Удерживайте кнопку со стрелкой на панели инструментов и выберите <img class="ico" src="assets/icons/mirror.png" alt="Mirror" width="26" height="26"><i>Mirror</i>: рисунок будет отражаться.</li>
-    <li><b>Mirror axes.</b> Включите все четыре оси отражения: лево-право, верх-низ и обе диагонали (счётчик «Axes on: N/4»).</li>
-    <li><b>Preview.</b> В окне Preview видно, как генератор применит зеркало. Кнопка <i>New example</i> показывает другие варианты.</li>
-    <li><img class="ico" src="assets/icons/wand.png" alt="Generate" width="26" height="26"><b>Generate.</b> Нажмите кнопку с волшебной палочкой: варианты появятся в окне Sprites.</li>
-    <li><b>Your variations.</b> Кликните по понравившемуся спрайту - под ним появятся кнопки действий.</li>
-    <li><b>Result to canvas.</b> Кнопка с плюсом под выбранным спрайтом добавляет его новым слоем на холст.</li>
-    <li><b>Export.</b> <code>File &gt; Export</code>, чтобы сохранить PNG или GIF.</li>
+    <li><b>New document.</b> Open <code>File</code> and choose <code>New document</code> - this is your canvas.</li>
+    <li><b>Canvas size.</b> Pick a size, for example 32 px, and press <i>Create document</i>.</li>
+    <li><b>Draw a base.</b> Draw a simple shape with the pencil, even a square: the generator will color it and offer variations.</li>
+    <li><img class="ico" src="assets/icons/light.png" alt="Lighting" width="26" height="26"><b>Lighting.</b> Light works during generation. Turn it on, drag the light point and adjust the strength and size; the effect is visible in Preview.</li>
+    <li><b>Symmetry.</b> Hold the button with the arrow on the toolbar and choose <img class="ico" src="assets/icons/mirror.png" alt="Mirror" width="26" height="26"><i>Mirror</i>: the drawing will be mirrored.</li>
+    <li><b>Mirror axes.</b> Turn on all four reflection axes: left-right, top-bottom and both diagonals (the counter shows "Axes on: N/4").</li>
+    <li><b>Preview.</b> The Preview window shows how the generator will apply the mirror. The <i>New example</i> button shows other variations.</li>
+    <li><img class="ico" src="assets/icons/wand.png" alt="Generate" width="26" height="26"><b>Generate.</b> Press the magic wand button: the variations appear in the Sprites window.</li>
+    <li><b>Your variations.</b> Click a sprite you like - action buttons appear under it.</li>
+    <li><b>Result to canvas.</b> The plus button under the selected sprite adds it to the canvas as a new layer.</li>
+    <li><b>Export.</b> <code>File &gt; Export</code> to save a PNG or GIF.</li>
   </ol>
-  <figure class="dg"><svg viewBox="0 0 800 150" role="img" aria-label="Рабочий цикл" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="20" y="40" width="100" height="78" rx="8" class="box" /><text x="70" y="72" class="t" text-anchor="middle" font-size="12">1. Нарисуйте</text><text x="70" y="98" class="m" text-anchor="middle" font-size="10">тело, контур, шанс</text><line x1="124" y1="79" x2="146" y2="79" class="ln" marker-end="url(#ah)"/><rect x="150" y="40" width="100" height="78" rx="8" class="box" /><text x="200" y="72" class="t" text-anchor="middle" font-size="12">2. Настройте</text><text x="200" y="98" class="m" text-anchor="middle" font-size="10">генератор и сид</text><line x1="254" y1="79" x2="276" y2="79" class="ln" marker-end="url(#ah)"/><rect x="280" y="40" width="100" height="78" rx="8" class="box" /><text x="330" y="72" class="t" text-anchor="middle" font-size="12">3. Generate</text><text x="330" y="98" class="m" text-anchor="middle" font-size="10">Generated sprites</text><line x1="384" y1="79" x2="406" y2="79" class="ln" marker-end="url(#ah)"/><rect x="410" y="40" width="100" height="78" rx="8" class="box" /><text x="460" y="72" class="t" text-anchor="middle" font-size="12">4. Отберите</text><text x="460" y="98" class="m" text-anchor="middle" font-size="10">в библиотеку</text><line x1="514" y1="79" x2="536" y2="79" class="ln" marker-end="url(#ah)"/><rect x="540" y="40" width="100" height="78" rx="8" class="box" /><text x="590" y="72" class="t" text-anchor="middle" font-size="12">5. Разместите</text><text x="590" y="98" class="m" text-anchor="middle" font-size="10">слой или кадр</text><line x1="644" y1="79" x2="666" y2="79" class="ln" marker-end="url(#ah)"/><rect x="670" y="40" width="100" height="78" rx="8" class="box" /><text x="720" y="72" class="t" text-anchor="middle" font-size="12">6. Экспорт</text><text x="720" y="98" class="m" text-anchor="middle" font-size="10">PNG, GIF, atlas</text></svg><figcaption>Рабочий цикл: от рисунка до экспорта.</figcaption></figure>
-  <div class="note"><p>Если нужное окно закрыто, тур сам откроет его (холст, Tools, Tool settings, Sprites, Lighting, Preview). Подробности по каждому шагу - в разделах <a href="mirror-tile.html">Зеркало</a>, <a href="generators.html">Генераторы</a>, <a href="lighting.html">Освещение</a> и <a href="export.html">Экспорт</a>.</p></div>
-
+  <figure class="dg"><svg viewBox="0 0 800 150" role="img" aria-label="Workflow" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="20" y="40" width="100" height="78" rx="8" class="box" /><text x="70" y="72" class="t" text-anchor="middle" font-size="12">1. Draw</text><text x="70" y="98" class="m" text-anchor="middle" font-size="10">body, outline, chance</text><line x1="124" y1="79" x2="146" y2="79" class="ln" marker-end="url(#ah)"/><rect x="150" y="40" width="100" height="78" rx="8" class="box" /><text x="200" y="72" class="t" text-anchor="middle" font-size="12">2. Configure</text><text x="200" y="98" class="m" text-anchor="middle" font-size="10">generator and seed</text><line x1="254" y1="79" x2="276" y2="79" class="ln" marker-end="url(#ah)"/><rect x="280" y="40" width="100" height="78" rx="8" class="box" /><text x="330" y="72" class="t" text-anchor="middle" font-size="12">3. Generate</text><text x="330" y="98" class="m" text-anchor="middle" font-size="10">Generated sprites</text><line x1="384" y1="79" x2="406" y2="79" class="ln" marker-end="url(#ah)"/><rect x="410" y="40" width="100" height="78" rx="8" class="box" /><text x="460" y="72" class="t" text-anchor="middle" font-size="12">4. Pick</text><text x="460" y="98" class="m" text-anchor="middle" font-size="10">to the library</text><line x1="514" y1="79" x2="536" y2="79" class="ln" marker-end="url(#ah)"/><rect x="540" y="40" width="100" height="78" rx="8" class="box" /><text x="590" y="72" class="t" text-anchor="middle" font-size="12">5. Place</text><text x="590" y="98" class="m" text-anchor="middle" font-size="10">layer or frame</text><line x1="644" y1="79" x2="666" y2="79" class="ln" marker-end="url(#ah)"/><rect x="670" y="40" width="100" height="78" rx="8" class="box" /><text x="720" y="72" class="t" text-anchor="middle" font-size="12">6. Export</text><text x="720" y="98" class="m" text-anchor="middle" font-size="10">PNG, GIF, atlas</text></svg><figcaption>Workflow: from drawing to export.</figcaption></figure>
+  <div class="note"><p>If a needed window is closed, the tour opens it for you (canvas, Tools, Tool settings, Sprites, Lighting, Preview). Details for each step are in <a href="mirror-tile.html">Mirror</a>, <a href="generators.html">Generators</a>, <a href="lighting.html">Frame lighting</a> and <a href="export.html">Export</a>.</p></div>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

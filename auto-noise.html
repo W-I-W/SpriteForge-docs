@@ -1,47 +1,47 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auto noise и Canvas generator - SpriteForge</title>
+<title>Auto noise and Canvas generator - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="auto-noise">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/jumble.png" alt="" width="40" height="40">Auto noise и Canvas generator</h1>
-  <p class="lead">Процедурная генерация форм из шума и настройка силуэта (области затухания) на холсте.</p>
+  <h1><img class="ico page-ico" src="assets/icons/jumble.png" alt="" width="40" height="40">Auto noise and Canvas generator</h1>
+  <p class="lead">Procedural generation of shapes from noise and the setup of the silhouette (fade area) on the canvas.</p>
 
-  <p>Auto noise больше не выбирается как режим в списке: он добавляется из окна <b>Auto generator</b> (после добавления режим появляется в списке как текущий).</p>
+  <p>Auto noise is no longer chosen as a mode in the list: it is added from the <b>Auto generator</b> window (after it is added, the mode appears in the list as the current one).</p>
 
   <h2>Noise settings</h2>
-  <p>Окно <b>Noise settings</b> описывает шум для вариаций. Основные параметры:</p>
+  <p>The <b>Noise settings</b> window describes the noise for variations. The main parameters:</p>
   <ul>
-    <li><b>Enable noise</b> - включить шум.</li>
-    <li><b>Scale</b> - масштаб шума: меньшие значения дают крупные пятна, большие - мелкую деталь. Задаётся диапазоном (между двумя ручками выбирается случайное значение; равные границы фиксируют масштаб).</li>
-    <li><b>Noise range</b> - рисуются только значения шума между границами. Шире диапазон - больше пикселей; равные границы - шум не рисуется. Перетащите середину между ручками, чтобы сдвинуть весь диапазон.</li>
-    <li><b>Density %</b>, <b>Falloff</b>, <b>Fade softness</b> и др.</li>
+    <li><b>Enable noise</b> - turn the noise on.</li>
+    <li><b>Scale</b> - the noise scale: smaller values give large patches, larger values give fine detail. It is set as a range (a random value is chosen between the two handles; equal bounds fix the scale).</li>
+    <li><b>Noise range</b> - only noise values between the bounds are drawn. A wider range means more pixels; equal bounds draw no noise. Drag the middle between the handles to move the whole range.</li>
+    <li><b>Density %</b>, <b>Falloff</b>, <b>Fade softness</b>, etc.</li>
   </ul>
 
   <h2>Auto generator</h2>
-  <p>Окно <b>Auto generator</b> настраивает процедурные вариации:</p>
+  <p>The <b>Auto generator</b> window configures the procedural variations:</p>
   <ul>
-    <li><b>Overlay noise onto drawing</b> - накладывать шум на рисунок, а не заменять его.</li>
-    <li><b>Variation</b> - выбор вариации; <b>Random seed</b> и <b>Seed</b>; <b>Falloff</b> (0,1-8).</li>
-    <li><b>Noise fade area</b> - форма области затухания; перетащите края и углы (или выберите инструмент <a href="tools.html#fade">Noise fade area</a>). <b>Fade softness</b> и <b>Reset shape</b>.</li>
-    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add variation" width="26" height="26"><b>Add variation</b> / <img class="ico" src="assets/icons/delete.png" alt="Remove selected variation" width="26" height="26"><b>Remove selected variation</b> - набор вариаций.</li>
+    <li><b>Overlay noise onto drawing</b> - overlay the noise onto the drawing instead of replacing it.</li>
+    <li><b>Variation</b> - choose a variation; <b>Random seed</b> and <b>Seed</b>; <b>Falloff</b> (0.1-8).</li>
+    <li><b>Noise fade area</b> - the shape of the fade area; drag the edges and corners (or choose the <a href="tools.html#fade">Noise fade area</a> tool). <b>Fade softness</b> and <b>Reset shape</b>.</li>
+    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add variation" width="26" height="26"><b>Add variation</b> / <img class="ico" src="assets/icons/delete.png" alt="Remove selected variation" width="26" height="26"><b>Remove selected variation</b> - the set of variations.</li>
   </ul>
-  <div class="note"><p>Если вариаций нет, окно подсказывает: «Add a variation to configure procedural noise».</p></div>
+  <div class="note"><p>If there are no variations the window hints: "Add a variation to configure procedural noise".</p></div>
 
   <h2>Canvas generator</h2>
-  <p>Окно <b>Canvas generator</b> формирует силуэт Auto noise. Настройки действуют на все слои шума; они не меняют размер холста и не обрезают ваш рисунок.</p>
+  <p>The <b>Canvas generator</b> window shapes the Auto noise silhouette. The settings affect all noise layers; they do not resize the canvas and do not crop your drawing.</p>
   <ul>
-    <li><b>Edge fade areas (pixels)</b> - увеличьте значение, чтобы подавить шум вдоль соответствующего края.</li>
-    <li><b>Corner fade areas (pixels)</b> - срезает углы по диагонали, округляя силуэт.</li>
-    <li><b>Fade softness</b> - минимум и максимум; для каждой вариации значение выбирается из этого диапазона. Меньшие значения убирают больше шума.</li>
-    <li><b>Noise suppression preview</b> - тепловая карта: 0 - без изменений, 1 - полностью подавлено. Белые линии - пределы краёв, жёлтые - углов, подписи показывают расстояние в пикселях (нулевые пределы скрыты). Предпросмотр использует среднюю мягкость; итоговая форма зависит ещё от шума и falloff.</li>
-    <li><b>Reset shape</b> - вернуть форму по умолчанию.</li>
+    <li><b>Edge fade areas (pixels)</b> - increase a value to suppress noise along the corresponding edge.</li>
+    <li><b>Corner fade areas (pixels)</b> - cuts the corners diagonally, rounding the silhouette.</li>
+    <li><b>Fade softness</b> - a minimum and a maximum; for each variation the value is chosen from this range. Lower values remove more noise.</li>
+    <li><b>Noise suppression preview</b> - a heat map: 0 - unchanged, 1 - fully suppressed. White lines are the edge limits, yellow lines the corner limits, the labels show the distance in pixels (zero limits are hidden). The preview uses the average softness; the final shape also depends on the noise and the falloff.</li>
+    <li><b>Reset shape</b> - restore the default shape.</li>
   </ul>
-  <p>Если Auto noise не выбран как режим, окно предлагает «Switch to Auto noise».</p>
+  <p>If Auto noise is not chosen as the mode, the window offers "Switch to Auto noise".</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Результаты и библиотека - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="library">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/library-save.png" alt="" width="40" height="40">Результаты и библиотека</h1>
+  <p class="lead">Окно Generated sprites хранит временные результаты, Result library - постоянные.</p>
+
+  <h2>Generated sprites</h2>
+  <p>Показывает результаты последней генерации. Они временные: следующая генерация их заменяет. Действия над результатом описаны в <a href="generators.html">обзоре генераторов</a>. Кликните по карточке спрайта - под ней появятся кнопки действий; повторный клик скрывает их. Имя спрайта показывается подсказкой при наведении, а ползунок размера превью появляется в углу окна, пока курсор над ним (или Ctrl + колесо мыши).</p>
+  <ul>
+    <li><img class="ico" src="../assets/icons/library-save.png" alt="Keep in library" width="28" height="28"><b>Keep in library</b> - сохранить удачный вариант в библиотеку результатов.</li>
+    <li><img class="ico" src="../assets/icons/variations.png" alt="Create variations" width="28" height="28"><b>Create variations</b> - создать вариации спрайта; стрелка рядом открывает параметры (<i>Preserve shape</i>, <i>Preserve palette</i>) и кнопку повтора с тем же начальным значением.</li>
+    <li><img class="ico" src="../assets/icons/save-png.png" alt="Save PNG" width="28" height="28"><b>Save</b> - сохранить спрайт как PNG (анимацию как GIF).</li>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add layer" width="28" height="28"><b>Add to a new layer</b> - вставить спрайт новым слоем.</li>
+    <li><img class="ico" src="../assets/icons/copy-frame.png" alt="Add frame" width="28" height="28"><b>Insert as a new frame</b> - вставить спрайт новым кадром активного слоя.</li>
+  </ul>
+
+  <h2>Result library</h2>
+  <p>Откройте через <code>View &gt; Result library</code>. Библиотека хранит изображение вместе с настройками генерации.</p>
+  <ul>
+    <li><b>Название и теги</b> (<i>Tags (comma separated)</i>), отметка <b>Favorite</b>, фильтр <b>Favorites only</b>.</li>
+    <li><b>Поиск</b> по названиям и тегам («Search names and tags»).</li>
+    <li><b>Add to layer</b> (<img class="ico" src="../assets/icons/add-layer.png" alt="Add to layer" width="28" height="28">) / вставка в документ; <img class="ico" src="../assets/icons/lasso-polygon.png" alt="Apply saved settings" width="26" height="26"><b>Apply saved settings</b> применяет сохранённые настройки генерации (включая вариации и шум).</li>
+    <li><img class="ico" src="../assets/icons/save-png.png" alt="Export PNG" width="26" height="26"><b>Export PNG</b>, <img class="ico" src="../assets/icons/refresh.png" alt="Refresh library" width="26" height="26"><b>Refresh library</b>, <b>Delete result from library</b> (<img class="ico" src="../assets/icons/delete.png" alt="Delete" width="28" height="28">).</li>
+  </ul>
+  <p>Хранилище находится в <code>Application.persistentDataPath/ResultLibrary</code> и не зависит от временных результатов генератора. Некорректные PNG отклоняются («Invalid library PNG»).</p>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

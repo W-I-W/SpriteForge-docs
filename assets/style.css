@@ -194,3 +194,6 @@ img.ico.flip { transform: scaleX(-1); }
 .anchor-grid img.ico { width: 56px; height: 56px; padding: 4px; margin: 0 auto 4px; display: block; }
 
 h1 img.page-ico { width: 44px; height: 44px; margin-right: 12px; margin-top: -6px; padding: 4px; border-radius: 10px; }
+
+a.lang-btn { text-decoration: none; font-weight: 600; letter-spacing: .04em; }
+a.lang-btn:hover { text-decoration: none; border-color: var(--accent); }

@@ -1,40 +1,40 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Восстановление и история - SpriteForge</title>
+<title>Recovery and history - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="recovery">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/refresh.png" alt="" width="40" height="40">Восстановление и история</h1>
-  <p class="lead">Undo/Redo, автосохранение сессии, восстановление несохранённой работы и ограничения памяти.</p>
+  <h1><img class="ico page-ico" src="assets/icons/refresh.png" alt="" width="40" height="40">Recovery and history</h1>
+  <p class="lead">Undo/Redo, session autosave, recovering unsaved work and memory limits.</p>
 
   <h2>Undo / Redo</h2>
   <ul>
-    <li><kbd>Ctrl</kbd>+<kbd>Z</kbd> - отмена, <kbd>Ctrl</kbd>+<kbd>Y</kbd> - возврат.</li>
-    <li>История хранит без потерь сжатые (GZip) снимки состояния.</li>
-    <li><b>Лимит: 50 записей и 64 МиБ сжатых данных суммарно на документ</b>, включая Redo. Слишком большие снимки вытесняются.</li>
-    <li>Лимит не включает состояние интерфейса, текстуры и временные буферы.</li>
-    <li>Новое действие после отмены создаёт ветку истории (Redo сбрасывается).</li>
+    <li><kbd>Ctrl</kbd>+<kbd>Z</kbd> - undo, <kbd>Ctrl</kbd>+<kbd>Y</kbd> - redo.</li>
+    <li>The history stores lossless compressed (GZip) state snapshots.</li>
+    <li><b>The limit is 50 entries and 64 MiB of compressed data in total per document</b>, including Redo. Snapshots that are too large are evicted.</li>
+    <li>The limit does not include interface state, textures and temporary buffers.</li>
+    <li>A new action after an undo creates a history branch (Redo is reset).</li>
   </ul>
 
   <h2>History performance</h2>
-  <p>Окно <code>View &gt; History performance</code> показывает размер сжатой истории, размер исходных строк, время операций Capture / Record / Restore и позволяет измерить десять снимков текущего документа (<i>Measure 10 snapshots</i>). Измерение не добавляет записей в историю. Изменение управляемой памяти зависит от сборки мусора и не включает память текстур. Время CPU Timeline и отслеживания документа показывается сглаженно (без времени GPU). В Unity Profiler используйте маркеры <code>SpriteForge.Timeline</code> и <code>SpriteForge.DocumentTracking</code>.</p>
+  <p>The <code>View &gt; History performance</code> window shows the size of the compressed history, the size of the source strings, the Capture / Record / Restore operation times, and lets you measure ten snapshots of the current document (<i>Measure 10 snapshots</i>). The measurement adds no entries to the history. The change in managed memory depends on garbage collection and does not include texture memory. The CPU time of the Timeline and of document tracking is shown smoothed (without GPU time). In the Unity Profiler use the markers <code>SpriteForge.Timeline</code> and <code>SpriteForge.DocumentTracking</code>.</p>
 
-  <h2>Автосохранение и восстановление</h2>
+  <h2>Autosave and recovery</h2>
   <ul>
-    <li>Программа периодически сохраняет сессию (ошибки автосохранения выводятся в статусе: «Autosave failed»).</li>
-    <li>Окно восстановления показывает «Document N of M» и счётчик «Recovered / Failed»; кнопка <b>Stop after this document</b> останавливает процесс после текущего документа.</li>
-    <li>После сбоя при запуске предлагается <b>Recover unfinished work</b>: «An autosaved session is available». Кнопка <b>Recover all</b> (<code>File &gt; Recover all</code>) восстанавливает все документы сразу, показывая сводку «Recovered: N Failed: M».</li>
-    <li>Сохранение PNG/JPEG оставляет проект несохранённым, а копия для восстановления сохраняется до сохранения <code>.sf</code>.</li>
-    <li>Запись файлов проекта атомарная: при сбое остаётся предыдущая версия.</li>
+    <li>The program periodically saves the session (autosave errors appear in the status: "Autosave failed").</li>
+    <li>The recovery window shows "Document N of M" and a "Recovered / Failed" counter; the <b>Stop after this document</b> button stops the process after the current document.</li>
+    <li>After a crash, <b>Recover unfinished work</b> is offered on start: "An autosaved session is available". The <b>Recover all</b> button (<code>File &gt; Recover all</code>) restores all documents at once and shows the summary "Recovered: N Failed: M".</li>
+    <li>Saving a PNG/JPEG leaves the project unsaved, and the recovery copy is kept until you save the <code>.sf</code>.</li>
+    <li>Project files are written atomically: if something fails the previous version stays.</li>
   </ul>
 
-  <h2>Бюджет памяти</h2>
-  <p>Оценочный бюджет по умолчанию - 1 ГиБ на все открытые документы. Оценка консервативна: она включает плотные данные инструментов, пиксели на CPU и GPU и рабочие буферы, но не измеряет память процесса целиком и не гарантирует отсутствие сбоев выделения. Проверка выполняется до изменения для: создания, импорта изображения/проекта/листа, изменения размера, дублирования слоёв и кадров, разреженных копий анимации. При превышении показывается «Project memory budget exceeded», а документ остаётся без частичных изменений. Текущий расход виден как «Estimated memory: X / Y MiB».</p>
-  <p>Лимиты: 120 кадров на документ, размер текстуры ограничен максимально допустимым.</p>
+  <h2>The memory budget</h2>
+  <p>The default estimated budget is 1 GiB across all open documents. The estimate is conservative: it includes dense tool data, CPU and GPU pixels and working buffers, but it does not measure the process memory as a whole and does not guarantee the absence of allocation failures. The check runs before the change for: creating, importing an image/project/sheet, resizing, duplicating layers and frames, and sparse animation copies. When exceeded "Project memory budget exceeded" is shown and the document stays without partial changes. The current usage is visible as "Estimated memory: X / Y MiB".</p>
+  <p>Limits: 120 frames per document; the texture size is limited to the maximum allowed.</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

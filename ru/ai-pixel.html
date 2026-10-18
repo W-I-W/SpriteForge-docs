@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI image to pixel art - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="ai-pixel">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/variations.png" alt="" width="40" height="40">AI image to pixel art</h1>
+  <p class="lead">Превращает «псевдо-пиксельное» изображение (например, созданное нейросетью) в настоящий пиксель-арт: находит исходную сетку, выравнивает блоки и сокращает палитру. Работает локально, без сетевых запросов.</p>
+
+  <p>Откройте через <code>Filter &gt; AI image to pixel art...</code>. Загрузите PNG или JPG кнопкой <b>Load image...</b>.</p>
+
+  <figure class="dg"><svg viewBox="0 0 720 190" role="img" aria-label="AI image to pixel art" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="170" rx="8" class="box" /><rect x="25" y="40" width="140" height="80" rx="8" class="bg" /><text x="95" y="72" class="t" text-anchor="middle" font-size="13">Исходник</text><text x="95" y="96" class="m" text-anchor="middle" font-size="10">мягкие края, ~псевдопиксели</text><line x1="165" y1="80" x2="195" y2="80" class="ln" marker-end="url(#ah)"/><rect x="195" y="40" width="140" height="80" rx="8" class="bg" /><text x="265" y="72" class="t" text-anchor="middle" font-size="13">Detect grid</text><text x="265" y="96" class="m" text-anchor="middle" font-size="10">размер ячейки и смещение</text><line x1="335" y1="80" x2="365" y2="80" class="ln" marker-end="url(#ah)"/><rect x="365" y="40" width="140" height="80" rx="8" class="bg" /><text x="435" y="72" class="t" text-anchor="middle" font-size="13">Стиль + палитра</text><text x="435" y="96" class="m" text-anchor="middle" font-size="10">Conversion style, Max colors</text><line x1="505" y1="80" x2="535" y2="80" class="ln" marker-end="url(#ah)"/><rect x="535" y="40" width="140" height="80" rx="8" class="bg" /><text x="605" y="72" class="t" text-anchor="middle" font-size="13">Результат</text><text x="605" y="96" class="m" text-anchor="middle" font-size="10">чёткий пиксель-арт</text><text x="30" y="160" class="m" text-anchor="start" font-size="12">Save PNG, Add to canvas as new frame или Create document</text></svg><figcaption>Конвертация изображения в пиксель-арт: сетка, стиль, палитра.</figcaption></figure>
+
+  <h2>Шаг 1. Pixel grid</h2>
+  <ul>
+    <li><b>Detect grid</b> - автоматически определяет размер «пикселя» в исходнике и смещение. Если определение неуверенное, окно предупреждает - проверьте выравнивание кнопкой <i>Adjust grid</i>.</li>
+    <li><b>Source pixel cell size</b> (по умолчанию 4) - размер ячейки исходного изображения. 1 обрабатывает отдельные пиксели; бóльшие значения выравнивают блоки.</li>
+    <li><b>Grid offset X / Y</b> - сдвиг сетки.</li>
+  </ul>
+
+  <h2>Шаг 2. Appearance</h2>
+  <p><b>Conversion style</b> выбирает способ получить цвет блока:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Стиль</th><th>Идея</th></tr>
+    <tr><td>Balanced blocks</td><td>усредняет каждый блок для чистого ровного результата</td></tr>
+    <tr><td>Sharp edges</td><td>берёт пиксель около центра блока, сохраняя чёткие края</td></tr>
+    <tr><td>High contrast</td><td>усиливает светлые и тёмные области перед ограничением палитры</td></tr>
+    <tr><td>Dithered palette</td><td>распределяет ошибку цвета между пикселями (дизеринг) для плавных переходов малым числом цветов</td></tr>
+    <tr><td>Dominant clusters</td><td>использует самую частую группу цветов в блоке: плотные формы и резкие границы</td></tr>
+    <tr><td>Posterized shading</td><td>группирует яркость в четыре полосы - графичные ступенчатые тени</td></tr>
+    <tr><td>Grayscale</td><td>оттенки серого перед ограничением палитры</td></tr>
+    <tr><td>Handheld green</td><td>четыре ретро-зелёных тона по яркости</td></tr>
+    <tr><td>Soft pastel</td><td>осветляет и смягчает насыщенность</td></tr>
+    <tr><td>Ink outlines</td><td>добавляет тёмный контур в один пиксель вдоль сильных цветовых и силуэтных границ</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Maximum colors</b> (2-256, по умолчанию 16) - размер итоговой палитры.</li>
+    <li><b>Separate palette per tile</b> - палитра ограничивается независимо для каждого тайла (<i>Tile width</i>, <i>Tile height</i> в пикселях восстановленной сетки, <i>Show tile grid</i>); во всём изображении цветов может быть больше.</li>
+    <li><b>Line thickness</b> (0-4 px) - 0 сохраняет исходную ширину контура, 1-4 задают единую ширину в пикселях сетки.</li>
+    <li><b>Cleanup and extra settings</b>: <i>Noise reduction</i> (0-100, убирает одиночный цветовой шум до сокращения палитры), <i>Pixel art cleanup</i> (0 - выкл.; выше - сливает близкие цвета и чистит мелкие дефекты силуэта), <i>Transparency threshold</i>.</li>
+  </ul>
+
+  <h2>Шаг 3. Result</h2>
+  <ul>
+    <li>Размер результата показан как «Result: W x H | N colors» («Source: W x H» - размер исходника).</li>
+    <li><b>Align without resizing</b> - только выровнять и ограничить палитру, не уменьшая изображение.</li>
+    <li><img class="ico" src="../assets/icons/save-png.png" alt="Save PNG" width="26" height="26"><b>Save PNG...</b> - сохранить результат.</li>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add to canvas as new frame" width="26" height="26"><b>Add to canvas as new frame</b> - вставить в документ как новый кадр.</li>
+    <li><img class="ico" src="../assets/icons/new-doc.png" alt="Create new document from result" width="26" height="26"><b>Create document</b> - создать новый документ из результата.</li>
+  </ul>
+  <div class="note"><p>Правила ориентации: результат вставляется в документ строкой 0 сверху. Чтобы убедиться в этом, проверяйте преобразование на несимметричном изображении (голова сверху, ноги снизу).</p></div>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

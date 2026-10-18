@@ -1,69 +1,68 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Палитры и цвет - SpriteForge</title>
+<title>Palettes and color - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="palettes">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/picker.png" alt="" width="40" height="40">Палитры и цвет</h1>
-  <p class="lead">Окно Palettes хранит цвета рисования и цвета генерации; каждый цвет несёт параметры того, как генераторы должны его использовать.</p>
+  <h1><img class="ico page-ico" src="assets/icons/picker.png" alt="" width="40" height="40">Palettes and color</h1>
+  <p class="lead">The Palettes window stores the drawing colors and the generation colors; each color carries parameters that tell generators how to use it.</p>
 
-  <h2>Окно Palettes</h2>
+  <h2>The Palettes window</h2>
   <ul>
-    <li>Клик по цвету выбирает его, повторный клик или ПКМ открывает редактирование (<i>Color Picker</i>). Подсказка: «click to select, click again to edit, right-click to edit».</li>
-    <li><b>Add random color</b> добавляет случайный цвет, <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> удаляет выбранный.</li>
-    <li>Кнопка пипетки (<i>Pick color from canvas</i>) берёт цвет прямо с холста.</li>
-    <li>Палитры рисования и генерации раздельны. <b>Generation colors</b> - набор цветов, из которых генератор выбирает случайно; <i>Add color to generation set</i> добавляет цвет, а цвет «Random color from set» можно заменить фиксированным.</li>
+    <li>A click selects a color; a second click or a right-click opens editing (<i>Color Picker</i>). The tooltip: "click to select, click again to edit, right-click to edit".</li>
+    <li><b>Add random color</b> adds a random color, <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> removes the selected one.</li>
+    <li>The picker button (<i>Pick color from canvas</i>) takes a color directly from the canvas.</li>
+    <li>The drawing and generation palettes are separate. <b>Generation colors</b> is a set of colors from which the generator picks at random; <i>Add color to generation set</i> adds a color, and the "Random color from set" color can be replaced with a fixed one.</li>
   </ul>
 
-  <h3>Параметры цвета: Body и Outline</h3>
-  <p>Каждый цвет карандаша содержит настройки для двух ролей пикселя: <b>Body</b> (тело) и <b>Outline</b> (контур):</p>
+  <h3>Color parameters: Body and Outline</h3>
+  <p>Each pencil color contains settings for two pixel roles: <b>Body</b> and <b>Outline</b>:</p>
   <ul>
-    <li><b>Active</b> - участвует ли роль в генерации.</li>
-    <li><b>Chance</b> (<i>Body chance</i>, <i>Outline chance</i>) - вероятность 0-100%, что пиксель будет использован генератором. Основную форму делают надёжной (100%), блики, капли и искры - менее вероятными.</li>
-    <li><b>AutoColor</b> - цвет подбирается из палитры автоматически.</li>
-    <li><b>Generation colors / Fill color</b> - собственный набор цветов для генерации; не перезаписывает цвет рисования.</li>
+    <li><b>Active</b> - whether the role takes part in generation.</li>
+    <li><b>Chance</b> (<i>Body chance</i>, <i>Outline chance</i>) - the probability, 0-100%, that a pixel is used by the generator. The main shape is made reliable (100%), highlights, drops and sparks less likely.</li>
+    <li><b>AutoColor</b> - the color is picked from the palette automatically.</li>
+    <li><b>Generation colors / Fill color</b> - a separate set of colors for generation; it does not overwrite the drawing color.</li>
   </ul>
-  <p>Подключите эти параметры через <a href="tools.html#pencil">Advanced paint settings</a> карандаша и заливки.</p>
+  <p>Connect these parameters through the <a href="tools.html#pencil">Advanced paint settings</a> of the pencil and fill.</p>
 
-  <h2>Управление палитрами</h2>
-  <p>Кнопки управления списком палитр (<code>Properties</code> и окно Palettes):</p>
+  <h2>Palette management</h2>
+  <p>Buttons that manage the palette list (<code>Properties</code> and the Palettes window):</p>
   <ul>
-    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> и <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> - добавить случайный цвет и удалить выбранный.</li>
-    <li><img class="ico" src="assets/icons/save-png.png" alt="Import palette" width="26" height="26"><b>Import palette</b> - загрузить палитру из файла (PNG, HEX, GPL, JSON).</li>
-    <li><img class="ico" src="assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - сохранить текущую палитру в файл.</li>
-    <li><img class="ico" src="assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> - перечитать папку палитр.</li>
-    <li><img class="ico" src="assets/icons/open.png" alt="Open settings folder" width="26" height="26"><b>Open settings folder</b> - открыть папку настроек.</li>
-    <li><img class="ico" src="assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> - меню действий над палитрой.</li>
+    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add random color" width="26" height="26"><b>Add random color</b> and <img class="ico" src="assets/icons/delete.png" alt="Remove color" width="26" height="26"><b>Remove color</b> - add a random color and remove the selected one.</li>
+    <li><img class="ico" src="assets/icons/save-png.png" alt="Import palette" width="26" height="26"><b>Import palette</b> - load a palette from a file (PNG, HEX, GPL, JSON).</li>
+    <li><img class="ico" src="assets/icons/save.png" alt="Save palette" width="26" height="26"><b>Save palette</b> - save the current palette to a file.</li>
+    <li><img class="ico" src="assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> - re-read the palette folder.</li>
+    <li><img class="ico" src="assets/icons/open.png" alt="Open settings folder" width="26" height="26"><b>Open settings folder</b> - open the settings folder.</li>
+    <li><img class="ico" src="assets/icons/palette-options.png" alt="Palette options" width="26" height="26"><b>Palette options</b> - a menu of palette actions.</li>
   </ul>
 
-  <h2>Форматы палитр</h2>
+  <h2>Palette formats</h2>
   <div class="table-wrap"><table>
-    <tr><th>Формат</th><th>Описание</th></tr>
-    <tr><td>PNG</td><td>Читаются уникальные видимые цвета слева направо, сверху вниз; полностью прозрачные пиксели пропускаются.</td></tr>
-    <tr><td>HEX</td><td>Один цвет <code>RRGGBB</code> или <code>RRGGBBAA</code> на строку, <code>#</code> необязателен.</td></tr>
-    <tr><td>GPL</td><td>Стандартный заголовок <code>GIMP Palette</code>, строки с десятичными RGB.</td></tr>
-    <tr><td>JSON</td><td><code>name</code>, <code>colors</code> (RGBA 0-1, объекты Unity) и необязательный <code>tools</code> с параметрами по цветам.</td></tr>
+    <tr><th>Format</th><th>Description</th></tr>
+    <tr><td>PNG</td><td>Unique visible colors are read left to right, top to bottom; fully transparent pixels are skipped.</td></tr>
+    <tr><td>HEX</td><td>One <code>RRGGBB</code> or <code>RRGGBBAA</code> color per line, <code>#</code> is optional.</td></tr>
+    <tr><td>GPL</td><td>The standard <code>GIMP Palette</code> header, rows with decimal RGB.</td></tr>
+    <tr><td>JSON</td><td><code>name</code>, <code>colors</code> (RGBA 0-1, Unity objects) and an optional <code>tools</code> with per-color parameters.</td></tr>
   </table></div>
-  <p>Палитра содержит от 1 до 256 цветов; файл не больше 16 МиБ. <b>Import palette</b> копирует палитру в виде нормализованного JSON в папку <code>Settings/Palettes</code> и применяет её. <b>Save palette</b> создаёт новый файл (с параметрами Body/Outline); существующие файлы не перезаписываются. <img class="ico" src="assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> находит файлы, добавленные вручную. Импорт меняет цвета и выбирает первый; нарисованные пиксели остаются. Undo восстанавливает прежнюю палитру.</p>
+  <p>A palette contains 1 to 256 colors; the file is at most 16 MiB. <b>Import palette</b> copies the palette as normalized JSON to the <code>Settings/Palettes</code> folder and applies it. <b>Save palette</b> creates a new file (with Body/Outline parameters); existing files are never overwritten. <img class="ico" src="assets/icons/refresh.png" alt="Refresh palette list" width="26" height="26"><b>Refresh palette list</b> finds files added manually. Importing changes the swatches and selects the first one; painted pixels remain. Undo restores the previous palette.</p>
 
   <h2 id="palette-tools">Palette tools</h2>
-  <p>Меню <code>Filter &gt; Palette tools</code> открывает окно с вкладками:</p>
-  <figure class="dg"><svg viewBox="0 0 720 150" role="img" aria-label="Рампа цвета" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="130" rx="8" class="box" /><text x="30" y="36" class="t" text-anchor="start" font-size="13">Ramps: тень -> свет (Hue shift: холодные тени, тёплые света)</text><rect x="30" y="52" width="90" height="46" fill="#1b1f3b"/><rect x="130" y="52" width="90" height="46" fill="#3b3a6b"/><rect x="230" y="52" width="90" height="46" fill="#5b5aa0"/><rect x="330" y="52" width="90" height="46" fill="#8a7fd0"/><rect x="430" y="52" width="90" height="46" fill="#c2a6f0"/><rect x="530" y="52" width="90" height="46" fill="#f0d8ff"/><text x="30" y="124" class="m" text-anchor="start" font-size="12">Ramp steps, Shadow depth, Highlight lift, Hue shift - в Palette tools</text></svg><figcaption>Palette tools - Ramps: строит ряд оттенков от тени к свету.</figcaption></figure>
+  <p>The <code>Filter &gt; Palette tools</code> menu opens a window with tabs:</p>
+  <figure class="dg"><svg viewBox="0 0 720 150" role="img" aria-label="Color ramp" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="130" rx="8" class="box" /><text x="30" y="36" class="t" text-anchor="start" font-size="13">Ramps: shadow -> highlight (Hue shift: cool shadows, warm highlights)</text><rect x="30" y="52" width="90" height="46" fill="#1b1f3b"/><rect x="130" y="52" width="90" height="46" fill="#3b3a6b"/><rect x="230" y="52" width="90" height="46" fill="#5b5aa0"/><rect x="330" y="52" width="90" height="46" fill="#8a7fd0"/><rect x="430" y="52" width="90" height="46" fill="#c2a6f0"/><rect x="530" y="52" width="90" height="46" fill="#f0d8ff"/><text x="30" y="124" class="m" text-anchor="start" font-size="12">Ramp steps, Shadow depth, Highlight lift, Hue shift - in Palette tools</text></svg><figcaption>Palette tools - Ramps: builds a row of shades from shadow to highlight.</figcaption></figure>
   <ul>
-    <figure class="dg"><svg viewBox="0 0 720 150" role="img" aria-label="Рампа цвета" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="700" height="130" rx="8" class="box" /><text x="30" y="36" class="t" text-anchor="start" font-size="13">Ramps: тень -> свет (Hue shift: холодные тени, тёплые света)</text><rect x="30" y="52" width="90" height="46" fill="#1b1f3b"/><rect x="130" y="52" width="90" height="46" fill="#3b3a6b"/><rect x="230" y="52" width="90" height="46" fill="#5b5aa0"/><rect x="330" y="52" width="90" height="46" fill="#8a7fd0"/><rect x="430" y="52" width="90" height="46" fill="#c2a6f0"/><rect x="530" y="52" width="90" height="46" fill="#f0d8ff"/><text x="30" y="124" class="m" text-anchor="start" font-size="12">Ramp steps, Shadow depth, Highlight lift, Hue shift - в Palette tools</text></svg><figcaption>Palette tools - Ramps: строит ряд оттенков от тени к свету.</figcaption></figure>
-    <li><b>Ramps</b> - строит рампу оттенков от тени к свету по <i>Base color</i>: <i>Ramp steps</i>, <i>Shadow depth</i>, <i>Highlight lift</i>, <i>Hue shift (degrees)</i> и <i>Saturation shift</i>. Режим «Cool shadows, warm highlights» делает тени холоднее, света теплее. <i>Add ramp to pencil palette</i> добавляет цвета в палитру.</li>
-    <li><b>Hue shift</b> - смещение Hue (degrees), Saturation, Brightness. Область применения (<i>Apply to</i>): активные слой и кадр, активный слой во всех кадрах, активный кадр на всех слоях или вся анимация. Заблокированные слои пропускаются.</li>
-    <li><b>Replace colors</b> - замена Single color, Ramp to ramp или Palette to palette (цвета сопоставляются по позиции).</li>
-    <li><b>Indexed</b> - преобразование документа в индексированный режим (<i>Convert to indexed</i>, <i>Detect palette from artwork</i>): каждый пиксель привязан к слоту палитры, поэтому вся анимация меняет палитру одним действием.</li>
-    <li><b>Palette swap</b> - переключение палитры у индексированного документа (<i>Swap</i>).</li>
+    <li><b>Ramps</b> - builds a ramp of shades from shadow to highlight from a <i>Base color</i>: <i>Ramp steps</i>, <i>Shadow depth</i>, <i>Highlight lift</i>, <i>Hue shift (degrees)</i> and <i>Saturation shift</i>. The "Cool shadows, warm highlights" mode makes shadows cooler and highlights warmer. <i>Add ramp to pencil palette</i> adds the colors to the palette.</li>
+    <li><b>Hue shift</b> - shifts Hue (degrees), Saturation, Brightness. The scope (<i>Apply to</i>): the active layer and frame, the active layer in all frames, the active frame on all layers, or the whole animation. Locked layers are skipped.</li>
+    <li><b>Replace colors</b> - replacing a Single color, Ramp to ramp or Palette to palette (colors are matched by position).</li>
+    <li><b>Indexed</b> - converting the document to indexed mode (<i>Convert to indexed</i>, <i>Detect palette from artwork</i>): every pixel is bound to a palette slot, so the whole animation changes palette in one action.</li>
+    <li><b>Palette swap</b> - switching the palette of an indexed document (<i>Swap</i>).</li>
   </ul>
 
-  <h2>Замена цвета во всём документе</h2>
-  <p><code>Edit &gt; Replace color in document</code> заменяет выбранный цвет во всех слоях и кадрах («Replace in every layer and frame»).</p>
+  <h2>Replacing a color across the document</h2>
+  <p><code>Edit &gt; Replace color in document</code> replaces the chosen color in all layers and frames ("Replace in every layer and frame").</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

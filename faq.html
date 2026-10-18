@@ -1,69 +1,69 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Вопросы и ответы - SpriteForge</title>
+<title>FAQ - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="faq">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/sparkle.png" alt="" width="40" height="40">Вопросы и ответы</h1>
-  <p class="lead">Частые ситуации и их решения.</p>
+  <h1><img class="ico page-ico" src="assets/icons/sparkle.png" alt="" width="40" height="40">FAQ</h1>
+  <p class="lead">Common situations and their solutions.</p>
 
-  <h2>Рисование</h2>
-  <h3>Инструмент не рисует</h3>
-  <p>Проверьте: открыт ли документ, не скрыт и не заблокирован ли активный слой, нет ли активного выделения, которое не включает курсор. Если включён режим выбора точки (Physics animation, «POINT MODE»), холст не рисует - нажмите <kbd>Esc</kbd> или <i>Finish point placement</i>.</p>
-  <h3>Линия карандаша «ступенчатая»</h3>
-  <p>Включите <b>Pixel-perfect</b> в настройках карандаша (работает при кисти 1 px).</p>
-  <h3>Как взять цвет с холста</h3>
-  <p>Клавиша <kbd>I</kbd> или удержание <kbd>Ctrl</kbd>. Пипетка берёт и свойства Body/Outline.</p>
-  <h3>Как нарисовать бесшовную текстуру</h3>
-  <p>Включите <a href="mirror-tile.html">Tile Repeat</a>. Рисунок будет заворачиваться через границы.</p>
+  <h2>Drawing</h2>
+  <h3>The tool does not draw</h3>
+  <p>Check whether a document is open, whether the active layer is hidden or locked, and whether an active selection does not include the cursor. If point-selection mode is on (Physics animation, "POINT MODE") the canvas does not draw - press <kbd>Esc</kbd> or <i>Finish point placement</i>.</p>
+  <h3>The pencil line is "stair-stepped"</h3>
+  <p>Turn on <b>Pixel-perfect</b> in the pencil settings (it works with a 1 px brush).</p>
+  <h3>How to take a color from the canvas</h3>
+  <p>Press <kbd>I</kbd> or hold <kbd>Ctrl</kbd>. The picker also takes the Body/Outline properties.</p>
+  <h3>How to draw a seamless texture</h3>
+  <p>Turn on <a href="mirror-tile.html">Tile Repeat</a>. The drawing will wrap around the borders.</p>
 
-  <h2>Анимация</h2>
-  <h3>Не получается добавить кадр</h3>
-  <p>В документе не больше 120 кадров. Освободите слоты или проверьте бюджет памяти.</p>
-  <h3>Анимация не проигрывается</h3>
-  <p>Нажмите <kbd>Space</kbd> при фокусе на Timeline либо выберите полосу тега над слоями и нажмите Play. Убедитесь, что диапазон содержит как минимум два кадра.</p>
-  <h3>Как сделать разные скорости кадров</h3>
-  <p>Задайте <b>Frame duration (ms)</b> каждого кадра; 0 означает общий FPS. Длительности сохраняются в .sf, PNG-метаданных и GIF.</p>
+  <h2>Animation</h2>
+  <h3>I cannot add a frame</h3>
+  <p>A document holds at most 120 frames. Free up slots or check the memory budget.</p>
+  <h3>The animation does not play</h3>
+  <p>Press <kbd>Space</kbd> while the Timeline has focus, or select a tag bar above the layers and press Play. Make sure the range contains at least two frames.</p>
+  <h3>How to give frames different speeds</h3>
+  <p>Set the <b>Frame duration (ms)</b> of each frame; 0 means the common FPS. The durations are saved in .sf, in the PNG metadata and in the GIF.</p>
 
-  <h2>Генерация</h2>
-  <h3>Генератор выдаёт один и тот же результат</h3>
-  <p>Выключите фиксированный сид: включите <b>Random seed</b> или поменяйте <b>Seed</b>.</p>
-  <h3>Результат не помещается в холст</h3>
-  <p>Большие спрайты обрезаются по центру или вписываются (если вставляете как кадр). Увеличьте холст через <kbd>C</kbd> или <i>Resize canvas</i>.</p>
-  <h3>Генерация тайлов выдаёт предупреждение</h3>
-  <p>Для набора из 48 тайлов нужен квадратный холст.</p>
+  <h2>Generation</h2>
+  <h3>The generator gives the same result</h3>
+  <p>Turn off the fixed seed: turn on <b>Random seed</b> or change the <b>Seed</b>.</p>
+  <h3>The result does not fit the canvas</h3>
+  <p>Large sprites are cropped around the center or fitted (when inserting as a frame). Enlarge the canvas with <kbd>C</kbd> or <i>Resize canvas</i>.</p>
+  <h3>Tile generation shows a warning</h3>
+  <p>The 48-tile set needs a square canvas.</p>
 
-  <h2>Файлы</h2>
-  <h3>Я сохранил PNG, но проект не сохранён</h3>
-  <p>Так и должно быть: экспорт не заменяет сохранение. Нажмите <kbd>Ctrl</kbd>+<kbd>S</kbd> для .sf.</p>
-  <h3>Программа закрылась с ошибкой, несохранённая работа пропала?</h3>
-  <p>При следующем запуске выберите <b>Recover unfinished work</b>. Подробнее: <a href="recovery.html">Восстановление</a>.</p>
-  <h3>CSS-экспорт отказывается</h3>
-  <p>Лимит - один миллион видимых пикселей. Экспортируйте PNG.</p>
-  <h3>«Project memory budget exceeded»</h3>
-  <p>Оценочный бюджет 1 ГиБ исчерпан. Уменьшите размер холста, число слоёв или кадров, закройте лишние документы.</p>
+  <h2>Files</h2>
+  <h3>I saved a PNG but the project is not saved</h3>
+  <p>That is expected: exporting does not replace saving. Press <kbd>Ctrl</kbd>+<kbd>S</kbd> for the .sf.</p>
+  <h3>The program crashed - is my unsaved work gone?</h3>
+  <p>On the next launch choose <b>Recover unfinished work</b>. More: <a href="recovery.html">Recovery</a>.</p>
+  <h3>The CSS export refuses</h3>
+  <p>The limit is one million visible pixels. Export a PNG.</p>
+  <h3>"Project memory budget exceeded"</h3>
+  <p>The estimated 1 GiB budget is used up. Reduce the canvas size, the number of layers or frames, or close extra documents.</p>
 
-  <h2>Интерфейс</h2>
-  <h3>Интерфейс слишком мелкий или крупный</h3>
-  <p>Масштаб меняется клавишами <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd> подбирает его автоматически. Тот же параметр - <i>Interface scale</i> в Properties.</p>
-  <h3>F1 говорит «Documentation not found»</h3>
-  <p>Программа ищет папку <code>docs</code> рядом с собой (в редакторе - в корне проекта). Положите туда эту документацию.</p>
-  <h3>Куда делась обучающая игра?</h3>
-  <p>Её заменил короткий <a href="quick-tour.html">Quick tour</a> (<code>Help &gt; Quick tour</code>).</p>
-  <h3>Не нахожу Effects, Furniture, UI и Character в списке режимов</h3>
-  <p>Это надстройки над Drawing: откройте окно настроек нужного генератора и включите флажок «Apply ... to Drawing». См. <a href="generators.html">Генераторы</a>.</p>
-  <h3>Где Auto noise?</h3>
-  <p>Он добавляется из окна <i>Auto generator</i> и не выбирается в списке режимов заранее.</p>
-  <h3>Куда делся «Generator mirror»?</h3>
-  <p>Теперь отражение генерации включается значком <i>During generation</i> в настройках Mirror и использует те же оси, что и рисование.</p>
-  <h3>Я потерял панель</h3>
-  <p><code>View &gt;</code> название окна, либо <code>View &gt; Reset panel layout</code>.</p>
-  <h3>Как сменить язык или тему</h3>
-  <p><code>Edit &gt; Properties</code>: вкладки Language и Appearance. Подробнее: <a href="settings.html">Настройки</a>.</p>
+  <h2>Interface</h2>
+  <h3>The interface is too small or too large</h3>
+  <p>The scale is changed with <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd> picks it automatically. The same parameter is <i>Interface scale</i> in Properties.</p>
+  <h3>F1 says "Documentation not found"</h3>
+  <p>The program looks for a <code>docs</code> folder next to itself (in the editor - in the project root). Put this documentation there.</p>
+  <h3>Where did the learning game go?</h3>
+  <p>It was replaced by a short <a href="quick-tour.html">Quick tour</a> (<code>Help &gt; Quick tour</code>).</p>
+  <h3>I cannot find Effects, Furniture, UI and Character in the mode list</h3>
+  <p>They are add-ons over Drawing: open the settings window of the needed generator and turn on the "Apply ... to Drawing" checkbox. See <a href="generators.html">Generators</a>.</p>
+  <h3>Where is Auto noise?</h3>
+  <p>It is added from the <i>Auto generator</i> window and is not preselected in the mode list.</p>
+  <h3>What happened to "Generator mirror"?</h3>
+  <p>Mirroring during generation is now turned on with the <i>During generation</i> icon in the Mirror settings and uses the same axes as drawing.</p>
+  <h3>I lost a panel</h3>
+  <p><code>View &gt;</code> the window name, or <code>View &gt; Reset panel layout</code>.</p>
+  <h3>How to change the language or theme</h3>
+  <p><code>Edit &gt; Properties</code>: the Language and Appearance tabs. More: <a href="settings.html">Settings</a>.</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

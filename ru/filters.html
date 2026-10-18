@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Фильтры и правка цвета - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="filters">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/gradient.png" alt="" width="40" height="40">Фильтры и правка цвета</h1>
+  <p class="lead">Меню <code>Filter</code> применяет операции к активному слою и кадру, если не указано иное. Все фильтры можно отменить (Undo).</p>
+
+  <h2>Outline filter</h2>
+  <p>Добавляет контур вокруг нарисованной формы.</p>
+  <ul>
+    <li><b>Outline thickness</b> - толщина контура.</li>
+    <li><b>Include diagonal pixels</b> - учитывать диагональных соседей.</li>
+    <li><b>Apply outline</b> применяет фильтр. Контур обрезается краями холста («Outline is clipped at canvas edges»).</li>
+  </ul>
+
+  <h2>Color limit</h2>
+  <p>Ограничивает число различных цветов активного слоя и кадра, сохраняя прозрачность. Параметр <b>Maximum colors</b> задаёт предел; если изображение уже использует это число цветов или меньше, программа сообщает об этом. После применения показывается итог («Reduced colors from N to M»).</p>
+
+  <h2>Color indexing</h2>
+  <p>Сопоставляет активный слой и кадр ближайшим цветам выбранной палитры (<b>Palette for indexing</b>). Сначала добавьте цвета в палитру. Результат: «Indexed N pixels to M colors».</p>
+
+  <h2>Inversion</h2>
+  <p>Инвертирует цвета. Можно выбрать, какие каналы инвертировать (Red / Green / Blue channel). Кнопка <b>Apply inversion</b>; после применения: «Color inversion applied».</p>
+
+  <h2>Saturation и Gamma</h2>
+  <p>Диалоги <b>Saturation settings</b> и <b>Gamma settings</b> меняют насыщенность и гамму активного слоя и кадра. Применённое действие отмечается в строке состояния.</p>
+
+  <h2>Palette tools</h2>
+  <p>Ramps, Hue shift, Replace colors, Indexed и Palette swap описаны на странице <a href="palettes.html#palette-tools">Палитры</a>.</p>
+
+  <h2>AI image to pixel art</h2>
+  <p>Преобразование обычного изображения в пиксель-арт: <a href="ai-pixel.html">отдельная страница</a>.</p>
+
+  <h2>Замена цвета</h2>
+  <p><code>Edit &gt; Replace color in document</code> - замена выбранного цвета во всех слоях и кадрах сразу.</p>
+
+  <div class="note"><p>Фильтры работают с пикселями активного слоя. Чтобы применить эффект ко всему кадру, предварительно сведите нужные слои или используйте Palette tools с областью «Whole animation».</p></div>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

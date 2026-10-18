@@ -1,61 +1,61 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Выделение и преобразование - SpriteForge</title>
+<title>Selection and transform - SpriteForge</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="selection">
 <main>
-  <h1><img class="ico page-ico" src="assets/icons/marquee-rect.png" alt="" width="40" height="40">Выделение и преобразование</h1>
-  <p class="lead">Пять инструментов выделения, общие режимы комбинирования и рамка преобразования.</p>
+  <h1><img class="ico page-ico" src="assets/icons/marquee-rect.png" alt="" width="40" height="40">Selection and transform</h1>
+  <p class="lead">Five selection tools, shared combination modes and the transform frame.</p>
 
-  <figure class="dg"><svg viewBox="0 0 720 290" role="img" aria-label="Рамка преобразования" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="270" rx="8" class="box" /><rect x="110" y="70" width="200" height="150" fill="none" class="acs" stroke-dasharray="6 4"/><rect x="182.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="210.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="224.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="110.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="110.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="124.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="124.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="124.0" width="14" height="14" fill="#f4efe0"/><rect x="210.0" y="124.0" width="14" height="14" fill="#f4efe0"/><rect x="224.0" y="124.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="124.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="138.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="138.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="138.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="138.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="152.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="152.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="238.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="154.0" y="166.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="182.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="252.0" y="166.0" width="14" height="14" fill="#2f3b52"/><rect x="154.0" y="180.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="252.0" y="180.0" width="14" height="14" fill="#2f3b52"/><rect x="204.0" y="64" width="12" height="12" rx="2" class="ac"/><rect x="204.0" y="214" width="12" height="12" rx="2" class="ac"/><rect x="104" y="139.0" width="12" height="12" rx="2" class="ac"/><rect x="304" y="139.0" width="12" height="12" rx="2" class="ac"/><rect x="104" y="64" width="12" height="12" rx="2" class="pu"/><rect x="304" y="64" width="12" height="12" rx="2" class="pu"/><rect x="104" y="214" width="12" height="12" rx="2" class="pu"/><rect x="304" y="214" width="12" height="12" rx="2" class="pu"/><line x1="210.0" y1="48" x2="210.0" y2="64" class="ln" /><circle cx="210.0" cy="40" r="9" class="gd"/><path d="M340 135.0 l10 10 l-10 10 l-10 -10z" fill="#4a8fe0" stroke="#fff" stroke-width="1"/><line x1="316" y1="145.0" x2="330" y2="145.0" class="ln" /><path d="M210.0 242 l10 10 l-10 10 l-10 -10z" fill="#4aa36b" stroke="#fff" stroke-width="1"/><line x1="210.0" y1="226" x2="210.0" y2="242" class="ln" /><rect x="402" y="44" width="12" height="12" rx="2" class="ac"/><text x="430" y="55" class="t" text-anchor="start" font-size="12">Квадраты на сторонах - размер</text><circle cx="408" cy="86" r="8" class="gd"/><text x="430" y="91" class="t" text-anchor="start" font-size="12">Круг - поворот (Ctrl: шаг 45 градусов)</text><path d="M408 112 l10 10 l-10 10 l-10 -10z" fill="#4a8fe0" stroke="#fff" stroke-width="1"/><text x="430" y="127" class="t" text-anchor="start" font-size="12">Синий ромб - наклон по одной оси</text><path d="M408 148 l10 10 l-10 10 l-10 -10z" fill="#4aa36b" stroke="#fff" stroke-width="1"/><text x="430" y="163" class="t" text-anchor="start" font-size="12">Зелёный ромб - наклон по другой оси</text><rect x="402" y="188" width="12" height="12" rx="2" class="pu"/><text x="430" y="199" class="t" text-anchor="start" font-size="12">Фиолетовые углы - независимое искажение</text><rect x="400" y="224" width="16" height="12" rx="2" fill="none" class="acs" stroke-dasharray="3 2"/><text x="430" y="235" class="t" text-anchor="start" font-size="12">Внутри рамки - перемещение; Esc отменяет</text></svg><figcaption>Рамка преобразования выделения и назначение её маркеров.</figcaption></figure>
+  <figure class="dg"><svg viewBox="0 0 720 290" role="img" aria-label="Transform frame" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="270" rx="8" class="box" /><rect x="110" y="70" width="200" height="150" fill="none" class="acs" stroke-dasharray="6 4"/><rect x="182.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="210.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="224.0" y="96.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="110.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="110.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="110.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="124.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="124.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="124.0" width="14" height="14" fill="#f4efe0"/><rect x="210.0" y="124.0" width="14" height="14" fill="#f4efe0"/><rect x="224.0" y="124.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="124.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="138.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="138.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="138.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="138.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="182.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="196.0" y="152.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="152.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="238.0" y="152.0" width="14" height="14" fill="#2f3b52"/><rect x="154.0" y="166.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="182.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="224.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="166.0" width="14" height="14" fill="#5a7fa8"/><rect x="252.0" y="166.0" width="14" height="14" fill="#2f3b52"/><rect x="154.0" y="180.0" width="14" height="14" fill="#2f3b52"/><rect x="168.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="196.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="210.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="238.0" y="180.0" width="14" height="14" fill="#5a7fa8"/><rect x="252.0" y="180.0" width="14" height="14" fill="#2f3b52"/><rect x="204.0" y="64" width="12" height="12" rx="2" class="ac"/><rect x="204.0" y="214" width="12" height="12" rx="2" class="ac"/><rect x="104" y="139.0" width="12" height="12" rx="2" class="ac"/><rect x="304" y="139.0" width="12" height="12" rx="2" class="ac"/><rect x="104" y="64" width="12" height="12" rx="2" class="pu"/><rect x="304" y="64" width="12" height="12" rx="2" class="pu"/><rect x="104" y="214" width="12" height="12" rx="2" class="pu"/><rect x="304" y="214" width="12" height="12" rx="2" class="pu"/><line x1="210.0" y1="48" x2="210.0" y2="64" class="ln" /><circle cx="210.0" cy="40" r="9" class="gd"/><path d="M340 135.0 l10 10 l-10 10 l-10 -10z" fill="#4a8fe0" stroke="#fff" stroke-width="1"/><line x1="316" y1="145.0" x2="330" y2="145.0" class="ln" /><path d="M210.0 242 l10 10 l-10 10 l-10 -10z" fill="#4aa36b" stroke="#fff" stroke-width="1"/><line x1="210.0" y1="226" x2="210.0" y2="242" class="ln" /><rect x="402" y="44" width="12" height="12" rx="2" class="ac"/><text x="430" y="55" class="t" text-anchor="start" font-size="12">Side squares - size</text><circle cx="408" cy="86" r="8" class="gd"/><text x="430" y="91" class="t" text-anchor="start" font-size="12">Circle - rotate (Ctrl: 45 degree steps)</text><path d="M408 112 l10 10 l-10 10 l-10 -10z" fill="#4a8fe0" stroke="#fff" stroke-width="1"/><text x="430" y="127" class="t" text-anchor="start" font-size="12">Blue diamond - skew on one axis</text><path d="M408 148 l10 10 l-10 10 l-10 -10z" fill="#4aa36b" stroke="#fff" stroke-width="1"/><text x="430" y="163" class="t" text-anchor="start" font-size="12">Green diamond - skew on the other axis</text><rect x="402" y="188" width="12" height="12" rx="2" class="pu"/><text x="430" y="199" class="t" text-anchor="start" font-size="12">Purple corners - free distortion</text><rect x="400" y="224" width="16" height="12" rx="2" fill="none" class="acs" stroke-dasharray="3 2"/><text x="430" y="235" class="t" text-anchor="start" font-size="12">Inside the frame - move; Esc cancels</text></svg><figcaption>The selection transform frame and what its handles do.</figcaption></figure>
 
-  <h2>Инструменты выделения</h2>
-  <p>Rectangular marquee (<kbd>M</kbd>), Elliptical marquee (<kbd>Shift</kbd>+<kbd>M</kbd>), Lasso (<kbd>Q</kbd>), Polygonal lasso (<kbd>Shift</kbd>+<kbd>Q</kbd>) и Magic wand (<kbd>W</kbd>). Описание каждого - на странице <a href="tools.html#select-tools">Инструменты</a>.</p>
+  <h2>Selection tools</h2>
+  <p>Rectangular marquee (<kbd>M</kbd>), Elliptical marquee (<kbd>Shift</kbd>+<kbd>M</kbd>), Lasso (<kbd>Q</kbd>), Polygonal lasso (<kbd>Shift</kbd>+<kbd>Q</kbd>) and Magic wand (<kbd>W</kbd>). Each one is described on the <a href="tools.html#select-tools">Tools</a> page.</p>
 
-  <h2>Режимы</h2>
+  <h2>Modes</h2>
   <div class="table-wrap"><table>
-    <tr><th>Режим</th><th>Меню</th><th>Клавиатура</th></tr>
-    <tr><td>Replace</td><td><code>Select &gt; Mode &gt; Replace</code></td><td>по умолчанию</td></tr>
+    <tr><th>Mode</th><th>Menu</th><th>Keyboard</th></tr>
+    <tr><td>Replace</td><td><code>Select &gt; Mode &gt; Replace</code></td><td>default</td></tr>
     <tr><td>Add</td><td><code>Select &gt; Mode &gt; Add</code></td><td><kbd>Shift</kbd></td></tr>
-    <tr><td>Subtract</td><td><code>Select &gt; Mode &gt; Subtract</code></td><td><kbd>Ctrl</kbd> или <kbd>Alt</kbd></td></tr>
+    <tr><td>Subtract</td><td><code>Select &gt; Mode &gt; Subtract</code></td><td><kbd>Ctrl</kbd> or <kbd>Alt</kbd></td></tr>
     <tr><td>Intersect</td><td><code>Select &gt; Mode &gt; Intersect</code></td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd></td></tr>
   </table></div>
 
-  <h2>Меню Select</h2>
+  <h2>The Select menu</h2>
   <ul>
-    <li><b>Select all</b> (<kbd>Ctrl</kbd>+<kbd>A</kbd>) - выделить весь холст.</li>
-    <li><b>Select opaque pixels</b> - выделить все непрозрачные пиксели активного слоя и кадра.</li>
-    <li><b>Invert selection</b> - инвертировать.</li>
+    <li><b>Select all</b> (<kbd>Ctrl</kbd>+<kbd>A</kbd>) - select the whole canvas.</li>
+    <li><b>Select opaque pixels</b> - select all opaque pixels of the active layer and frame.</li>
+    <li><b>Invert selection</b> - invert it.</li>
     <li><img class="ico" src="assets/icons/deselect.png" alt="Deselect" width="26" height="26"><b>Deselect</b> (<kbd>Ctrl</kbd>+<kbd>D</kbd>).</li>
-    <li><b>Expand</b> / <b>Shrink</b> - расширить или сузить выделение на значение <b>Amount (px)</b> (по умолчанию 1).</li>
-    <li><img class="ico" src="assets/icons/wand.png" alt="Magic Wand" width="26" height="26"><b>Magic Wand</b> - флажок Contiguous и ползунок Tolerance.</li>
+    <li><b>Expand</b> / <b>Shrink</b> - grow or shrink the selection by the <b>Amount (px)</b> value (1 by default).</li>
+    <li><img class="ico" src="assets/icons/wand.png" alt="Magic Wand" width="26" height="26"><b>Magic Wand</b> - the Contiguous checkbox and the Tolerance slider.</li>
   </ul>
-  <div class="note"><p>Если выбран флажок <b>Select all layers</b>, преобразование и удаление выделенных пикселей применяется ко всем видимым незаблокированным слоям текущего кадра. В противном случае - только к активному слою.</p></div>
+  <div class="note"><p>If the <b>Select all layers</b> checkbox is on, transforming and deleting the selected pixels applies to all visible unlocked layers of the current frame. Otherwise only the active layer is affected.</p></div>
 
-  <h2>Что можно делать с выделением</h2>
+  <h2>What you can do with a selection</h2>
   <ul>
-    <li><b>Переместить</b> - перетащите внутри выделения, либо используйте инструмент Move (<kbd>V</kbd>). <kbd>Esc</kbd> отменяет перетаскивание.</li>
-    <li><b>Удалить пиксели</b> - <kbd>Delete</kbd>.</li>
-    <li><b>Копировать / вставить</b> - <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> (<code>Edit &gt; Copy selection</code> / <code>Paste selection</code>). Если системный буфер изображений недоступен, копия остаётся внутри SpriteForge.</li>
-    <li><b>Повернуть на 90 градусов</b>, <b>отразить по горизонтали / вертикали</b> - команды меню <code>Edit</code>.</li>
-    <li><b>Ограничить рисование</b> - любые инструменты рисования работают только внутри выделения. Индикатор «Selection active» и кнопка Deselect pixels показываются в Tool settings.</li>
-    <li><b>Стать штампом</b> - Pencil &rarr; <i>Copy selection to pencil</i> (область не больше 32 x 32).</li>
+    <li><b>Move</b> - drag inside the selection, or use the Move tool (<kbd>V</kbd>). <kbd>Esc</kbd> cancels the drag.</li>
+    <li><b>Delete pixels</b> - <kbd>Delete</kbd>.</li>
+    <li><b>Copy / paste</b> - <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> (<code>Edit &gt; Copy selection</code> / <code>Paste selection</code>). If the system image clipboard is unavailable, the copy stays inside SpriteForge.</li>
+    <li><b>Rotate 90 degrees</b>, <b>flip horizontally / vertically</b> - commands of the <code>Edit</code> menu.</li>
+    <li><b>Limit drawing</b> - any drawing tool works only inside the selection. The "Selection active" indicator and the Deselect pixels button are shown in Tool settings.</li>
+    <li><b>Become a stamp</b> - Pencil &rarr; <i>Copy selection to pencil</i> (an area no larger than 32 x 32).</li>
   </ul>
 
-  <h2>Рамка преобразования</h2>
-  <p>При выборе выделения вокруг него появляется рамка с маркерами:</p>
+  <h2>The transform frame</h2>
+  <p>When a selection is chosen, a frame with handles appears around it:</p>
   <ul>
-    <li><b>Квадраты</b> - изменение размера.</li>
-    <li><b>Круг</b> - поворот. <kbd>Ctrl</kbd> привязывает направление и угол к шагу 45 градусов.</li>
-    <li><b>Синий и зелёный ромбы</b> - симметричный наклон (skew) вокруг центра по осям повёрнутого изображения.</li>
-    <li><b>Фиолетовые углы</b> - независимое искажение (distort): каждый угол двигается отдельно. <kbd>Esc</kbd> восстанавливает предыдущую форму.</li>
-    <li><b>Внутри рамки</b> - перемещение.</li>
+    <li><b>Squares</b> - resize.</li>
+    <li><b>Circle</b> - rotate. <kbd>Ctrl</kbd> snaps the direction and angle to 45 degree steps.</li>
+    <li><b>Blue and green diamonds</b> - symmetric skew around the center along the axes of the rotated image.</li>
+    <li><b>Purple corners</b> - independent distortion (distort): each corner moves separately. <kbd>Esc</kbd> restores the previous shape.</li>
+    <li><b>Inside the frame</b> - move.</li>
   </ul>
-  <p>Во время перетаскивания подсказка показывает величину наклона в пикселях. Результат растеризуется на сетку пикселей.</p>
+  <p>While dragging, a tooltip shows the amount of skew in pixels. The result is rasterized to the pixel grid.</p>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

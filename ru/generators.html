@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Обзор генераторов - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="generators">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/wand.png" alt="" width="40" height="40">Обзор генераторов</h1>
+  <p class="lead">Генераторы создают наборы спрайтов: вариации вашего рисунка или полностью новые объекты. Результат - обычные пиксели, которые можно доработать.</p>
+  <figure class="dg"><svg viewBox="0 0 800 150" role="img" aria-label="Рабочий цикл" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="20" y="40" width="100" height="78" rx="8" class="box" /><text x="70" y="72" class="t" text-anchor="middle" font-size="12">1. Нарисуйте</text><text x="70" y="98" class="m" text-anchor="middle" font-size="10">тело, контур, шанс</text><line x1="124" y1="79" x2="146" y2="79" class="ln" marker-end="url(#ah)"/><rect x="150" y="40" width="100" height="78" rx="8" class="box" /><text x="200" y="72" class="t" text-anchor="middle" font-size="12">2. Настройте</text><text x="200" y="98" class="m" text-anchor="middle" font-size="10">генератор и сид</text><line x1="254" y1="79" x2="276" y2="79" class="ln" marker-end="url(#ah)"/><rect x="280" y="40" width="100" height="78" rx="8" class="box" /><text x="330" y="72" class="t" text-anchor="middle" font-size="12">3. Generate</text><text x="330" y="98" class="m" text-anchor="middle" font-size="10">Generated sprites</text><line x1="384" y1="79" x2="406" y2="79" class="ln" marker-end="url(#ah)"/><rect x="410" y="40" width="100" height="78" rx="8" class="box" /><text x="460" y="72" class="t" text-anchor="middle" font-size="12">4. Отберите</text><text x="460" y="98" class="m" text-anchor="middle" font-size="10">в библиотеку</text><line x1="514" y1="79" x2="536" y2="79" class="ln" marker-end="url(#ah)"/><rect x="540" y="40" width="100" height="78" rx="8" class="box" /><text x="590" y="72" class="t" text-anchor="middle" font-size="12">5. Разместите</text><text x="590" y="98" class="m" text-anchor="middle" font-size="10">слой или кадр</text><line x1="644" y1="79" x2="666" y2="79" class="ln" marker-end="url(#ah)"/><rect x="670" y="40" width="100" height="78" rx="8" class="box" /><text x="720" y="72" class="t" text-anchor="middle" font-size="12">6. Экспорт</text><text x="720" y="98" class="m" text-anchor="middle" font-size="10">PNG, GIF, atlas</text></svg><figcaption>Рабочий цикл: от рисунка до экспорта.</figcaption></figure>
+
+  <h2>Режимы и надстройки</h2>
+  <p>В списке режимов панели <b>Generation toolbar</b> («Choose what to create») доступны <b>Drawing</b> и <b>Tiles</b>. Остальные генераторы - <b>надстройки (add-on) над Drawing</b>: каждый включается флажком в собственном окне настроек, и тогда кнопка Generate запускает именно его вместо обычных вариаций рисунка.</p>
+  <figure class="dg"><svg viewBox="0 0 720 250" role="img" aria-label="Режимы генерации" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="230" rx="8" class="box" /><rect x="30" y="80" width="140" height="50" rx="8" class="bg" /><text x="100" y="110" class="t" text-anchor="middle" font-size="15">Drawing</text><rect x="300" y="22" width="170" height="42" rx="8" class="bg" /><text x="385" y="49" class="t" text-anchor="middle" font-size="14">Effects</text><line x1="170" y1="105" x2="300" y2="43" class="ln" marker-end="url(#ah)"/><rect x="300" y="74" width="170" height="42" rx="8" class="bg" /><text x="385" y="101" class="t" text-anchor="middle" font-size="14">Furniture</text><line x1="170" y1="105" x2="300" y2="95" class="ln" marker-end="url(#ah)"/><rect x="300" y="126" width="170" height="42" rx="8" class="bg" /><text x="385" y="153" class="t" text-anchor="middle" font-size="14">UI</text><line x1="170" y1="105" x2="300" y2="147" class="ln" marker-end="url(#ah)"/><rect x="300" y="178" width="170" height="42" rx="8" class="bg" /><text x="385" y="205" class="t" text-anchor="middle" font-size="14">Character</text><line x1="170" y1="105" x2="300" y2="199" class="ln" marker-end="url(#ah)"/><text x="500" y="70" class="m" text-anchor="start" font-size="12">флажок «Apply ... to Drawing»</text><text x="500" y="94" class="m" text-anchor="start" font-size="12">в окне настроек генератора</text><text x="500" y="118" class="m" text-anchor="start" font-size="12">включает его вместо обычных</text><text x="500" y="142" class="m" text-anchor="start" font-size="12">вариаций рисунка</text><text x="30" y="190" class="m" text-anchor="start" font-size="12">Tiles выбирается отдельным режимом;</text><text x="30" y="212" class="m" text-anchor="start" font-size="12">Auto noise добавляется из окна Auto generator.</text></svg><figcaption>Effects, Furniture, UI и Character включаются как надстройки над Drawing.</figcaption></figure>
+  <div class="table-wrap"><table>
+    <tr><th>Режим / надстройка</th><th>Как включить</th><th>Что создаёт</th><th>Страница</th></tr>
+    <tr><td>Drawing</td><td>режим по умолчанию</td><td>Вариации вашего рисунка: тело, контур, цвета и их вероятности из палитры.</td><td><a href="palettes.html">Палитры</a></td></tr>
+    <tr><td>Auto noise</td><td>добавляется из окна <i>Auto generator</i></td><td>Процедурные формы из шума, наложенные на рисунок или самостоятельные.</td><td><a href="auto-noise.html">Auto noise</a></td></tr>
+    <tr><td>Tiles</td><td>выбрать в списке режимов</td><td>Набор из 48 тайлов (карта 8 x 6).</td><td><a href="tiles-ui.html">Тайлы и UI</a></td></tr>
+    <tr><td>Effects</td><td>флажок <i>Apply effects to Drawing</i></td><td>Эффекты и материалы по пакетам (огонь, магия, металл, дерево и др.).</td><td><a href="furniture-effects.html">Мебель и эффекты</a></td></tr>
+    <tr><td>Furniture</td><td>флажок <i>Apply furniture to Drawing</i></td><td>Кровати, стулья, столы, диваны, плиты, шкафы, двери, ящики, полки.</td><td><a href="furniture-effects.html">Мебель и эффекты</a></td></tr>
+    <tr><td>UI</td><td>флажок <i>Apply UI to Drawing</i></td><td>Компоненты интерфейса в четырёх состояниях.</td><td><a href="tiles-ui.html">Тайлы и UI</a></td></tr>
+    <tr><td>Character</td><td>флажок <i>Apply character to Drawing</i></td><td>Люди, монстры, животные, оружие и анимации.</td><td><a href="character.html">Персонажи</a></td></tr>
+  </table></div>
+  <p>Окна настроек доступны из меню панели генерации: Drawing (Border settings, Noise settings, Auto generator, Tile Repeat settings), Effects, Furniture, UI и Character. При смене режима окно настроек открывается автоматически. Кнопка «Settings...» рядом со списком открывает окно текущего генератора.</p>
+
+  <h2>Панель Generation toolbar</h2>
+  <ul>
+    <li><b>Список режимов</b> и <b>количество</b>: «sprites» (число спрайтов, 1-N; предел зависит от размеров), «variants» (число вариантов анимации) или «states» (для UI).</li>
+    <li><img class="ico" src="../assets/icons/wand.png" alt="Generate" width="26" height="26"><b>Generate</b> - кнопка с волшебной палочкой. Для Effects, Furniture и UI рядом показан также выбор пресета.</li>
+    <li><b>Generate all frames per variant</b> - если в документе больше одного кадра, каждый вариант проходит по кадрам документа с его порядком и таймингом.</li>
+  </ul>
+
+  <h2>Результаты</h2>
+  <p>Результат появляется в окне <b>Generated sprites</b> и в Preview. Кликните по спрайту - под ним появятся кнопки действий; имя спрайта видно в подсказке.</p>
+  <ul>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add to layer" width="26" height="26"><b>Add to layer</b> - добавить спрайт на новый слой текущего кадра (по центру; больший спрайт обрезается).</li>
+    <li><img class="ico" src="../assets/icons/copy-frame.png" alt="Insert as new frame" width="26" height="26"><b>Insert as new frame</b> - вставить как новый кадр активного слоя; полный спрайт вписывается в холст.</li>
+    <li><img class="ico" src="../assets/icons/library-save.png" alt="Keep in library" width="26" height="26"><b>Keep in library</b> (<i>Keep for later</i>) - сохранить в <a href="library.html">библиотеку</a> вместе с настройками.</li>
+    <li><img class="ico" src="../assets/icons/variations.png" alt="Create variations" width="26" height="26"><b>Create variations</b> - родственные варианты. Стрелка рядом открывает <i>Variation options</i>: <i>Preserve shape</i>, <i>Preserve palette</i>, текущий <i>Seed #N</i> и кнопку <i>Repeat with same seed</i>.</li>
+    <li><b>Save generated sprite / Save sprite as PNG</b>, <b>Save animation as GIF</b>.</li>
+    <li>Для анимаций: добавить текущий кадр на новый слой, вставить все кадры анимации на активный слой, показать вариант (<code>Variant N · frame K/M</code>).</li>
+  </ul>
+
+  <h2>Сид и вариации</h2>
+  <ul>
+    <li><b>Random seed</b> / <b>Seed</b> - воспроизводимость: тот же сид и те же настройки дают тот же результат.</li>
+    <li><img class="ico" src="../assets/icons/add-layer.png" alt="Add variation" width="26" height="26"><b>Add variation</b> / <img class="ico" src="../assets/icons/delete.png" alt="Remove selected variation" width="26" height="26"><b>Remove selected variation</b> - несколько независимых вариаций настроек (например, разные профили шума).</li>
+  </ul>
+
+  <h2>Пресеты (Generation presets)</h2>
+  <p>Окно <b>Generation presets</b> (меню <code>Edit</code>) сохраняет текущие настройки генерации под именем и применяет их позже: <i>Preset name</i>, <i>Save preset</i>, <i>Generation preset</i>. Недопустимое имя блокируется («Invalid preset name»).</p>
+
+  <h2>Предпросмотр</h2>
+  <p>Окно Preview показывает результат генерации или холст («Drawing canvas»). Кнопка <b>New example</b> появляется при наведении курсора в правом нижнем углу окна и показывает другой пример. Для генераторов с полными наборами размер задаётся автоматически («This generator creates a complete set; its size is automatic»).</p>
+
+  <div class="note"><p>Генераторы используют координаты «сверху вниз» (строка 0 - верх). Это важно для модов и импорта: см. <a href="mods.html">Моды</a> и <a href="import-files.html">Импорт</a>.</p></div>
+
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

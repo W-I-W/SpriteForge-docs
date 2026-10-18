@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Моды - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="mods">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/add-layer.png" alt="" width="40" height="40">Моды</h1>
+  <p class="lead">Мод - это .NET-библиотека, которая добавляет окна и вставляет свой интерфейс в существующие панели SpriteForge через ImGui.NET.</p>
+
+  <div class="warn"><p>Моды выполняются внутри процесса программы и имеют полный доступ к документу и системе. Устанавливайте только доверенные DLL.</p></div>
+
+  <h2>Установка</h2>
+  <p>При запуске программа загружает все верхнеуровневые <code>*.dll</code> из папки:</p>
+  <pre><code>%USERPROFILE%\AppData\LocalLow\BowPixel\Sprite Forge\Settings\Mods</code></pre>
+  <p>Папка создаётся автоматически. Скопируйте туда DLL и перезапустите программу. Примеры лежат в репозитории: <code>Assets/InternalAssets/Mods/ExampleEmptyWindow~</code>, <code>AIModelFolders~</code>, <code>SentisImageGenerator~</code> (у каждого есть <code>mod.json</code> и скрипт <code>Install-Mod.ps1</code>).</p>
+
+  <h2>Интерфейс IMod</h2>
+  <pre><code>public interface IMod
+{
+    void OnLoad();
+    void OnGui();
+    void OnUnload();
+}</code></pre>
+  <p><code>OnGui</code> вызывается в цикле раскладки UImGui, поэтому внутри можно вызывать ImGui.NET напрямую.</p>
+
+  <h2>SpriteForgeModApi</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Возможность</th><th>Описание</th></tr>
+    <tr><td><code>CurrentDocument</code>, <code>Documents</code></td><td>Метаданные и живой экземпляр <code>Bow.Document</code>; список открытых документов.</td></tr>
+    <tr><td><code>CreateDocument</code>, <code>OpenDocument</code>, <code>SaveDocument</code>, <code>SaveDocumentAs</code>, <code>Generate</code></td><td>Вызов штатных рабочих процессов программы.</td></tr>
+    <tr><td><code>GetService&lt;T&gt;()</code></td><td>Доступ к сервисам: <code>Bow.Document</code>, <code>Bow.SpriteBuilder</code>, <code>Bow.Toolbar</code>, <code>Bow.FileSettings</code>, <code>Bow.Export.Export</code>, <code>Layers</code>, <code>NewFile</code>, <code>OpenFile</code>, <code>SaveFile</code>, <code>DocumnetSettings</code>, <code>PaletteGeneration</code>. До инициализации интерфейса объекты Unity могут быть <code>null</code>.</td></tr>
+    <tr><td><code>RegisterWindow(new ModGuiWindow { Id, Title, Draw })</code> / <code>UnregisterWindow(id)</code></td><td>Именованное окно мода.</td></tr>
+    <tr><td><code>RegisterGui(Action)</code></td><td>Обратный вызов, выполняемый в каждом кадре.</td></tr>
+    <tr><td><code>Windows</code></td><td>Список <code>ModWindowInfo</code> (<code>Id</code>, <code>Title</code>, <code>IsOpen</code>, <code>IsBuiltIn</code>) всех встроенных и модовых окон.</td></tr>
+    <tr><td><code>SetWindowVisible</code> / <code>GetWindowVisible</code></td><td>Управление видимостью встроенных панелей по идентификатору.</td></tr>
+    <tr><td><code>RegisterWindowContent(windowId, callback)</code> / <code>UnregisterWindowContent</code></td><td>Вставка своего интерфейса внутрь встроенной панели.</td></tr>
+  </table></div>
+
+  <h3>Идентификаторы встроенных окон</h3>
+  <p><code>canvas</code>, <code>preview</code>, <code>tools</code>, <code>timeline</code>, <code>palettes</code>, <code>lighting</code>, <code>generated-sprites</code>, <code>result-library</code>, <code>history-performance</code>, <code>generation-toolbar</code>, <code>grid</code>, <code>border</code>, <code>noise</code>, <code>auto-generator</code>, <code>canvas-generator</code>, <code>effects</code>, <code>furniture</code>, <code>ui-generation</code>, <code>character-generation</code>, <code>mirror</code>, <code>user-settings</code>, <code>export</code>, <code>new-document</code>, <code>replace-color</code>, <code>generation-presets</code>, <code>expand-canvas</code>.</p>
+
+  <h2>Пример: контент внутри Preview</h2>
+  <pre><code>public void OnLoad() =&gt; SpriteForgeModApi.RegisterWindowContent("preview", DrawResultChoices);
+
+private void DrawResultChoices()
+{
+    ImGui.Separator();
+    ImGui.Text("My mod results");
+    if (ImGui.Button("Use selected result"))
+    {
+        // Apply the selected result to the active document here.
+    }
+}
+
+public void OnUnload() =&gt; SpriteForgeModApi.UnregisterWindowContent("preview", DrawResultChoices);</code></pre>
+
+  <h2>Сборка примера</h2>
+  <p>Пример ссылается на сгенерированный <code>Assembly-CSharp.dll</code>, ImGui.NET и UnityEngine.CoreModule из Unity-проекта. Сборка:</p>
+  <pre><code>dotnet build InternalAssets\Mods\ExampleEmptyWindow~\Build\ModApi.csproj
+dotnet build InternalAssets\Mods\ExampleEmptyWindow~\Build\EmptyWindowMod.csproj</code></pre>
+
+  <h2>Советы</h2>
+  <ul>
+    <li>Меняя состояние документа, предпочитайте методы рабочих процессов приложения - так интерфейс и отслеживание сохранений остаются согласованными.</li>
+    <li>Всегда снимайте регистрацию окон и содержимого в <code>OnUnload</code>.</li>
+    <li>Строка 0 пикселей документа - верхняя. Не добавляйте вертикальные развороты без необходимости; конвертируйте строки только на границе с внешними изображениями.</li>
+  </ul>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

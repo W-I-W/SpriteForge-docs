@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экспорт - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="export">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/save-png.png" alt="" width="40" height="40">Экспорт</h1>
+  <p class="lead">Окно <b>Export sprites</b> (<code>File &gt; Export...</code>) выгружает документ или сгенерированные анимации в разные форматы.</p>
+
+  <figure class="dg"><svg viewBox="0 0 720 290" role="img" aria-label="Форматы экспорта" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="80" width="130" height="60" rx="8" class="box" /><text x="75" y="108" class="t" text-anchor="middle" font-size="14">Документ</text><text x="75" y="126" class="m" text-anchor="middle" font-size="11">(кадры, теги)</text><rect x="300" y="10" width="190" height="38" rx="8" class="box" /><text x="395" y="27" class="t" text-anchor="middle" font-size="13">PNG + JSON</text><text x="395" y="42" class="m" text-anchor="middle" font-size="10">Individual sprites</text><line x1="140" y1="110" x2="300" y2="29" class="ln" marker-end="url(#ah)"/><rect x="300" y="56" width="190" height="38" rx="8" class="box" /><text x="395" y="73" class="t" text-anchor="middle" font-size="13">PNG лист</text><text x="395" y="88" class="m" text-anchor="middle" font-size="10">Tileset</text><line x1="140" y1="110" x2="300" y2="75" class="ln" marker-end="url(#ah)"/><rect x="300" y="102" width="190" height="38" rx="8" class="box" /><text x="395" y="119" class="t" text-anchor="middle" font-size="13">GIF</text><text x="395" y="134" class="m" text-anchor="middle" font-size="10">цикл, длительности</text><line x1="140" y1="110" x2="300" y2="121" class="ln" marker-end="url(#ah)"/><rect x="300" y="148" width="190" height="38" rx="8" class="box" /><text x="395" y="165" class="t" text-anchor="middle" font-size="13">CSS</text><text x="395" y="180" class="m" text-anchor="middle" font-size="10">box-shadow</text><line x1="140" y1="110" x2="300" y2="167" class="ln" marker-end="url(#ah)"/><rect x="300" y="194" width="190" height="38" rx="8" class="box" /><text x="395" y="211" class="t" text-anchor="middle" font-size="13">Атлас</text><text x="395" y="226" class="m" text-anchor="middle" font-size="10">Unity / Godot / Phaser</text><line x1="140" y1="110" x2="300" y2="213" class="ln" marker-end="url(#ah)"/><rect x="300" y="240" width="190" height="38" rx="8" class="box" /><text x="395" y="257" class="t" text-anchor="middle" font-size="13">.aseprite</text><text x="395" y="272" class="m" text-anchor="middle" font-size="10">слои и теги</text><line x1="140" y1="110" x2="300" y2="259" class="ln" marker-end="url(#ah)"/><text x="510" y="110" class="m" text-anchor="start" font-size="12">Selected animation</text><text x="510" y="132" class="m" text-anchor="start" font-size="12">или Frame range</text></svg><figcaption>Форматы экспорта окна Export sprites.</figcaption></figure>
+
+  <h2>Кнопки окна</h2>
+  <ul>
+    <li><img class="ico" src="../assets/icons/save-png.png" alt="Choose location and export" width="26" height="26"><b>Choose location and export</b> - открывает диалог сохранения и выгружает выбранные данные в выбранном формате.</li>
+    <li><img class="ico" src="../assets/icons/close.png" alt="Cancel" width="26" height="26"><b>Cancel</b> - закрывает окно без экспорта.</li>
+  </ul>
+
+  <h2>Источник</h2>
+  <p>Выпадающий список источника выбирает, что экспортировать: кадры документа или (при наличии) сгенерированные анимации. Для документа доступны два режима отбора:</p>
+  <ul>
+    <li><b>Selected animation</b> - именованная анимация (её слои, длительности и цикл).</li>
+    <li><b>Frame range</b> - диапазон кадров: <i>First frame</i> и <i>Last frame</i> (нумерация с 1).</li>
+  </ul>
+  <p>Индексы кадров и клипов в JSON пересчитываются относительно выгружаемой последовательности. Одинаковый отбор действует для PNG, тайлсета, GIF и CSS.</p>
+
+  <h2>Форматы</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Режим</th><th>Результат</th><th>Параметры</th></tr>
+    <tr><td><b>Individual sprites</b></td><td>PNG + JSON с данными кадров (PNG + frame JSON). Для PNG доступна прозрачность. В метаданные входят длительности кадров, именованные анимации и диапазон воспроизведения.</td><td>Pixel scale 1-8, File name</td></tr>
+    <tr><td><b>Tileset</b></td><td>Один лист: кадры слева направо, сверху вниз.</td><td>Columns (по умолчанию 4), Spacing (px) 0-32, Pixel scale</td></tr>
+    <tr><td><b>GIF</b></td><td>Анимированный GIF. Индивидуальные длительности с округлением накопленного времени до сотых секунды; можно отключить цикл (Loop). Бинарная прозрачность.</td><td>Pixel scale, Loop</td></tr>
+    <tr><td><b>CSS</b></td><td>Пиксель-арт через <code>box-shadow</code>. Предел - один миллион видимых пикселей; больше - используйте PNG.</td><td>Pixel scale</td></tr>
+    <tr><td><b>Engine atlas</b></td><td>PNG-лист + JSON-атлас для движка. Теги анимаций становятся клипами.</td><td>Engine, Pixels per unit (по умолчанию 16), Godot resource folder</td></tr>
+    <tr><td><b>.aseprite</b></td><td>Файл Aseprite со всеми слоями, кадрами, тегами и длительностями в исходном размере.</td><td>-</td></tr>
+  </table></div>
+
+  <h3>Engine atlas</h3>
+  <ul>
+    <li><b>Unity (JSON)</b> - атлас с <i>Pixels per unit</i>.</li>
+    <li><b>Godot (JSON + SpriteFrames .tres)</b> - дополнительно создаётся ресурс SpriteFrames; поле <i>Godot resource folder</i> задаёт путь ресурсов внутри проекта.</li>
+    <li><b>Phaser (JSON atlas with tags)</b> - JSON-атлас с тегами.</li>
+  </ul>
+
+  <h3>.aseprite</h3>
+  <p>Экспорт содержит слои, кадры, теги и длительности. Группы при этом сплющиваются, а маски слоёв не сохраняются. Импорт .aseprite также поддерживается - см. <a href="import-files.html">Проекты и импорт</a>.</p>
+
+  <h2>Ограничения и ошибки</h2>
+  <ul>
+    <li>Имя файла не должно содержать недопустимых символов.</li>
+    <li>«Output is too large. Reduce scale» - итоговое изображение слишком велико; уменьшите Pixel scale или измените число колонок.</li>
+    <li>Для тайлсета и GIF все спрайты должны иметь одинаковый размер («All sprites must have the same dimensions»).</li>
+    <li>Записи выполняются транзакционно: при сбое существующий файл не теряется.</li>
+  </ul>
+
+  <div class="warn"><p>Экспорт PNG/JPEG не заменяет сохранение проекта: сохраняйте <code>.sf</code>, чтобы не потерять слои и теги.</p></div>
+
+  <h2>Экспорт отдельных частей</h2>
+  <ul>
+    <li><b>Слайс</b> - кнопка Export PNG в настройках инструмента <a href="tools.html#slice">Slice</a>.</li>
+    <li><b>Результат генерации</b> - Save sprite as PNG / Save animation as GIF в Generated sprites.</li>
+    <li><b>Библиотека</b> - экспорт PNG из <a href="library.html">Result library</a>.</li>
+    <li><b>Стили карандаша</b> - JSON или прозрачный PNG (не больше 32 x 32).</li>
+  </ul>
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

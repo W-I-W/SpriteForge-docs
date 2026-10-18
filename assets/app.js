@@ -1,5 +1,8 @@
 (function () {
-  var NAV = [
+  var en = document.documentElement.lang !== "ru";
+  var P = en ? "" : "../";
+
+  var NAV_RU = [
     ["Начало", [
       ["index", "Обзор"],
       ["getting-started", "Быстрый старт"],
@@ -31,7 +34,7 @@
     ]],
     ["Умные функции", [
       ["ai-pixel", "AI image to pixel art"],
-      ["prediction", "Предсказание правок"],
+      ["prediction", "Предсказание правок"]
     ]],
     ["Файлы", [
       ["export", "Экспорт"],
@@ -46,25 +49,87 @@
       ["glossary", "Глоссарий"]
     ]]
   ];
+
+  var NAV_EN = [
+    ["Start", [
+      ["index", "Overview"],
+      ["getting-started", "Getting started"],
+      ["quick-tour", "Quick tour (built-in)"],
+      ["interface", "Interface"],
+      ["windows", "Window reference"],
+      ["recipes", "Step-by-step recipes"]
+    ]],
+    ["Drawing", [
+      ["tools", "Tools (all 28)"],
+      ["selection", "Selection and transform"],
+      ["canvas", "Canvas, grid, guides"],
+      ["mirror-tile", "Mirror and Tile Repeat"],
+      ["palettes", "Palettes and color"],
+      ["filters", "Filters and color editing"]
+    ]],
+    ["Animation", [
+      ["layers-timeline", "Layers and Timeline"],
+      ["physics", "Physics animation"],
+      ["lighting", "Frame lighting"]
+    ]],
+    ["Generators", [
+      ["generators", "Generators overview"],
+      ["character", "Characters"],
+      ["furniture-effects", "Furniture and effects"],
+      ["tiles-ui", "Tiles and UI"],
+      ["auto-noise", "Auto noise and Canvas generator"],
+      ["library", "Results and library"]
+    ]],
+    ["Smart features", [
+      ["ai-pixel", "AI image to pixel art"],
+      ["prediction", "Edit prediction"]
+    ]],
+    ["Files", [
+      ["export", "Export"],
+      ["import-files", "Projects and import"],
+      ["recovery", "Recovery and history"]
+    ]],
+    ["Setup", [
+      ["settings", "Settings and content"],
+      ["mods", "Mods"],
+      ["shortcuts", "Keyboard shortcuts"],
+      ["faq", "FAQ"],
+      ["glossary", "Glossary"]
+    ]]
+  ];
+
+  var T = en ? {
+    menu: "Menu", doc: "documentation", search: "Search the documentation...", searchLabel: "Search", theme: "Theme",
+    onPage: "On this page", footer: "SpriteForge - documentation. Matches the current version of the source code.",
+    hintPage: "page", hintHere: "on this page", none: "Nothing found", lang: "RU", langTitle: "Русская версия"
+  } : {
+    menu: "Меню", doc: "документация", search: "Поиск по документации...", searchLabel: "Поиск", theme: "Тема",
+    onPage: "На странице", footer: "SpriteForge - документация. Описание соответствует текущей версии исходного кода.",
+    hintPage: "страница", hintHere: "на этой странице", none: "Ничего не найдено", lang: "EN", langTitle: "English version"
+  };
+
+  var NAV = en ? NAV_EN : NAV_RU;
   var flat = [];
   NAV.forEach(function (g) { g[1].forEach(function (p) { flat.push(p); }); });
 
   var page = document.body.getAttribute("data-page") || "index";
-  var root = document.body.getAttribute("data-root") || "";
 
   // theme
   var saved = null;
   try { saved = localStorage.getItem("sf-theme"); } catch (e) {}
   if (saved) document.documentElement.setAttribute("data-theme", saved);
 
+  var otherLang = (en ? "ru/" : "../") + page + ".html";
+
   var top = document.createElement("div");
   top.className = "topbar";
   top.innerHTML =
-    '<button class="icon-btn menu-btn" aria-label="Меню">&#9776;</button>' +
-    '<a class="brand" href="index.html"><img src="assets/logo.png" alt=""><span>SpriteForge <small>документация</small></span></a>' +
+    '<button class="icon-btn menu-btn" aria-label="' + T.menu + '">&#9776;</button>' +
+    '<a class="brand" href="index.html"><img src="' + P + 'assets/logo.png" alt=""><span>SpriteForge <small>' + T.doc + '</small></span></a>' +
     '<div class="spacer"></div>' +
-    '<div class="search"><input type="search" placeholder="Поиск по документации..." aria-label="Поиск"><div class="search-results"></div></div>' +
-    '<button class="icon-btn theme-btn" aria-label="Тема">&#9680;</button>';
+    '<div class="search"><input type="search" placeholder="' + T.search + '" aria-label="' + T.searchLabel + '"><div class="search-results"></div></div>' +
+    '<a class="icon-btn lang-btn" href="' + otherLang + '" title="' + T.langTitle + '" hreflang="' + (en ? "ru" : "en") + '">' + T.lang + '</a>' +
+    '<button class="icon-btn theme-btn" aria-label="' + T.theme + '">&#9680;</button>';
   document.body.insertBefore(top, document.body.firstChild);
 
   var side = document.createElement("nav");
@@ -90,7 +155,7 @@
   if (heads.length > 1) {
     var toc = document.createElement("div");
     toc.className = "toc";
-    var t = "<b>На странице</b>";
+    var t = "<b>" + T.onPage + "</b>";
     heads.forEach(function (h, i) {
       if (!h.id) h.id = "s" + i;
       t += '<a href="#' + h.id + '">' + h.textContent + "</a>";
@@ -111,7 +176,7 @@
     main.appendChild(pager);
   }
   var foot = document.createElement("footer");
-  foot.textContent = "SpriteForge - документация. Описание соответствует текущей версии исходного кода.";
+  foot.textContent = T.footer;
   layout.appendChild(foot);
 
   // menu
@@ -128,10 +193,10 @@
   // search (titles + h2/h3 of the current page + index of all pages by title)
   var input = top.querySelector(".search input");
   var box = top.querySelector(".search-results");
-  var entries = flat.map(function (p) { return { title: p[1], url: p[0] + ".html", hint: "страница" }; });
+  var entries = flat.map(function (p) { return { title: p[1], url: p[0] + ".html", hint: T.hintPage }; });
   main.querySelectorAll("h2,h3").forEach(function (h, i) {
     if (!h.id) h.id = "h" + i;
-    entries.push({ title: h.textContent.replace(/\s+/g, " ").trim(), url: "#" + h.id, hint: "на этой странице" });
+    entries.push({ title: h.textContent.replace(/\s+/g, " ").trim(), url: "#" + h.id, hint: T.hintHere });
   });
   var INDEX = window.SF_SEARCH_INDEX || [];
   INDEX.forEach(function (e) { entries.push({ title: e[0], url: e[1], hint: e[2] }); });
@@ -141,7 +206,7 @@
     var found = entries.filter(function (e) { return e.title.toLowerCase().indexOf(q) >= 0; }).slice(0, 14);
     box.innerHTML = found.length
       ? found.map(function (e) { return '<a href="' + e.url + '">' + e.title + "<span>" + e.hint + "</span></a>"; }).join("")
-      : '<a href="#">Ничего не найдено</a>';
+      : '<a href="#">' + T.none + "</a>";
     box.style.display = "block";
   });
   document.addEventListener("click", function (e) { if (!top.contains(e.target)) box.style.display = "none"; });

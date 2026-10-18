@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,50 +9,50 @@
 <body data-page="ai-pixel">
 <main>
   <h1><img class="ico page-ico" src="assets/icons/variations.png" alt="" width="40" height="40">AI image to pixel art</h1>
-  <p class="lead">Превращает «псевдо-пиксельное» изображение (например, созданное нейросетью) в настоящий пиксель-арт: находит исходную сетку, выравнивает блоки и сокращает палитру. Работает локально, без сетевых запросов.</p>
+  <p class="lead">Turns a "pseudo-pixel" image (for example one made by a neural network) into real pixel art: it finds the source grid, aligns the blocks and reduces the palette. It works locally, with no network requests.</p>
 
-  <p>Откройте через <code>Filter &gt; AI image to pixel art...</code>. Загрузите PNG или JPG кнопкой <b>Load image...</b>.</p>
+  <p>Open it through <code>Filter &gt; AI image to pixel art...</code>. Load a PNG or JPG with the <b>Load image...</b> button.</p>
 
-  <figure class="dg"><svg viewBox="0 0 720 190" role="img" aria-label="AI image to pixel art" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="170" rx="8" class="box" /><rect x="25" y="40" width="140" height="80" rx="8" class="bg" /><text x="95" y="72" class="t" text-anchor="middle" font-size="13">Исходник</text><text x="95" y="96" class="m" text-anchor="middle" font-size="10">мягкие края, ~псевдопиксели</text><line x1="165" y1="80" x2="195" y2="80" class="ln" marker-end="url(#ah)"/><rect x="195" y="40" width="140" height="80" rx="8" class="bg" /><text x="265" y="72" class="t" text-anchor="middle" font-size="13">Detect grid</text><text x="265" y="96" class="m" text-anchor="middle" font-size="10">размер ячейки и смещение</text><line x1="335" y1="80" x2="365" y2="80" class="ln" marker-end="url(#ah)"/><rect x="365" y="40" width="140" height="80" rx="8" class="bg" /><text x="435" y="72" class="t" text-anchor="middle" font-size="13">Стиль + палитра</text><text x="435" y="96" class="m" text-anchor="middle" font-size="10">Conversion style, Max colors</text><line x1="505" y1="80" x2="535" y2="80" class="ln" marker-end="url(#ah)"/><rect x="535" y="40" width="140" height="80" rx="8" class="bg" /><text x="605" y="72" class="t" text-anchor="middle" font-size="13">Результат</text><text x="605" y="96" class="m" text-anchor="middle" font-size="10">чёткий пиксель-арт</text><text x="30" y="160" class="m" text-anchor="start" font-size="12">Save PNG, Add to canvas as new frame или Create document</text></svg><figcaption>Конвертация изображения в пиксель-арт: сетка, стиль, палитра.</figcaption></figure>
+  <figure class="dg"><svg viewBox="0 0 720 190" role="img" aria-label="AI image to pixel art" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arh"/></marker></defs><rect x="10" y="10" width="700" height="170" rx="8" class="box" /><rect x="25" y="40" width="140" height="80" rx="8" class="bg" /><text x="95" y="72" class="t" text-anchor="middle" font-size="13">Source</text><text x="95" y="96" class="m" text-anchor="middle" font-size="10">soft edges, ~pseudo-pixels</text><line x1="165" y1="80" x2="195" y2="80" class="ln" marker-end="url(#ah)"/><rect x="195" y="40" width="140" height="80" rx="8" class="bg" /><text x="265" y="72" class="t" text-anchor="middle" font-size="13">Detect grid</text><text x="265" y="96" class="m" text-anchor="middle" font-size="10">cell size and offset</text><line x1="335" y1="80" x2="365" y2="80" class="ln" marker-end="url(#ah)"/><rect x="365" y="40" width="140" height="80" rx="8" class="bg" /><text x="435" y="72" class="t" text-anchor="middle" font-size="13">Style + palette</text><text x="435" y="96" class="m" text-anchor="middle" font-size="10">Conversion style, Max colors</text><line x1="505" y1="80" x2="535" y2="80" class="ln" marker-end="url(#ah)"/><rect x="535" y="40" width="140" height="80" rx="8" class="bg" /><text x="605" y="72" class="t" text-anchor="middle" font-size="13">Result</text><text x="605" y="96" class="m" text-anchor="middle" font-size="10">crisp pixel art</text><text x="30" y="160" class="m" text-anchor="start" font-size="12">Save PNG, Add to canvas as new frame or Create document</text></svg><figcaption>Converting an image to pixel art: grid, style, palette.</figcaption></figure>
 
-  <h2>Шаг 1. Pixel grid</h2>
+  <h2>Step 1. Pixel grid</h2>
   <ul>
-    <li><b>Detect grid</b> - автоматически определяет размер «пикселя» в исходнике и смещение. Если определение неуверенное, окно предупреждает - проверьте выравнивание кнопкой <i>Adjust grid</i>.</li>
-    <li><b>Source pixel cell size</b> (по умолчанию 4) - размер ячейки исходного изображения. 1 обрабатывает отдельные пиксели; бóльшие значения выравнивают блоки.</li>
-    <li><b>Grid offset X / Y</b> - сдвиг сетки.</li>
+    <li><b>Detect grid</b> - automatically determines the "pixel" size and offset in the source. If the detection is uncertain the window warns you - check the alignment with the <i>Adjust grid</i> button.</li>
+    <li><b>Source pixel cell size</b> (4 by default) - the cell size of the source image. 1 processes individual pixels; larger values align the blocks.</li>
+    <li><b>Grid offset X / Y</b> - the grid shift.</li>
   </ul>
 
-  <h2>Шаг 2. Appearance</h2>
-  <p><b>Conversion style</b> выбирает способ получить цвет блока:</p>
+  <h2>Step 2. Appearance</h2>
+  <p><b>Conversion style</b> chooses how a block's color is obtained:</p>
   <div class="table-wrap"><table>
-    <tr><th>Стиль</th><th>Идея</th></tr>
-    <tr><td>Balanced blocks</td><td>усредняет каждый блок для чистого ровного результата</td></tr>
-    <tr><td>Sharp edges</td><td>берёт пиксель около центра блока, сохраняя чёткие края</td></tr>
-    <tr><td>High contrast</td><td>усиливает светлые и тёмные области перед ограничением палитры</td></tr>
-    <tr><td>Dithered palette</td><td>распределяет ошибку цвета между пикселями (дизеринг) для плавных переходов малым числом цветов</td></tr>
-    <tr><td>Dominant clusters</td><td>использует самую частую группу цветов в блоке: плотные формы и резкие границы</td></tr>
-    <tr><td>Posterized shading</td><td>группирует яркость в четыре полосы - графичные ступенчатые тени</td></tr>
-    <tr><td>Grayscale</td><td>оттенки серого перед ограничением палитры</td></tr>
-    <tr><td>Handheld green</td><td>четыре ретро-зелёных тона по яркости</td></tr>
-    <tr><td>Soft pastel</td><td>осветляет и смягчает насыщенность</td></tr>
-    <tr><td>Ink outlines</td><td>добавляет тёмный контур в один пиксель вдоль сильных цветовых и силуэтных границ</td></tr>
+    <tr><th>Style</th><th>Idea</th></tr>
+    <tr><td>Balanced blocks</td><td>averages each block for a clean, even result</td></tr>
+    <tr><td>Sharp edges</td><td>takes a pixel near the block center, keeping edges crisp</td></tr>
+    <tr><td>High contrast</td><td>strengthens light and dark areas before limiting the palette</td></tr>
+    <tr><td>Dithered palette</td><td>distributes the color error between pixels (dithering) to keep smooth transitions with few colors</td></tr>
+    <tr><td>Dominant clusters</td><td>uses the most common color group in a block: solid shapes and sharper boundaries</td></tr>
+    <tr><td>Posterized shading</td><td>groups brightness into four bands - graphic, stepped shadows</td></tr>
+    <tr><td>Grayscale</td><td>shades of gray before limiting the palette</td></tr>
+    <tr><td>Handheld green</td><td>four retro green tones by brightness</td></tr>
+    <tr><td>Soft pastel</td><td>lightens and softens saturation</td></tr>
+    <tr><td>Ink outlines</td><td>adds a dark one-pixel outline along strong color and silhouette edges</td></tr>
   </table></div>
   <ul>
-    <li><b>Maximum colors</b> (2-256, по умолчанию 16) - размер итоговой палитры.</li>
-    <li><b>Separate palette per tile</b> - палитра ограничивается независимо для каждого тайла (<i>Tile width</i>, <i>Tile height</i> в пикселях восстановленной сетки, <i>Show tile grid</i>); во всём изображении цветов может быть больше.</li>
-    <li><b>Line thickness</b> (0-4 px) - 0 сохраняет исходную ширину контура, 1-4 задают единую ширину в пикселях сетки.</li>
-    <li><b>Cleanup and extra settings</b>: <i>Noise reduction</i> (0-100, убирает одиночный цветовой шум до сокращения палитры), <i>Pixel art cleanup</i> (0 - выкл.; выше - сливает близкие цвета и чистит мелкие дефекты силуэта), <i>Transparency threshold</i>.</li>
+    <li><b>Maximum colors</b> (2-256, 16 by default) - the size of the final palette.</li>
+    <li><b>Separate palette per tile</b> - the palette is limited independently for each tile (<i>Tile width</i>, <i>Tile height</i> in pixels of the recovered grid, <i>Show tile grid</i>); the whole image may contain more colors.</li>
+    <li><b>Line thickness</b> (0-4 px) - 0 keeps the original outline width, 1-4 set a uniform width in grid pixels.</li>
+    <li><b>Cleanup and extra settings</b>: <i>Noise reduction</i> (0-100, removes isolated color noise before the palette is reduced), <i>Pixel art cleanup</i> (0 - off; higher merges close colors and cleans small silhouette defects), <i>Transparency threshold</i>.</li>
   </ul>
 
-  <h2>Шаг 3. Result</h2>
+  <h2>Step 3. Result</h2>
   <ul>
-    <li>Размер результата показан как «Result: W x H | N colors» («Source: W x H» - размер исходника).</li>
-    <li><b>Align without resizing</b> - только выровнять и ограничить палитру, не уменьшая изображение.</li>
-    <li><img class="ico" src="assets/icons/save-png.png" alt="Save PNG" width="26" height="26"><b>Save PNG...</b> - сохранить результат.</li>
-    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add to canvas as new frame" width="26" height="26"><b>Add to canvas as new frame</b> - вставить в документ как новый кадр.</li>
-    <li><img class="ico" src="assets/icons/new-doc.png" alt="Create new document from result" width="26" height="26"><b>Create document</b> - создать новый документ из результата.</li>
+    <li>The result size is shown as "Result: W x H | N colors" ("Source: W x H" is the source size).</li>
+    <li><b>Align without resizing</b> - only align and limit the palette without shrinking the image.</li>
+    <li><img class="ico" src="assets/icons/save-png.png" alt="Save PNG" width="26" height="26"><b>Save PNG...</b> - save the result.</li>
+    <li><img class="ico" src="assets/icons/add-layer.png" alt="Add to canvas as new frame" width="26" height="26"><b>Add to canvas as new frame</b> - insert into the document as a new frame.</li>
+    <li><img class="ico" src="assets/icons/new-doc.png" alt="Create new document from result" width="26" height="26"><b>Create document</b> - create a new document from the result.</li>
   </ul>
-  <div class="note"><p>Правила ориентации: результат вставляется в документ строкой 0 сверху. Чтобы убедиться в этом, проверяйте преобразование на несимметричном изображении (голова сверху, ноги снизу).</p></div>
+  <div class="note"><p>Orientation rule: the result is inserted into the document with row 0 at the top. To be sure of this, test the conversion on an asymmetric image (head on top, feet at the bottom).</p></div>
 </main>
 <script src="assets/search-index.js"></script>
 <script src="assets/app.js"></script>

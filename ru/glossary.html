@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Глоссарий - SpriteForge</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="glossary">
+<main>
+  <h1><img class="ico page-ico" src="../assets/icons/library-save.png" alt="" width="40" height="40">Глоссарий</h1>
+  <p class="lead">Термины, которые встречаются в программе и документации.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Термин</th><th>Значение</th></tr>
+    <tr><td><b>Body / Outline</b></td><td>Две роли пикселя: тело (заливка) и контур. У каждой свои цвета, вероятность и флажок активности.</td></tr>
+    <tr><td><b>Chance</b></td><td>Вероятность (0-100%), что пиксель или слой будет использован генератором.</td></tr>
+    <tr><td><b>AutoColor</b></td><td>Цвет пикселя подбирается из палитры автоматически.</td></tr>
+    <tr><td><b>Ячейка (cell)</b></td><td>Слой в конкретном кадре. Инструмент Move без выделения двигает всю ячейку.</td></tr>
+    <tr><td><b>Frame / кадр</b></td><td>Один момент анимации; максимум 120 кадров на документ; нумерация в интерфейсе с 1.</td></tr>
+    <tr><td><b>Tag / тег анимации</b></td><td>Именованный диапазон кадров (<code>idle</code>, <code>walk</code>). Становится клипом при экспорте в атлас.</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/layers.png" alt="Onion skin" width="26" height="26"><b>Onion skin</b></td><td>Полупрозрачный показ соседних кадров (до 4 до и 4 после).</td></tr>
+    <tr><td><b>Inbetween</b></td><td>Автоматическая промежуточная поза между двумя кадрами.</td></tr>
+    <tr><td><b>Layer group</b></td><td>Плоская группа слоёв с общей видимостью и блокировкой.</td></tr>
+    <tr><td><b>Alpha mask</b></td><td>Слой, использующий альфа-канал другого слоя как маску, с возможной инверсией.</td></tr>
+    <tr><td><b>Blend mode</b></td><td>Режим наложения слоя: Normal, Multiply, Screen, Add.</td></tr>
+    <tr><td><b>Add-on</b></td><td>Режим генератора (Effects, Furniture, Character), который включается поверх Drawing флажком «Apply ... to Drawing».</td></tr>
+    <tr><td><b>Seed</b></td><td>Число, задающее случайность; тот же сид и настройки дают тот же результат.</td></tr>
+    <tr><td><b>Variation</b></td><td>Вариант настроек (например, профиль шума) или результат, созданный на основе выбранного спрайта.</td></tr>
+    <tr><td><b>Indexed</b></td><td>Документ, где пиксели привязаны к слотам палитры; смена палитры меняет всю анимацию.</td></tr>
+    <tr><td><b>Ramp</b></td><td>Ряд оттенков от тени к свету, построенный от базового цвета.</td></tr>
+    <tr><td><b>Dithering</b></td><td>Рисунок из пикселей двух цветов, имитирующий промежуточные тона.</td></tr>
+    <tr><td><img class="ico" src="../assets/icons/slice.png" alt="Slice" width="26" height="26"><b>Slice</b></td><td>Именованная прямоугольная область с pivot и 9-slice center.</td></tr>
+    <tr><td><b>Pivot</b></td><td>Опорная точка слайса относительно его границ.</td></tr>
+    <tr><td><b>9-slice</b></td><td>Разбиение изображения на 9 частей: углы неизменны, центр растягивается.</td></tr>
+    <tr><td><b>Atlas</b></td><td>Лист спрайтов с описанием кадров и клипов (Unity, Godot, Phaser).</td></tr>
+    <tr><td><b>Tile Repeat</b></td><td>Режим, при котором рисунок «заворачивается» через края холста.</td></tr>
+    <tr><td><b>.sf</b></td><td>Формат проекта SpriteForge.</td></tr>
+  </table></div>
+
+</main>
+<script src="../assets/search-index-ru.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
